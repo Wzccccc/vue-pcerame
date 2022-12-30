@@ -1,33 +1,45 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "esnext",
     "useDefineForClassFields": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "module": "esnext",
+    "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
+    "sourceMap": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
+    // 跳过第三方库检查，解决打包失败
     "skipLibCheck": true,
-    "noEmit": true,
-    // 配置@别名
-    "baseUrl": ".",
+    "noEmit": true, // 解决 vite构建vue3 打包失败
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    // 解析非相对模块名的基准目录
+    "baseUrl": "./",
+    // 模块名到基于 baseUrl 的路径映射的列表。
     "paths": {
+      "@": [
+        "src"
+      ],
       "@/*": [
         "src/*"
       ]
-    },
+    }
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.js"
   ],
   "references": [
     {
