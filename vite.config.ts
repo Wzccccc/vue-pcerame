@@ -6,12 +6,9 @@ import { resolve } from "path"; // 配置别名 如报错需要安装 @types/nod
 import VueSetupExtend from "vite-plugin-vue-setup-extend"; // 可在 setup 上自定义name
 
 // https://vitejs.dev/config/
-// ConfigEnv/UserConfig ts 提示报错需要导入
+// ConfigEnv UserConfig ts 提示报错需要导入
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
-	// console.log(env);
-	// console.log(env.VITE_APP_PORT);
-	// console.log(Number(env.VITE_APP_PORT));
 
 	return {
 		base: "./",

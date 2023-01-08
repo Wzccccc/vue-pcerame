@@ -27,13 +27,19 @@ export const errorRouters = [
 		path: "/403",
 		name: "403",
 		component: () => import("@/components/errorCom/403.vue"),
-		meta: { title: "403页面" }
+		meta: { title: "403" }
 	},
 	{
 		path: "/404",
 		name: "404",
 		component: () => import("@/components/errorCom/404.vue"),
-		meta: { title: "404页面" }
+		meta: { title: "404" }
+	},
+	{
+		path: "/500",
+		name: "500",
+		component: () => import("@/components/errorCom/500.vue"),
+		meta: { title: "500" }
 	}
 ];
 
