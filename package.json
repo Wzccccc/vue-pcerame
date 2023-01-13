@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.0.10",
     "@types/node": "^18.11.17",
     "axios": "^1.2.1",
     "element-plus": "^2.2.27",
+    "js-md5": "^0.7.3",
     "pinia": "^2.0.28",
+    "pinia-plugin-persistedstate": "^3.0.2",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },

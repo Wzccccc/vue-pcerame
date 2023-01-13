@@ -4,11 +4,11 @@ import { RouteRecordRaw } from "vue-router";
 // 登陆页 首页
 export const staticRouters: RouteRecordRaw[] = [
 	{
-		path: "/",
+		path: "",
 		redirect: { name: "home" }
 	},
 	{
-		path: "",
+		path: "/home",
 		name: "home",
 		component: () => import("@/views/home/index.vue"),
 		meta: { title: "首页" }

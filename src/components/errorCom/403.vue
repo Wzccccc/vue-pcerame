@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts" name="403">
-import { useRouter } from "vue-router";
+import { useRouter, onBeforeRouteLeave } from "vue-router";
 import { ref } from "vue";
 const router = useRouter();
 let timeNum = ref(10);
@@ -26,7 +26,10 @@ const returnHome = function () {
 	clearInterval(timer);
 	router.push({ name: "home" });
 };
+onBeforeRouteLeave(() => {
+	clearInterval(timer);
+});
 </script>
 <style scoped lang="scss">
-@import "./common.scss";
+@import "./index.scss";
 </style>

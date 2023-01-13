@@ -2,13 +2,15 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import "./styles/reset.scss";
 
+import router from "./routers";
+import pinia from "@/store/index";
 import ElementPlus from "element-plus";
+import * as Icons from "@element-plus/icons-vue";
 import "element-plus/dist/index.css";
 
-import router from "./routers";
-
-console.log(import.meta.env);
-console.log(import.meta.env.VITE_APP_PORT);
-console.log(Number(import.meta.env.VITE_APP_PORT));
-
-createApp(App).use(ElementPlus).use(router).mount("#app");
+const app = createApp(App);
+// 注册 icons
+for (const [key, component] of Object.entries(Icons)) {
+	app.component(key, component);
+}
+app.use(ElementPlus).use(pinia).use(router).mount("#app");

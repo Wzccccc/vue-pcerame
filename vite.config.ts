@@ -38,7 +38,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			cors: true,
 			proxy: {
 				"/api": {
-					target: "http://localhost:8080",
+					target: "https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e",
 					changeOrigin: true,
 					rewrite: path => path.replace(/^\/api/, "")
 					// pathRewrite: {
