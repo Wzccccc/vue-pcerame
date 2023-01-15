@@ -3,6 +3,7 @@ import { ResponseData } from "./interface";
 import { RequestEnum } from "@/enum/requestEnum";
 
 import { ElMessage } from "element-plus";
+import { GlobalStore } from "@/store";
 
 // 配置 config 对象
 const config = {
@@ -25,14 +26,13 @@ class Request {
 				 * TODO ...
 				 * 1. 将 当前请求存入 pending 中
 				 * 2. 当前请求是否需要 loading 可在 接口中 {headers:{noLoading:true}} 配置
-				 * 3. 从 pinia 中 取 token
-				 * 4. 将 token 随接口一并发送
 				 */
 				// console.log(config);
-				return { ...config, headers: { ...config.headers, "x-access-token": "" } };
+				const token: string = GlobalStore().token;
+				return { ...config, headers: { ...config.headers, "x-access-token": token } };
 			},
 			(error: AxiosError) => {
-				console.log(error);
+				// console.log(error);
 				return Promise.reject(error);
 			}
 		);

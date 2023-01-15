@@ -31,11 +31,12 @@
 import { reactive, ref, onMounted } from "vue";
 import { FormInstance, FormRules, ElLoading } from "element-plus";
 import { useRouter } from "vue-router";
-import { GlobalStore } from "@/store";
 import md5 from "js-md5"; // 密码加密
 
 import { Login } from "@/api/interface";
 import { loginApi } from "@/api/modules/login";
+import { GlobalStore } from "@/store";
+import { initDynamicRouters } from "@/routers/modules/dynamicRouter";
 
 const router = useRouter();
 const globalStore = GlobalStore();
@@ -57,8 +58,9 @@ const login = async (formEl: FormInstance | undefined) => {
 		if (!valid) return;
 		loginLoading.value = true;
 		try {
-			const { data } = await loginApi({ ...loginForm, password: md5(loginForm.password) });
-			globalStore.setToken(data!.access_token);
+			const { data: token } = await loginApi({ ...loginForm, password: md5(loginForm.password) });
+			globalStore.setToken(token!.access_token);
+			await initDynamicRouters();
 			router.push({ name: "home" });
 		} finally {
 			loginLoading.value = false;

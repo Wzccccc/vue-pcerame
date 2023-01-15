@@ -1,13 +1,15 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import { GlobalStore } from "@/store";
-import { staticRouters, errorRouters, notFoundRouter } from "@/routers/modules/staticRouter";
+import { MenuStore } from "@/store/modules/menu";
+import { staticRouters, errorRouters } from "@/routers/modules/staticRouter";
+import { initDynamicRouters } from "./modules/dynamicRouter";
 
 import { ROUTER_WHITE_LIST } from "@/config/config";
 
 // 接口返回数据匹配动态路由表
 const router = createRouter({
 	history: createWebHashHistory(),
-	routes: [...staticRouters, ...errorRouters, ...notFoundRouter],
+	routes: [...staticRouters, ...errorRouters],
 	strict: false,
 	scrollBehavior: () => ({ left: 0, top: 0 })
 });
@@ -15,7 +17,7 @@ const router = createRouter({
 /**
  * @description 前置路由守卫
  */
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
 	const globalStore = GlobalStore();
 
 	// 动态设置当前页面title
@@ -35,6 +37,13 @@ router.beforeEach((to, from, next) => {
 
 	// 其他页面
 	if (!globalStore.token) return next({ name: "login", replace: true }); // replace 浏览器无法回退
+
+	// 防止登录时路由未获取到菜单，需要重新添加动态路由
+	const menuStore = MenuStore();
+	if (!menuStore.dataMneuList.length) {
+		await initDynamicRouters();
+		return next({ ...to, replace: true });
+	}
 
 	next();
 });

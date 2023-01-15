@@ -5,14 +5,14 @@ import { RouteRecordRaw } from "vue-router";
 export const staticRouters: RouteRecordRaw[] = [
 	{
 		path: "",
-		redirect: { name: "home" }
+		redirect: "/home"
 	},
-	{
-		path: "/home",
-		name: "home",
-		component: () => import("@/views/home/index.vue"),
-		meta: { title: "首页" }
-	},
+	// {
+	// 	path: "/home",
+	// 	name: "home",
+	// 	component: () => import("@/views/home/index.vue"),
+	// 	meta: { title: "首页" }
+	// },
 	{
 		path: "/login",
 		name: "login",
@@ -44,10 +44,8 @@ export const errorRouters = [
 ];
 
 // 其他
-export const notFoundRouter = [
-	{
-		path: "/:pathMatch(.*)*",
-		name: "NotFound",
-		redirect: { name: "404" }
-	}
-];
+export const notFoundRouter = {
+	path: "/:pathMatch(.*)*",
+	name: "NotFound",
+	redirect: { name: "404" }
+};

@@ -13,4 +13,4 @@ const app = createApp(App);
 for (const [key, component] of Object.entries(Icons)) {
 	app.component(key, component);
 }
-app.use(ElementPlus).use(pinia).use(router).mount("#app");
+app.use(ElementPlus).use(router).use(pinia).mount("#app");

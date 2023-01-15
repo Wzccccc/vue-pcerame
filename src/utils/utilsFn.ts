@@ -33,3 +33,10 @@ export class Debounce {
 }
 
 // 节流
+
+// 判断数据类型
+export const isType = (val: any) => {
+	if (val === null) return "null";
+	if (typeof val !== "object") return typeof val;
+	else return Object.prototype.toString.call(val).slice(8, -1).toLocaleLowerCase();
+};
