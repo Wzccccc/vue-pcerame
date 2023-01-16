@@ -1,0 +1,41 @@
+#layout {
+	height: 100%;
+	.el-container {
+		width: 100%;
+		height: 100%;
+	}
+	.left-con {
+		.el-aside {
+			height: 100%;
+			.menu {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+				border-right: 1px solid var(--el-menu-border-color);
+				.logo {
+					cursor: pointer;
+					font: bold 18px arial;
+					line-height: 55px;
+					box-sizing: border-box;
+					display: flex;
+					justify-content: center;
+					align-content: center;
+					border-bottom: 1px solid var(--el-menu-border-color);
+					img {
+						width: 28px;
+						margin-right: 5px;
+					}
+				}
+				.el-scrollbar {
+					height: calc(100% - 55px);
+				}
+				ul {
+					border-right: 0 !important;
+				}
+			}
+		}
+	}
+	.right-con {
+		flex-direction: column;
+	}
+}

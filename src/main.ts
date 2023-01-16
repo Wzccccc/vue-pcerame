@@ -1,6 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import "./styles/reset.scss";
+// 引入 iconSvg 为全局组件
+import "@/assets/iconfont/icon.js";
+import SvgIcon from "@/components/SvgIcon/index.vue";
 
 import router from "./routers";
 import pinia from "@/store/index";
@@ -13,4 +16,5 @@ const app = createApp(App);
 for (const [key, component] of Object.entries(Icons)) {
 	app.component(key, component);
 }
+app.component("SvgIcon", SvgIcon);
 app.use(ElementPlus).use(router).use(pinia).mount("#app");

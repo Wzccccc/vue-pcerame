@@ -106,28 +106,6 @@ onMounted(() => {
 				border-radius: 20px;
 				width: 40%;
 			}
-			.el-button:hover {
-				background-color: #4db6ac;
-				border-color: #4db6ac;
-			}
-			.reset-btn:hover {
-				background-color: #e6f5f3;
-				color: #009688;
-			}
-			.reset-btn:active {
-				color: #e9f5f3;
-				background-color: #429488;
-				border-color: #429488;
-			}
-			.reset-btn:focus {
-				background-color: #e9f5f3;
-				border-color: #bcdfdb;
-				color: #429488;
-			}
-			.login-btn {
-				border-color: #429488;
-				background-color: #429488;
-			}
 		}
 	}
 }

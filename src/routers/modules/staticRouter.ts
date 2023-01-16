@@ -43,7 +43,7 @@ export const errorRouters = [
 	}
 ];
 
-// 其他
+// 错误路由
 export const notFoundRouter = {
 	path: "/:pathMatch(.*)*",
 	name: "NotFound",

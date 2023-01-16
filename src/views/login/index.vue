@@ -2,7 +2,7 @@
 	<div id="login">
 		<div class="login-box">
 			<div class="left-box">
-				<img src="@/assets/images/login_left.png" alt="" />
+				<img src="@/assets/images/welcome.png" alt="" />
 			</div>
 			<div class="right-form">
 				<LoginForm></LoginForm>
