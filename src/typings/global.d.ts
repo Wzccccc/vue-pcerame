@@ -12,7 +12,7 @@ declare namespace Menu {
 		icon: string;
 		title: string;
 		activeMenu?: string;
-		isLink?: boolean;
+		isLink?: string;
 		isHide: boolean;
 		isFull: boolean;
 		isAffix: boolean;

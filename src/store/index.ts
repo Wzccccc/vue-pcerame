@@ -1,15 +1,25 @@
 import { createPinia, defineStore } from "pinia";
-import { GlobalState } from "./interface";
+import { GlobalState, systemConfigOptions } from "./interface";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate"; // 持久化
 
 export const GlobalStore = defineStore("GlobalState", {
 	state: (): GlobalState => ({
-		token: ""
+		token: "",
+		language: "",
+		systemConfig: {
+			isCollapse: false
+		}
 	}),
 	getters: {},
 	actions: {
 		setToken(token: string) {
 			this.token = token;
+		},
+		setCollapse(systemConfig: systemConfigOptions) {
+			this.systemConfig = systemConfig;
+		},
+		setLanguage(language: string) {
+			this.language = language;
 		}
 	},
 	persist: {

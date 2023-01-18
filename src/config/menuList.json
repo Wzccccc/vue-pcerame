@@ -14,6 +14,108 @@
 				"isAffix": true,
 				"isKeepAlive": true
 			}
+		},
+		{
+			"path": "/utilsFun",
+			"name": "utilsFun",
+			"redirect": "/utilsFun/debounce",
+			"meta": {
+				"icon": "Platform",
+				"title": "常用工具函数",
+				"isLink": "",
+				"isHide": false,
+				"isFull": false,
+				"isAffix": true,
+				"isKeepAlive": true
+			},
+			"children": [
+				{
+					"path": "/utilsFun/debounce",
+					"name": "debounce",
+					"component": "/utilsFun/debounce/index",
+					"meta": {
+						"icon": "Flag",
+						"title": "防抖",
+						"isLink": "",
+						"isHide": false,
+						"isFull": false,
+						"isAffix": true,
+						"isKeepAlive": true
+					}
+				},
+				{
+					"path": "/utilsFun/throttle",
+					"name": "throttle",
+					"component": "/utilsFun/throttle/index",
+					"meta": {
+						"icon": "Flag",
+						"title": "节流",
+						"isLink": "",
+						"isHide": false,
+						"isFull": false,
+						"isAffix": true,
+						"isKeepAlive": true
+					}
+				},
+				{
+					"path": "/utilsFun/dateChange",
+					"name": "dateChange",
+					"component": "/utilsFun/dateChange/index",
+					"meta": {
+						"icon": "Flag",
+						"title": "日期转换",
+						"isLink": "",
+						"isHide": false,
+						"isFull": false,
+						"isAffix": true,
+						"isKeepAlive": true
+					}
+				}
+			]
+		},
+		{
+			"path": "/businessCom",
+			"name": "businessCom",
+			"redirect": "/businessCom/dataUpload",
+			"meta": {
+				"icon": "Briefcase",
+				"title": "常用组件",
+				"isLink": "",
+				"isHide": false,
+				"isFull": false,
+				"isAffix": true,
+				"isKeepAlive": true
+			},
+			"children": [
+				{
+					"path": "/businessCom/dataUpload",
+					"name": "dataUpload",
+					"component": "/businessCom/dataUpload/index",
+					"meta": {
+						"icon": "UploadFilled",
+						"title": "文件上传",
+						"isLink": "",
+						"isHide": false,
+						"isFull": false,
+						"isAffix": true,
+						"isKeepAlive": true
+					}
+				},
+				{
+					"path": "/businessCom/svgCon",
+					"name": "svgCon",
+					"component": "/businessCom/svgCon/index",
+					"meta": {
+						"icon": "PictureFilled",
+						"title": "SVG图标",
+						"isLink": "",
+						"isHide": false,
+						"isFull": false,
+						"isAffix": true,
+						"isKeepAlive": true
+					}
+				}
+			]
 		}
 	],
 	"msg": "成功"

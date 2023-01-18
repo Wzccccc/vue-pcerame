@@ -17,7 +17,6 @@ export const MenuStore = defineStore("MenuStore", {
 	actions: {
 		async setMenuList() {
 			const { data } = await menuListApi(true);
-			// console.log(data);
 			this.authMenuList = data;
 		}
 	}

@@ -4,10 +4,11 @@
 	</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts" name="layoutFooter"></script>
 
 <style scoped lang="scss">
 #footer {
+	border-top: 1px solid var(--el-menu-border-color);
 	.el-footer {
 		height: 40px;
 		line-height: 40px;

@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router";
+import I18n from "@/language/index";
 import { GlobalStore } from "@/store";
 import { MenuStore } from "@/store/modules/menu";
 import { staticRouters, errorRouters } from "@/routers/modules/staticRouter";
 import { initDynamicRouters } from "./modules/dynamicRouter";
-
 import { ROUTER_WHITE_LIST } from "@/config/config";
 
 // 接口返回数据匹配动态路由表
@@ -22,7 +22,7 @@ router.beforeEach(async (to, from, next) => {
 
 	// 动态设置当前页面title
 	const title = import.meta.env.VITE_APP_TITLE;
-	document.title = to.meta.title ? `${to.meta.title} - 后台模板(vue)` : title;
+	document.title = to.meta.title ? `${I18n.global.t(`layoutMenu.${to.meta.title}`)} - Vue-Pcerame` : title;
 
 	// 登录页
 	if (to.name === "login") {

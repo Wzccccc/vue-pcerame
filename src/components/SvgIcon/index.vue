@@ -4,9 +4,9 @@
 	</svg>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" name="SvgIcon">
 import { computed } from "vue";
-
+// 后期需要借助 vite-plugin-svg-icons 插件 完成 svg 的使用
 const props = defineProps({
 	iconName: {
 		type: String,
@@ -18,7 +18,7 @@ const props = defineProps({
 	},
 	color: {
 		type: String,
-		default: "#5c6b77"
+		default: "#000"
 	}
 });
 
@@ -42,6 +42,8 @@ const svgClass = computed(() => {
 	height: 1em;
 	position: relative;
 	fill: currentColor;
-	vertical-align: -2px;
+}
+.svg-icon:focus {
+	outline: 0;
 }
 </style>

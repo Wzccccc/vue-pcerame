@@ -28,3 +28,7 @@ export const menuListApi = (params: boolean): Promise<ResponseData> => {
 };
 
 // 退出登录
+// * 用户退出登录
+export const logoutApi = () => {
+	return request.post("geeker/logout");
+};

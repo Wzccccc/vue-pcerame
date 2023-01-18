@@ -1,55 +1,57 @@
 <template>
 	<div class="title">
-		<img src="@/assets/images/logo.svg" alt="" />
-		<h2>VUE-PCERAME</h2>
+		<img src="@/assets/images/logo.png" alt="" />
+		<h2>Vue-Pcerame</h2>
 	</div>
 	<el-form ref="loginFormRef" :model="loginForm" :rules="loginRules" size="large">
 		<el-form-item prop="username">
-			<el-input v-model="loginForm.username" :placeholder="isDev ? '用户名：admin / user' : '请输入用户名'">
+			<el-input v-model="loginForm.username" :placeholder="$t('loginForm.UserNameTips')">
 				<template #prefix>
 					<el-icon><User /></el-icon>
 				</template>
 			</el-input>
 		</el-form-item>
 		<el-form-item prop="password">
-			<el-input v-model="loginForm.password" type="password" show-password :placeholder="isDev ? '密码：123456' : '请输入密码'">
+			<el-input v-model="loginForm.password" type="password" show-password :placeholder="$t('loginForm.PassWordTips')">
 				<template #prefix>
 					<el-icon><Lock /></el-icon>
 				</template>
 			</el-input>
 		</el-form-item>
 		<el-form-item>
-			<el-button class="reset-btn" size="large" @click="resetForm(loginFormRef)"> 重 置</el-button>
+			<el-button class="reset-btn" size="large" @click="resetForm(loginFormRef)">
+				{{ $t("loginForm.Reset") }}
+			</el-button>
 			<el-button class="login-btn" size="large" type="primary" @click="login(loginFormRef)" :loading="loginLoading">
-				登 录
+				{{ $t("loginForm.Login") }}
 			</el-button>
 		</el-form-item>
 	</el-form>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup name="login">
 import { reactive, ref, onMounted } from "vue";
-import { FormInstance, FormRules, ElLoading } from "element-plus";
+import { FormInstance, FormRules } from "element-plus";
 import { useRouter } from "vue-router";
 import md5 from "js-md5"; // 密码加密
 
 import { Login } from "@/api/interface";
 import { loginApi } from "@/api/modules/login";
 import { GlobalStore } from "@/store";
+import I18n from "@/language/index";
 import { initDynamicRouters } from "@/routers/modules/dynamicRouter";
 
 const router = useRouter();
 const globalStore = GlobalStore();
 const loginLoading = ref(false);
 const loginFormRef = ref<FormInstance>();
-const isDev = import.meta.env.VITE_ENV === "development";
 const loginForm = reactive<Login.LoginForm>({
 	username: "",
 	password: ""
 });
 const loginRules = reactive<FormRules>({
-	username: [{ required: true, message: "请输入用户名", trigger: ["blur", "change"] }],
-	password: [{ required: true, message: "请输入密码", trigger: ["blur", "change"] }]
+	username: [{ required: true, message: I18n.global.t("loginForm.CheckUserName"), trigger: ["blur", "change"] }],
+	password: [{ required: true, message: I18n.global.t("loginForm.CheckPassWord"), trigger: ["blur", "change"] }]
 });
 
 const login = async (formEl: FormInstance | undefined) => {
@@ -87,7 +89,6 @@ onMounted(() => {
 	margin-bottom: 40px;
 	img {
 		width: 60px;
-		height: 52px;
 	}
 	h2 {
 		margin-left: 20px;

@@ -2,10 +2,9 @@
 	<div class="not-container">
 		<img src="@/assets/images/404.png" alt="404" class="not-img" />
 		<div class="back-detail">
-			<h2 class="title">404</h2>
-			<div class="txtTips">抱歉，您访问的页面不存在或无权限</div>
-			<div class="timeTxt">{{ timeNum }} 秒后将自动返回首页</div>
-			<el-button type="primary" @click="returnHome">返回首页</el-button>
+			<div class="txtTips">{{ $t("ErrorPags.NoExistTips") }}</div>
+			<div class="timeTxt">{{ timeNum }} {{ $t("ErrorPags.CountDownTips") }}</div>
+			<el-button type="primary" @click="returnHome">{{ $t("ErrorPags.BackHomeBtn") }}</el-button>
 		</div>
 	</div>
 </template>

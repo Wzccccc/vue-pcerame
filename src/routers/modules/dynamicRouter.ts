@@ -15,21 +15,15 @@ export const initDynamicRouters = async () => {
 		await menuStore.setMenuList();
 		// 添加动态路由
 		menuStore.flatDataMneuList.forEach((item: any) => {
+			// console.log(item.children);
 			item.children && delete item.children;
 			if (item.component && isType(item.component) == "string") {
 				item.component = modules["/src/views" + item.component + ".vue"];
 			}
-			router.addRoute(item);
 			if (item.meta.isFull) {
 				router.addRoute(item);
 			} else {
-				// router.addRoute("layout", item);
-				router.addRoute({
-					name: "layout",
-					path: "/layout",
-					component: () => import("@/layouts/index.vue"),
-					children: [item]
-				});
+				router.addRoute("layout", item);
 			}
 		});
 		// 添加错误路由

@@ -2,11 +2,11 @@
 export class Debounce {
 	/**
 	 * @description debounce 防抖函数
-	 * @param fn 需要节流的函数
+	 * @param fn 需要防抖的函数
 	 * @param delay 延迟时间
 	 * @param immediate 是否立即执行
 	 * @param timer 计时器
-	 * @returns 节流过的函数
+	 * @returns 处理过的函数
 	 */
 	private timer: any;
 	constructor(timer: any = null) {
@@ -40,3 +40,18 @@ export const isType = (val: any) => {
 	if (typeof val !== "object") return typeof val;
 	else return Object.prototype.toString.call(val).slice(8, -1).toLocaleLowerCase();
 };
+
+/**
+ * @description 获取浏览器默认语言
+ * @return string
+ */
+export function getBrowserLang() {
+	let browserLang = navigator.language;
+	let defaultBrowserLang = "";
+	if (browserLang.toLowerCase() === "cn" || browserLang.toLowerCase() === "zh" || browserLang.toLowerCase() === "zh-cn") {
+		defaultBrowserLang = "zh";
+	} else {
+		defaultBrowserLang = "en";
+	}
+	return defaultBrowserLang;
+}

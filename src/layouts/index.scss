@@ -1,41 +1,56 @@
-#layout {
+.el-container {
+	width: 100%;
 	height: 100%;
-	.el-container {
-		width: 100%;
-		height: 100%;
-	}
-	.left-con {
-		.el-aside {
+}
+.layout {
+	min-width: 900px;
+	.el-aside {
+		width: auto;
+		overflow: inherit;
+		// height: 100%;
+		border-right: 1px solid var(--el-menu-border-color);
+		.menu {
+			display: flex;
+			flex-direction: column;
 			height: 100%;
-			.menu {
+			transition: all 0.3s ease;
+			.logo {
+				cursor: pointer;
+				font: bold 18px arial;
+				height: 55px;
 				display: flex;
-				flex-direction: column;
-				height: 100%;
-				border-right: 1px solid var(--el-menu-border-color);
-				.logo {
-					cursor: pointer;
-					font: bold 18px arial;
-					line-height: 55px;
-					box-sizing: border-box;
-					display: flex;
-					justify-content: center;
-					align-content: center;
-					border-bottom: 1px solid var(--el-menu-border-color);
-					img {
-						width: 28px;
-						margin-right: 5px;
-					}
+				justify-content: center;
+				align-items: center;
+				border-bottom: 1px solid var(--el-menu-border-color);
+				img {
+					width: 30px;
 				}
-				.el-scrollbar {
-					height: calc(100% - 55px);
+				span {
+					white-space: nowrap;
+					margin-left: 10px;
 				}
-				ul {
-					border-right: 0 !important;
+			}
+			.el-scrollbar {
+				height: calc(100% - 55px);
+				:deep(.el-scrollbar__bar.is-vertical) {
+					right: 0;
+				}
+			}
+
+			.el-menu--vertical {
+				width: 100%;
+				border-right: 0;
+				:deep(.el-menu-item.is-active) {
+					background-color: #eef5fe;
+				}
+				:deep(.el-menu-item:not(.is-active):hover),
+				:deep(.el-sub-menu .el-sub-menu__title:hover) {
+					background-color: #eeeff2;
 				}
 			}
 		}
 	}
-	.right-con {
-		flex-direction: column;
-	}
+}
+.right-con {
+	flex-direction: column;
 }

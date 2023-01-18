@@ -40,6 +40,13 @@ export const errorRouters = [
 		name: "500",
 		component: () => import("@/components/errorCom/500.vue"),
 		meta: { title: "500" }
+	},
+	{
+		path: "/layout",
+		name: "layout",
+		component: () => import("@/layouts/index.vue"),
+		redirect: "/home",
+		children: []
 	}
 ];
 

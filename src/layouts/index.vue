@@ -1,33 +1,54 @@
 <template>
-	<div id="layout">
-		<el-container class="left-con">
-			<el-aside width="200px">
-				<div class="menu">
-					<div class="logo">
-						<img src="@/assets/images/logo.svg" alt="VUE - PREVIEW" />
-						<span>VUE-PREVIEW</span>
-					</div>
-					<el-scrollbar> <Menu /> </el-scrollbar>
+	<el-container class="layout">
+		<el-aside>
+			<div
+				class="menu"
+				:style="{ width: globalStore.systemConfig.isCollapse ? '65px' : globalStore.language === 'zh' ? '210px' : '250px' }"
+			>
+				<div class="logo">
+					<img src="@/assets/images/logo.png" alt="" />
+					<span v-if="!globalStore.systemConfig.isCollapse">Vue - Pcerame</span>
 				</div>
-			</el-aside>
-			<el-container class="right-con">
-				<!-- * 头部 -->
-				<Header />
-				<!-- * 内容 -->
-				<Main />
-				<!-- * 页脚 -->
-				<Footer />
-			</el-container>
+				<el-scrollbar>
+					<!-- :collapse="isCollapse" -->
+					<el-menu
+						:default-active="activeMenu"
+						:router="true"
+						:collapse="globalStore.systemConfig.isCollapse"
+						:collapse-transition="false"
+					>
+						<SubMenu :menuList="menuStore.dataMneuList" />
+					</el-menu>
+				</el-scrollbar>
+			</div>
+		</el-aside>
+		<el-container class="right-con">
+			<!-- * 头部 -->
+			<Header />
+			<!-- * 内容 -->
+			<Main />
+			<!-- * 页脚 -->
+			<Footer />
 		</el-container>
-	</div>
+	</el-container>
 </template>
 
 <script lang="ts" setup>
-import Menu from "@/layouts/Menu/index.vue";
-import Header from "@/layouts/Header/index.vue";
-import Tabs from "@/layouts/Tabs/index.vue";
-import Main from "@/layouts/Main/index.vue";
-import Footer from "@/layouts/Footer/index.vue";
+import { computed } from "vue";
+import { useRoute } from "vue-router";
+import { MenuStore } from "@/store/modules/menu";
+import { GlobalStore } from "@/store";
+
+import SubMenu from "@/layouts/components/Menu/SubMenu.vue";
+import Header from "@/layouts/components/Header/index.vue";
+import Tabs from "@/layouts/components/Tabs/index.vue";
+import Main from "@/layouts/components/Main/index.vue";
+import Footer from "@/layouts/components/Footer/index.vue";
+
+const globalStore = GlobalStore();
+const menuStore = MenuStore();
+const route = useRoute();
+const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path));
 </script>
 
 <style scoped lang="scss">
