@@ -21,13 +21,16 @@ export default {
 		404: "404",
 		500: "500",
 		首页: "Home",
+		数据大屏: "Large Data Screen",
 		常用工具函数: "Common Tool Functions",
 		防抖: "Debounce",
 		节流: "Throttle",
-		日期转换: "DateChange",
+		日期转换: "Date Change",
 		常用组件: "Common Components",
 		文件上传: "Files Upload",
-		SVG图标: "SVGIcon"
+		SVG图标: "SVG Icon",
+		拖拽组件: "Drag Components",
+		超级表格: "Super Table"
 	},
 	layoutHeader: {
 		SearchTips: "Menu search: support name, path",

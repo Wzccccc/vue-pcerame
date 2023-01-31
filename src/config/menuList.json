@@ -16,6 +16,20 @@
 			}
 		},
 		{
+			"path": "/dataScreen",
+			"name": "dataScreen",
+			"component": "/echarts/index",
+			"meta": {
+				"icon": "Histogram",
+				"title": "数据大屏",
+				"isLink": "",
+				"isHide": false,
+				"isFull": true,
+				"isAffix": true,
+				"isKeepAlive": true
+			}
+		},
+		{
 			"path": "/utilsFun",
 			"name": "utilsFun",
 			"redirect": "/utilsFun/debounce",
@@ -74,9 +88,9 @@
 			]
 		},
 		{
-			"path": "/businessCom",
-			"name": "businessCom",
-			"redirect": "/businessCom/dataUpload",
+			"path": "/businessCon",
+			"name": "businessCon",
+			"redirect": "/businessCon/dataUpload",
 			"meta": {
 				"icon": "Briefcase",
 				"title": "常用组件",
@@ -88,9 +102,9 @@
 			},
 			"children": [
 				{
-					"path": "/businessCom/dataUpload",
+					"path": "/businessCon/dataUpload",
 					"name": "dataUpload",
-					"component": "/businessCom/dataUpload/index",
+					"component": "/businessCon/dataUpload/index",
 					"meta": {
 						"icon": "UploadFilled",
 						"title": "文件上传",
@@ -102,12 +116,40 @@
 					}
 				},
 				{
-					"path": "/businessCom/svgCon",
+					"path": "/businessCon/svgCon",
 					"name": "svgCon",
-					"component": "/businessCom/svgCon/index",
+					"component": "/businessCon/svgCon/index",
 					"meta": {
 						"icon": "PictureFilled",
 						"title": "SVG图标",
+						"isLink": "",
+						"isHide": false,
+						"isFull": false,
+						"isAffix": true,
+						"isKeepAlive": true
+					}
+				},
+				{
+					"path": "/businessCon/supTable",
+					"name": "supTable",
+					"component": "/businessCon/supTable/index",
+					"meta": {
+						"icon": "Flag",
+						"title": "超级表格",
+						"isLink": "",
+						"isHide": false,
+						"isFull": false,
+						"isAffix": true,
+						"isKeepAlive": true
+					}
+				},
+				{
+					"path": "/businessCon/dragCon",
+					"name": "dragCon",
+					"component": "/businessCon/dragCon/index",
+					"meta": {
+						"icon": "Flag",
+						"title": "拖拽组件",
 						"isLink": "",
 						"isHide": false,
 						"isFull": false,

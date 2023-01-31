@@ -2,22 +2,14 @@
 	<div class="serach-dailog">
 		<!-- <SvgIcon iconName="icon-search1" @click="handlerOpen"></SvgIcon> -->
 		<i :class="'iconfont icon-search1'" @click="handlerOpen"></i>
-		<el-dialog
-			v-model="searchDialogVisible"
-			width="300px"
-			@click="handlerClose"
-			fullscreen
-			destroy-on-close
-			:modal="false"
-			:show-close="false"
-		>
+
+		<el-dialog v-model="searchDialogVisible" width="300px" fullscreen destroy-on-close :modal="false" :show-close="false">
 			<el-autocomplete
 				ref="menuSearchRef"
 				v-model="searchMenu"
 				:fetch-suggestions="searchMenulist"
 				:placeholder="$t(`layoutHeader.SearchTips`)"
 				@select="handleclickMenu"
-				@click.stop
 			>
 				<template #prefix>
 					<el-icon><Search /></el-icon>
@@ -94,22 +86,26 @@ const handleclickMenu = (item: Menu.MenuOptions) => {
 
 <style scoped lang="scss">
 .serach-dailog {
-	height: 100%;
-	// .svg-icon {
-	// 	cursor: pointer;
-	// }
-	:deep(.el-dialog) {
+	:deep(.el-overlay-dialog) {
 		background-color: rgba(0, 0, 0, 0.5) !important;
+	}
+	:deep(.el-dialog) {
+		position: absolute;
+		height: auto;
+		top: 100px;
+		left: 50%;
+		width: 30%;
+		transform: translateX(-50%);
+		box-sizing: border-box;
 		.el-dialog__header {
 			display: none;
 		}
-	}
-	:deep(.el-autocomplete) {
-		position: absolute;
-		top: 100px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 30%;
+		.el-dialog__body {
+			padding: 0;
+			.el-autocomplete {
+				width: 100%;
+			}
+		}
 	}
 }
 .el-autocomplete__popper {

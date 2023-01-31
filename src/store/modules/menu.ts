@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { MenuState } from "../interface";
-import { flatMenu } from "@/utils/flatMenu";
+import { flatMenu } from "@/utils/utilsFn";
 import { menuListApi } from "@/api/modules/login";
 
 // 当前用户菜单
