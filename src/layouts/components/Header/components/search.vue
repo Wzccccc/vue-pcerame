@@ -92,7 +92,7 @@ const handleclickMenu = (item: Menu.MenuOptions) => {
 	:deep(.el-dialog) {
 		position: absolute;
 		height: auto;
-		top: 100px;
+		top: 10%;
 		left: 50%;
 		width: 30%;
 		transform: translateX(-50%);
