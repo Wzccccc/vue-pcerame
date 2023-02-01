@@ -1,9 +1,11 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
+import { ElMessage } from "element-plus";
+
 import { ResponseData } from "./interface";
 import { RequestEnum } from "@/enum/requestEnum";
-
-import { ElMessage } from "element-plus";
+import { checkStatus } from '@/api/checkStatus'
 import { GlobalStore } from "@/store";
+import router from "@/routers"
 
 // 配置 config 对象
 const config = {
@@ -12,6 +14,7 @@ const config = {
 	withCredentials: true // 跨域时允许带凭证
 	// 其他配置查看  http://axios-js.com/zh-cn/docs/#%E8%AF%B7%E6%B1%82%E9%85%8D%E7%BD%AE
 };
+
 
 // 封装 axios 请求类
 class Request {
@@ -22,17 +25,11 @@ class Request {
 		// * 请求拦截器
 		this.service.interceptors.request.use(
 			(config: AxiosRequestConfig) => {
-				/**
-				 * TODO ...
-				 * 1. 将 当前请求存入 pending 中
-				 * 2. 当前请求是否需要 loading 可在 接口中 {headers:{noLoading:true}} 配置
-				 */
-				// console.log(config);
-				const token: string = GlobalStore().token;
+				const globalStore = GlobalStore()
+				const token: string = globalStore.token;
 				return { ...config, headers: { ...config.headers, "x-access-token": token } };
 			},
 			(error: AxiosError) => {
-				// console.log(error);
 				return Promise.reject(error);
 			}
 		);
@@ -40,11 +37,16 @@ class Request {
 		// * 响应拦截器
 		this.service.interceptors.response.use(
 			(response: AxiosResponse) => {
+				const globalStore = GlobalStore()
 				const { data } = response;
-				/**
-				 * TODO...
-				 * 1. 处理登陆失效情况（清除 token ，重定向到登陆页）
-				 */
+				// token 过期失效
+				if (data.code == RequestEnum.OVERDUE) {
+					ElMessage.error(data.msg);
+					globalStore.setToken("");
+					router.replace('/login');
+					return Promise.reject(data);
+				}
+
 				// 	全局错误拦截
 				if (data.code && data.code !== RequestEnum.SUCCESS) {
 					ElMessage.error(data.msg);
@@ -53,13 +55,14 @@ class Request {
 				return data;
 			},
 			(error: AxiosError) => {
+				// 超时 || 网络错误无 response
 				const { response } = error;
-				/**
-				 * TODO...
-				 * 1. 判断接口超时情况
-				 * 2. 根据错误状态码提示 单独封装函数
-				 * 3. 断网情况 !window.navigator.online 跳转到 500 断网页面
-				 */
+				if (error.message.indexOf("timeout") !== -1) ElMessage.error("请求超时！请您稍后重试");
+				if (error.message.indexOf("Network Error") !== -1) ElMessage.error("网络错误！请您稍后重试");
+				// 根据状态码提示
+				if (response) checkStatus(response.status);
+				// 无网络
+				if (!window.navigator.onLine) router.replace("/500");
 				return Promise.reject(error);
 			}
 		);

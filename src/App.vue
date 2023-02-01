@@ -25,6 +25,7 @@ const locale = computed(() => {
 	}
 	// 解决 页面刷新 I18n language 丢失问题
 	I18n.locale.value = globalStore.language || getBrowserLang();
+	globalStore.setLanguage(I18n.locale.value);
 	return I18n.locale.value === "zh" ? zhCn : en;
 });
 </script>

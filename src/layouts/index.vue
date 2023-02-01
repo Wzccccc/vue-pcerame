@@ -3,7 +3,7 @@
 		<el-aside>
 			<div
 				class="menu"
-				:style="{ width: globalStore.systemConfig.isCollapse ? '65px' : globalStore.language === 'zh' ? '210px' : 'auto' }"
+				:style="{ width: globalStore.systemConfig.isCollapse ? '65px' : globalStore.language === 'zh' ? '240px' : '260px' }"
 			>
 				<div class="logo">
 					<img src="@/assets/images/logo.png" alt="" />

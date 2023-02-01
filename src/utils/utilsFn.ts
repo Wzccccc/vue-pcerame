@@ -28,6 +28,8 @@ export const flatMenu = (menuList: Menu.MenuOptions[]) => {
  */
 export function getBrowserLang() {
 	let browserLang = navigator.language;
+	console.log(browserLang.toLowerCase());
+
 	let defaultBrowserLang = "";
 	if (browserLang.toLowerCase() === "cn" || browserLang.toLowerCase() === "zh" || browserLang.toLowerCase() === "zh-cn") {
 		defaultBrowserLang = "zh";
