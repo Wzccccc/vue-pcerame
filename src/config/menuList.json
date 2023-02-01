@@ -35,7 +35,7 @@
 			"redirect": "/utilsFun/debounce",
 			"meta": {
 				"icon": "Platform",
-				"title": "常用工具函数",
+				"title": "常用函数或指令",
 				"isLink": "",
 				"isHide": false,
 				"isFull": false,

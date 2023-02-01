@@ -22,7 +22,7 @@ export default {
 		500: "500",
 		首页: "Home",
 		数据大屏: "Large Data Screen",
-		常用工具函数: "Common Tool Functions",
+		常用函数或指令: "Common Funs Or Directs",
 		防抖: "Debounce",
 		节流: "Throttle",
 		日期转换: "Date Change",

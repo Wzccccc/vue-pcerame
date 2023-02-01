@@ -4,7 +4,7 @@
 	align-items: center;
 	min-width: 550px;
 	height: 100%;
-	min-height: 500px;
+	min-height: 850px;
 	background-color: #eeeeee;
 	background-image: url(@/assets/images/login_bg.svg);
 	background-position: 50%;
@@ -19,7 +19,6 @@
 		border-radius: 10px;
 		padding: 0 50px;
 		background-color: rgba(252, 252, 252, 0.9);
-		overflow-y: auto;
 		.left-box {
 			width: 55%;
 			img {

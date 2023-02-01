@@ -1,5 +1,5 @@
 import { defineConfig, loadEnv, ConfigEnv, UserConfig } from "vite";
-import { createHtmlPlugin } from "vite-plugin-html"; // 可在 index.html 中使用环境比变量
+import { createHtmlPlugin } from "vite-plugin-html"; // 可在 index.html 中使用环境变量
 import vue from "@vitejs/plugin-vue";
 
 import { resolve } from "path"; // 配置别名 如报错需要安装 @types/node

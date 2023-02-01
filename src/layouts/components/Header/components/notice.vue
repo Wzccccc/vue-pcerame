@@ -13,7 +13,7 @@
 				<el-tab-pane :label="$t('layoutHeader.noticeTabs.Done')" name="third" />
 			</el-tabs>
 			<div class="infinite-list-wrapper" style="overflow: auto" v-if="isMounted">
-				<ul v-infinite-scroll="loadMore" class="list" :infinite-scroll-disabled="disabled">
+				<ul v-infinite-scroll="loadMore" class="list" :infinite-scroll-disabled="disabled" :infinite-scroll-distance="10">
 					<li v-for="i in count" :key="i" class="list-item">{{ i }}</li>
 				</ul>
 				<p v-if="loading">{{ $t("layoutHeader.noticeTabs.Loading") }}...</p>
