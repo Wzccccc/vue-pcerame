@@ -1,10 +1,18 @@
 <template>
 	<div id="throttle">
-		<h2 v-for="item in 30" :key="item">节流{{ item }}</h2>
+		<div>
+			<el-button type="primary">开启节流</el-button>
+			<div>
+				<el-input v-model="input" style="width: 300px" /> <span>{{ input }}</span>
+			</div>
+		</div>
 	</div>
 </template>
 
-<script setup lang="ts" name="throttle"></script>
+<script setup lang="ts" name="throttle">
+import { ref } from "vue";
+const input = ref("");
+</script>
 
 <style scoped lang="scss">
 #throttle {
