@@ -18,6 +18,8 @@ const router = createRouter({
  * @description 前置路由守卫
  */
 router.beforeEach(async (to, from, next) => {
+	// 将 main 滚动条恢复至左侧/顶部
+	document.querySelector('.card')?.scrollTo(0, 0)
 	const globalStore = GlobalStore();
 
 	// 动态设置当前页面title

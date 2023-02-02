@@ -1,12 +1,13 @@
 <template>
-	<div id="scgCon" class="card">svg图标</div>
+	<div id="scgCon">
+		<h2 v-for="item in 30" :key="item">svg图标{{ item }}</h2>
+	</div>
 </template>
 
 <script setup lang="ts" name="scgCon"></script>
 
 <style scoped lang="scss">
 #scgCon {
-	height: 100%;
-	width: 100%;
+	line-height: 50px;
 }
 </style>

@@ -1,12 +1,13 @@
 <template>
-	<div id="supTable" class="card">超级表格</div>
+	<div id="supTable">
+		<h2 v-for="item in 30" :key="item">超级表格{{ item }}</h2>
+	</div>
 </template>
 
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
 #supTable {
-	height: 100%;
-	width: 100%;
+	line-height: 50px;
 }
 </style>

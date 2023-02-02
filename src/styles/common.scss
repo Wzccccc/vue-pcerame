@@ -1,8 +1,10 @@
 // * card 卡片样式
 .card {
-	box-sizing: border-box;
+	height: 100%;
 	padding: 20px;
+	box-sizing: border-box;
 	overflow-x: hidden;
+	overflow-y: auto;
 	background-color: var(--el-fill-color-blank);
 	border: 1px solid var(--el-border-color-light);
 	border-radius: 4px;

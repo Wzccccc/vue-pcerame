@@ -1,5 +1,5 @@
 <template>
-	<div id="debounce" class="card">
+	<div id="debounce">
 		<h4>防抖函数</h4>
 		<div class="topDiv">
 			<el-space :size="15" spacer="|">
@@ -14,61 +14,7 @@
 			</el-space>
 		</div>
 		<el-divider />
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<h4>防抖指令</h4>
-		<BackTop :right="100" :bottom="100" :target="'.card'" />
+		<h4 v-for="item in 30" :key="item">防抖指令{{ item }}</h4>
 	</div>
 </template>
 
@@ -123,13 +69,11 @@ function cancelDebounce2() {
 
 <style scoped lang="scss">
 #debounce {
-	height: 100%;
-	width: 100%;
 	h4 {
 		margin-bottom: 20px;
 	}
 	.topDiv {
-		line-height: 60px;
+		line-height: 50px;
 	}
 }
 </style>

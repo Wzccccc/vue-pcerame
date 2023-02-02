@@ -1,5 +1,5 @@
 <template>
-	<div id="home" class="card">
+	<div id="home">
 		<img src="@/assets/images/welcome.png" alt="" />
 	</div>
 </template>

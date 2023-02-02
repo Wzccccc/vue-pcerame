@@ -1,12 +1,13 @@
 <template>
-	<div id="dataUpload" class="card">文件上传组件</div>
+	<div id="dataUpload">
+		<h2 v-for="item in 30" :key="item">文件上传组件{{ item }}</h2>
+	</div>
 </template>
 
 <script setup lang="ts" name="dataUpload"></script>
 
 <style scoped lang="scss">
 #dataUpload {
-	height: 100%;
-	width: 100%;
+	line-height: 50px;
 }
 </style>
