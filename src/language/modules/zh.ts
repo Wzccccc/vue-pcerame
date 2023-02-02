@@ -4,6 +4,8 @@ export default {
 		PassWordTips: "密码：123456",
 		CheckUserName: "请输入用户名",
 		CheckPassWord: "请输入密码",
+		verificatioNoCode: '请输入验证码',
+		verificatioCodeError: '验证码错误请重新输入',
 		Login: "登录",
 		Reset: "重置"
 	},

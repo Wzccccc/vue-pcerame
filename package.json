@@ -17,6 +17,7 @@
     "echarts": "^5.4.1",
     "echarts-liquidfill": "^3.1.0",
     "element-plus": "^2.2.27",
+    "identify": "^0.1.5",
     "js-md5": "^0.7.3",
     "pinia": "^2.0.28",
     "pinia-plugin-persistedstate": "^3.0.2",

@@ -4,6 +4,8 @@ export default {
 		PassWordTips: "PassWord：123456",
 		CheckUserName: "Please enter user name",
 		CheckPassWord: "Please input a password",
+		verificatioNoCode: 'Please enter the verification code',
+		verificatioCodeError: 'Verification code error, please re-enter',
 		Login: "Login",
 		Reset: "Reset"
 	},

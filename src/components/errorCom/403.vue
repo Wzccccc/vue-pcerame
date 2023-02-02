@@ -23,7 +23,7 @@ const timer = setInterval(() => {
 }, 1000);
 const returnHome = function () {
 	clearInterval(timer);
-	router.push({ name: "home" });
+	router.push("/home");
 };
 onBeforeRouteLeave(() => {
 	clearInterval(timer);

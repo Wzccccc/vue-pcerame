@@ -27,7 +27,6 @@ export function debounce<T = any, R = any>(fn: (...args: T[]) => R, delay: numbe
                     finishCallback()
                 } else {
                     // 延迟执行
-                    console.log(delay, timer);
                     timer = setTimeout(async () => {
                         const result = await fn.apply(null, args)
                         resolve(result)

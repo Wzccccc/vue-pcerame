@@ -18,6 +18,16 @@
 				</template>
 			</el-input>
 		</el-form-item>
+		<el-form-item class="code-item" prop="verificationCode">
+			<el-input v-model="loginForm.verificationCode" class="code-input" :placeholder="$t('loginForm.verificatioNoCode')">
+				<template #prefix>
+					<i :class="'iconfont icon-yanzhengyanzhengma'"></i>
+				</template>
+			</el-input>
+			<div class="get-code" @click="refreshCode">
+				<Sldentify :identifyCode="identifyCode"></Sldentify>
+			</div>
+		</el-form-item>
 		<el-form-item>
 			<el-button class="reset-btn" size="large" @click="resetForm(loginFormRef)">
 				{{ $t("loginForm.Reset") }}
@@ -29,8 +39,8 @@
 	</el-form>
 </template>
 
-<script lang="ts" setup name="login">
-import { reactive, ref, onMounted } from "vue";
+<script lang="ts" setup name="loginForm">
+import { reactive, ref, onMounted, onBeforeMount } from "vue";
 import { FormInstance, FormRules } from "element-plus";
 import { useRouter } from "vue-router";
 import md5 from "js-md5"; // 密码加密
@@ -40,6 +50,7 @@ import { loginApi } from "@/api/modules/login";
 import { GlobalStore } from "@/store";
 import I18n from "@/language/index";
 import { initDynamicRouters } from "@/routers/modules/dynamicRouter";
+import Sldentify from "@/components/SIdentify/index.vue";
 
 const router = useRouter();
 const globalStore = GlobalStore();
@@ -47,23 +58,52 @@ const loginLoading = ref(false);
 const loginFormRef = ref<FormInstance>();
 const loginForm = reactive<Login.LoginForm>({
 	username: "",
-	password: ""
+	password: "",
+	verificationCode: ""
 });
+const identifyCode = ref("");
+const identifyCodes = ref("0123456789abcdwerwshdjeJKDHRJHKOOPLMKQ");
 const loginRules = reactive<FormRules>({
 	username: [{ required: true, message: I18n.global.t("loginForm.CheckUserName"), trigger: ["blur", "change"] }],
-	password: [{ required: true, message: I18n.global.t("loginForm.CheckPassWord"), trigger: ["blur", "change"] }]
+	password: [{ required: true, message: I18n.global.t("loginForm.CheckPassWord"), trigger: ["blur", "change"] }],
+	verificationCode: [
+		{
+			validator: (rule: any, value: any, callback: any) => {
+				if (!value) {
+					callback(new Error(`${I18n.global.t("loginForm.verificatioNoCode")}`));
+				} else if (value.toLowerCase() !== identifyCode.value.toLowerCase()) {
+					callback(new Error(`${I18n.global.t("loginForm.verificatioCodeError")}`));
+				} else {
+					callback();
+				}
+			},
+			trigger: ["blur", "change"]
+		}
+	]
 });
 
+onBeforeMount(() => refreshCode());
+onMounted(() => {
+	document.onkeydown = (e: any) => {
+		if (e.keyCode === 13 || loginLoading.value) {
+			login(loginFormRef.value);
+		}
+	};
+});
+const refreshCode = () => {
+	identifyCode.value = "";
+	makeCode(identifyCodes.value, 6);
+};
 const login = async (formEl: FormInstance | undefined) => {
 	if (!formEl) return;
 	formEl.validate(async (valid, fields) => {
 		if (!valid) return;
 		loginLoading.value = true;
 		try {
-			const { data: token } = await loginApi({ ...loginForm, password: md5(loginForm.password) });
+			const { data: token } = await loginApi({ username: loginForm.username, password: md5(loginForm.password) });
 			globalStore.setToken(token!.access_token);
 			await initDynamicRouters();
-			router.push({ name: "home" });
+			router.push("/home");
 		} finally {
 			loginLoading.value = false;
 		}
@@ -73,13 +113,17 @@ const resetForm = (formEl: FormInstance | undefined) => {
 	if (!formEl || loginLoading.value) return;
 	formEl.resetFields();
 };
-onMounted(() => {
-	document.onkeydown = (e: any) => {
-		if (e.keyCode === 13 || loginLoading.value) {
-			login(loginFormRef.value);
-		}
-	};
-});
+
+function randomNum(min: number, max: number) {
+	max = max + 1;
+	return Math.floor(Math.random() * (max - min) + min);
+}
+// 随机生成验证码字符串
+function makeCode(data: string, len: number) {
+	for (let i = 0; i < len; i++) {
+		identifyCode.value += data[randomNum(0, data.length - 1)];
+	}
+}
 </script>
 <style scoped lang="scss">
 .title {
@@ -98,6 +142,20 @@ onMounted(() => {
 .el-form {
 	.el-form-item {
 		margin-bottom: 40px;
+		.get-code {
+			border: 1px solid #ccc;
+			height: 40px;
+			cursor: pointer;
+		}
+	}
+	.code-item :deep(.el-form-item__content) {
+		justify-content: space-between;
+		.code-input {
+			width: calc(100% - 150px);
+			.icon-yanzhengyanzhengma {
+				width: 14px;
+			}
+		}
 	}
 	.el-form-item:last-child {
 		margin-bottom: 0;

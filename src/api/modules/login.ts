@@ -8,7 +8,7 @@ import menuList from "@/config/menuList.json";
  */
 
 // 登录
-export const loginApi = (params: Login.LoginForm) => {
+export const loginApi = (params: Login.LoginApi) => {
 	return request.post<Login.ResLogin>("/geeker/login", params);
 };
 
