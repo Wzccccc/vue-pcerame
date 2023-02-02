@@ -2,7 +2,7 @@
 	<div class="not-container">
 		<img src="@/assets/images/500.png" alt="500" class="not-img" />
 		<div class="back-detail">
-			<div class="txtTips txtTips-500">{{ $t("ErrorPags.NoNetTips") }}</div>
+			<h2 class="txtTips txtTips-500">{{ $t("ErrorPags.NoNetTips") }}</h2>
 			<el-button type="primary" @click="returnHome">{{
 				globalStore.token ? $t("ErrorPags.BackHomeBtn") : $t("ErrorPags.BackLoginBtn")
 			}}</el-button>

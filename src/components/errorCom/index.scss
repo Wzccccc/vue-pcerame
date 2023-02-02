@@ -11,14 +11,11 @@
 	.back-detail {
 		display: flex;
 		flex-direction: column;
-		.txtTips {
-			margin: 30px 0 5px;
-		}
-		.txtTips-500 {
+		.txtTips-500,.txtTips {
 			margin-bottom: 20px;
 		}
 		.timeTxt {
-			font-size: 13px;
+			font-size: 16px;
 			color: #7f7f7f;
 			margin-bottom: 20px;
 		}

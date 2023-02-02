@@ -1,7 +1,7 @@
 <template>
 	<div class="user-name">username</div>
 	<el-dropdown class="user-photo" trigger="click">
-		<el-avatar :size="40" src="https://empty" @error="() => true">
+		<el-avatar :size="40" src="" @error="() => true">
 			<img src="@/assets/images/avatar.png" alt="" />
 		</el-avatar>
 		<template #dropdown>

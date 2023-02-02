@@ -2,7 +2,7 @@
 	<div class="not-container">
 		<img src="@/assets/images/403.png" alt="403" class="not-img" />
 		<div class="back-detail">
-			<div class="txtTips">{{ $t("ErrorPags.NoPowerTips") }}</div>
+			<h2 class="txtTips">{{ $t("ErrorPags.NoPowerTips") }}</h2>
 			<div class="timeTxt">{{ timeNum }} {{ $t("ErrorPags.CountDownTips") }}</div>
 			<el-button type="primary" @click="returnHome">{{ $t("ErrorPags.BackHomeBtn") }}</el-button>
 		</div>
