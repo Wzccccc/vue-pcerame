@@ -7,7 +7,13 @@ export default {
 		verificatioNoCode: 'Please enter the verification code',
 		verificatioCodeError: 'Verification code error, please re-enter',
 		Login: "Login",
-		Reset: "Reset"
+		Reset: "Reset",
+		Welcome: 'Welcome',
+		Night: "It's late at night. Please have a rest",
+		Morning: 'Good Morning',
+		Noon: 'Good Noon',
+		AfterNoon: 'Good AfterNoon',
+		Evening: 'Good Evening'
 	},
 	ErrorPags: {
 		NoPowerTips: "Sorry, you do not have access to this page, please contact the administrator",

@@ -7,7 +7,13 @@ export default {
 		verificatioNoCode: '请输入验证码',
 		verificatioCodeError: '验证码错误请重新输入',
 		Login: "登录",
-		Reset: "重置"
+		Reset: "重置",
+		Welcome: '欢迎登录',
+		Night: "夜深了, 请休息吧",
+		Morning: '早上好',
+		Noon: '中午好',
+		AfterNoon: '下午好',
+		Evening: '晚上好'
 	},
 	ErrorPags: {
 		NoPowerTips: "抱歉，您无权访问此页面，请联系管理员",

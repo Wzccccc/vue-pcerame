@@ -4,7 +4,10 @@
 	</div>
 </template>
 
-<script setup lang="ts" name="dateChange"></script>
+<script setup lang="ts" name="dateChange">
+import { ref } from "vue";
+console.log(Date.now());
+</script>
 
 <style scoped lang="scss">
 #dateChange {

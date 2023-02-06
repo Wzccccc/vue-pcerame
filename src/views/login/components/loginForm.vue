@@ -41,15 +41,16 @@
 
 <script lang="ts" setup name="loginForm">
 import { reactive, ref, onMounted, onBeforeMount } from "vue";
-import { FormInstance, FormRules } from "element-plus";
+import { FormInstance, FormRules, ElNotification } from "element-plus";
 import { useRouter } from "vue-router";
 import md5 from "js-md5"; // 密码加密
 
 import { Login } from "@/api/interface";
 import { loginApi } from "@/api/modules/login";
 import { GlobalStore } from "@/store";
-import I18n from "@/language/index";
 import { initDynamicRouters } from "@/routers/modules/dynamicRouter";
+import { getTimeState } from "@/utils/utilsFn";
+import I18n from "@/language/index";
 import Sldentify from "@/components/SIdentify/index.vue";
 
 const router = useRouter();
@@ -82,38 +83,23 @@ const loginRules = reactive<FormRules>({
 	]
 });
 
-onBeforeMount(() => refreshCode());
+onBeforeMount(() => {
+	refreshCode();
+});
 onMounted(() => {
+	// 监听回车事件
 	document.onkeydown = (e: any) => {
 		if (e.keyCode === 13 || loginLoading.value) {
 			login(loginFormRef.value);
 		}
 	};
 });
+
+// 生成随机验证码
 const refreshCode = () => {
 	identifyCode.value = "";
 	makeCode(identifyCodes.value, 6);
 };
-const login = async (formEl: FormInstance | undefined) => {
-	if (!formEl) return;
-	formEl.validate(async (valid, fields) => {
-		if (!valid) return;
-		loginLoading.value = true;
-		try {
-			const { data: token } = await loginApi({ username: loginForm.username, password: md5(loginForm.password) });
-			globalStore.setToken(token!.access_token);
-			await initDynamicRouters();
-			router.push("/home");
-		} finally {
-			loginLoading.value = false;
-		}
-	});
-};
-const resetForm = (formEl: FormInstance | undefined) => {
-	if (!formEl || loginLoading.value) return;
-	formEl.resetFields();
-};
-
 function randomNum(min: number, max: number) {
 	max = max + 1;
 	return Math.floor(Math.random() * (max - min) + min);
@@ -124,6 +110,36 @@ function makeCode(data: string, len: number) {
 		identifyCode.value += data[randomNum(0, data.length - 1)];
 	}
 }
+
+// 重置表单
+const resetForm = (formEl: FormInstance | undefined) => {
+	if (!formEl || loginLoading.value) return;
+	formEl.resetFields();
+};
+
+// 登录
+const login = async (formEl: FormInstance | undefined) => {
+	if (!formEl) return;
+	formEl.validate(async (valid, fields) => {
+		if (!valid) return;
+		loginLoading.value = true;
+		try {
+			const { data: token } = await loginApi({ username: loginForm.username, password: md5(loginForm.password) });
+			globalStore.setToken(token!.access_token);
+			await initDynamicRouters();
+			router.push("/home");
+			// 根据时间展示不同的提示语
+			ElNotification.success({
+				title: getTimeState(),
+				message: `${I18n.global.t("loginForm.Welcome")} Vue-Pcerame`,
+				offset: 60,
+				duration: 3000
+			});
+		} finally {
+			loginLoading.value = false;
+		}
+	});
+};
 </script>
 <style scoped lang="scss">
 .title {
