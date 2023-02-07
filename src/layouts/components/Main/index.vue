@@ -1,7 +1,10 @@
 vue3
 <template>
 	<el-main>
-		<div class="card">
+		<div
+			class="card"
+			v-waterMarker="{ text: 'Vue-Pcerame', font: '20px Microsoft JhengHei', textColor: 'rgba(180, 180, 180, 0.2)' }"
+		>
 			<router-view></router-view>
 			<el-backtop :right="100" :bottom="100" target=".card" />
 		</div>

@@ -126,6 +126,7 @@ const login = async (formEl: FormInstance | undefined) => {
 		try {
 			const { data: token } = await loginApi({ username: loginForm.username, password: md5(loginForm.password) });
 			globalStore.setToken(token!.access_token);
+			globalStore.setUserName(loginForm.username);
 			await initDynamicRouters();
 			router.push("/home");
 			// 根据时间展示不同的提示语

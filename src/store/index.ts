@@ -5,6 +5,7 @@ import piniaPluginPersistedstate from "pinia-plugin-persistedstate"; // 持久�
 export const GlobalStore = defineStore("GlobalState", {
 	state: (): GlobalState => ({
 		token: "",
+		userName: '',
 		language: "",
 		systemConfig: {
 			isCollapse: false
@@ -14,6 +15,9 @@ export const GlobalStore = defineStore("GlobalState", {
 	actions: {
 		setToken(token: string) {
 			this.token = token;
+		},
+		setUserName(name: string) {
+			this.userName = name
 		},
 		setCollapse(systemConfig: systemConfigOptions) {
 			this.systemConfig = systemConfig;

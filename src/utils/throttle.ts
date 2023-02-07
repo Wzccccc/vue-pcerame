@@ -2,69 +2,59 @@
  * @description  throttle 节流函数
  * @param {function} fn 需要节流的函数
  * @param {number} delay 间隔时间(默认500ms)
+ * @param {boolean} immediate 是否默认执行一次(第一次不触发节流)
  * @returns 节流后的函数
  */
-// * 函数
-export function throttle(fn: Function, delay: number = 500) {
-
+export function throttle<T = any, R = any>(fn: (...args: T[]) => R, delay: number = 500, immediate: boolean = false) {
+    let timer: NodeJS.Timeout | null = null
+    let stop: boolean = false
+    let death: boolean = false
+    let flag: boolean = true
+    function _throttle(...args: T[]) {
+        if (death) {
+            fn.apply(null, args)
+            return
+        }
+        if (stop) {
+            fn.apply(null, args)
+            return
+        }
+        if (immediate) {
+            fn.apply(null, args)
+            immediate = false
+            return
+        }
+        if (!flag) {
+            return
+        }
+        flag = false
+        timer = setTimeout(() => {
+            fn.apply(null, args)
+            flag = true
+        }, delay)
+    }
+    // 销毁
+    function destroy() {
+        death = true
+        stop = true
+        if (timer) {
+            clearTimeout(timer)
+            timer = null
+        }
+    }
+    // 开启
+    function open() {
+        if (!death) {
+            stop = false
+        }
+    }
+    // 关闭
+    function close() {
+        stop = true
+    }
+    _throttle.destroy = destroy
+    _throttle.open = open
+    _throttle.close = close
+    return _throttle
 }
 
-
-// *类
-// export class Throttle {
-//     private timer: null | NodeJS.Timeout = null
-//     private stop: boolean = false
-//     private death: boolean = false
-//     /**
-//      * @param func 需要包装的函数
-//      * @param delay 延迟时间，单位ms
-//      * @param immediate 是否默认执行一次(第一次不延迟)
-//      */
-//     public use(func: Function, delay: number, immediate: boolean = false): Function {
-//         let flag = true
-//         const _this = this
-//         return (...args: any) => {
-//             if (this.death) {
-//                 func.apply(this, args)
-//                 return
-//             }
-//             if (this.stop) {
-//                 func.apply(this, args)
-//                 return
-//             }
-//             if (immediate) {
-//                 func.apply(this, args)
-//                 immediate = false
-//                 return
-//             }
-//             if (!flag) {
-//                 return
-//             }
-//             flag = false
-//             _this.timer = setTimeout(() => {
-//                 func.apply(this, args)
-//                 flag = true
-//             }, delay)
-//         }
-//     }
-
-//     // 销毁
-//     public destroy() {
-//         this.death = true
-//         this.stop = true
-//         if (!!this.timer) {
-//             clearTimeout(this.timer)
-//             this.timer = null
-//         }
-//     }
-//     // 开启
-//     public open() {
-//         if (!this.death) {
-//             this.stop = false
-//         }
-//     }
-//     // 关闭
-//     public close() {
-//         this.stop = true
-//     }
-// }

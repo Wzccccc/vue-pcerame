@@ -33,7 +33,7 @@
 	</el-container>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup name="layout">
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { MenuStore } from "@/store/modules/menu";

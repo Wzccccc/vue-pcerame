@@ -1,8 +1,10 @@
 import { App } from 'vue'
 import debounce from './modules/debounce'
+import waterMarker from './modules/waterMark';
 
 const directivesList: any = {
-    debounce
+    debounce,
+    waterMarker
 }
 
 const directives = {

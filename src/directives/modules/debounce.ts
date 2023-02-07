@@ -4,7 +4,7 @@ interface Eltype extends HTMLElement {
 }
 /**
  * @description 防抖指令 v-debounce
- * @param binding 参数可拓展
+ * @param binding 参数可拓展 binding:obj
  */
 const debounce: Directive = {
     mounted(el: Eltype, binding: DirectiveBinding) {

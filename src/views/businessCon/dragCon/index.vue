@@ -4,7 +4,7 @@
 	</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts" name="dragCon"></script>
 
 <style scoped lang="scss">
 #dragCon {

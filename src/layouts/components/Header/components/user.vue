@@ -1,29 +1,43 @@
 <template>
-	<div class="user-name">username</div>
-	<el-dropdown class="user-photo" trigger="click">
+	<div class="user-name">{{ globalStore.userName }}</div>
+	<el-dropdown class="user-photo" trigger="click" @command="handleCommand">
 		<el-avatar :size="40" src="" @error="() => true">
 			<img src="@/assets/images/avatar.png" alt="" />
 		</el-avatar>
 		<template #dropdown>
 			<el-dropdown-menu>
-				<el-dropdown-item>{{ $t("layoutHeader.user.PersonalDetails") }}</el-dropdown-item>
-				<el-dropdown-item>{{ $t("layoutHeader.user.ChangePassword") }}</el-dropdown-item>
-				<el-dropdown-item divided @click="logout">{{ $t("layoutHeader.user.LogOut") }}</el-dropdown-item>
+				<el-dropdown-item command="1">{{ $t("layoutHeader.user.PersonalDetails") }}</el-dropdown-item>
+				<el-dropdown-item command="2">{{ $t("layoutHeader.user.ChangePassword") }}</el-dropdown-item>
+				<el-dropdown-item command="3" divided>{{ $t("layoutHeader.user.LogOut") }}</el-dropdown-item>
 			</el-dropdown-menu>
 		</template>
 	</el-dropdown>
+	<el-drawer v-model="drawer" title="I am the title" :with-header="false">
+		<UserDrawer></UserDrawer>
+	</el-drawer>
 </template>
 
 <script setup lang="ts" name="user">
+import { ref } from "vue";
 import { GlobalStore } from "@/store";
 import I18n from "@/language/index";
 import { logoutApi } from "@/api/modules/login";
+import UserDrawer from "@/layouts/components/components/userDrawer.vue";
 
 import { useRouter } from "vue-router";
 import { ElMessage, ElMessageBox } from "element-plus";
 
 const globalStore = GlobalStore();
 const router = useRouter();
+const drawer = ref(false);
+
+const handleCommand = (command: string | number | object) => {
+	if (command === "3") {
+		logout();
+	} else {
+	}
+};
+// 退出登录
 const logout = () => {
 	ElMessageBox.confirm(
 		`${I18n.global.t("layoutHeader.user.LogoutTips")}`,
