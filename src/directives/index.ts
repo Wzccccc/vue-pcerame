@@ -1,10 +1,12 @@
 import { App } from 'vue'
+import copy from './modules/copy'
 import debounce from './modules/debounce'
 import waterMarker from './modules/waterMark';
 
 const directivesList: any = {
+    copy,
     debounce,
-    waterMarker
+    waterMarker,
 }
 
 const directives = {

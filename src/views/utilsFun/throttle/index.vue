@@ -1,7 +1,7 @@
 <template>
 	<div id="throttle">
 		<div>
-			<h4>默认节流函数为关闭状态</h4>
+			<h4>节流函数(默认节流为关闭状态)</h4>
 			<el-space :size="15" spacer="|">
 				<el-button type="primary" @click="handleInput.open()">开启节流</el-button>
 				<el-button type="primary" @click="handleInput.close()">关闭节流</el-button>
@@ -11,7 +11,6 @@
 				<span class="txt">500ms(默认) </span>
 				<el-input v-model="input" style="width: 300px" @input="handleInput" /> <span>{{ copyInput }}</span>
 			</div>
-			<el-divider />
 			<el-space :size="15" spacer="|">
 				<el-button type="primary" @click="handleInput2.open()">开启节流</el-button>
 				<el-button type="primary" @click="handleInput2.close()">关闭节流</el-button>
@@ -21,6 +20,8 @@
 				<span class="txt">2000ms </span>
 				<el-input v-model="input2" style="width: 300px" @input="handleInput2" /> <span>{{ copyInput2 }}</span>
 			</div>
+			<el-divider />
+			<h4>节流指令</h4>
 		</div>
 	</div>
 </template>

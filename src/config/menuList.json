@@ -72,12 +72,26 @@
 					}
 				},
 				{
-					"path": "/utilsFun/dateChange",
-					"name": "dateChange",
-					"component": "/utilsFun/dateChange/index",
+					"path": "/utilsFun/waterMark",
+					"name": "waterMark",
+					"component": "/utilsFun/waterMark/index",
 					"meta": {
 						"icon": "Flag",
-						"title": "日期转换",
+						"title": "水印指令",
+						"isLink": "",
+						"isHide": false,
+						"isFull": false,
+						"isAffix": true,
+						"isKeepAlive": true
+					}
+				},
+				{
+					"path": "/utilsFun/copy",
+					"name": "copy",
+					"component": "/utilsFun/copy/index",
+					"meta": {
+						"icon": "Flag",
+						"title": "复制指令",
 						"isLink": "",
 						"isHide": false,
 						"isFull": false,

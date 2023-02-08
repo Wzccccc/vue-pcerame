@@ -14,6 +14,7 @@
 			</el-space>
 		</div>
 		<el-divider />
+		<h4>防抖指令</h4>
 		<el-space :size="15" spacer="|">
 			<el-button type="primary" v-debounce="{ fn: clickDiretive }">触发防抖指令(默认值:0.5s后触发)</el-button>
 			<el-button type="primary" v-debounce="{ fn: clickDiretive2, delay: 2000 }">触发防抖指令(自定义:2s后触发)</el-button>
