@@ -3,9 +3,9 @@ import { ElMessage } from "element-plus";
 
 import { ResponseData } from "./interface";
 import { RequestEnum } from "@/enum/requestEnum";
-import { checkStatus } from '@/api/checkStatus'
+import { checkStatus } from "@/api/checkStatus";
 import { GlobalStore } from "@/store";
-import router from "@/routers"
+import router from "@/routers";
 
 // 配置 config 对象
 const config = {
@@ -14,7 +14,6 @@ const config = {
 	withCredentials: true // 跨域时允许带凭证
 	// 其他配置查看  http://axios-js.com/zh-cn/docs/#%E8%AF%B7%E6%B1%82%E9%85%8D%E7%BD%AE
 };
-
 
 // 封装 axios 请求类
 class Request {
@@ -25,7 +24,7 @@ class Request {
 		// * 请求拦截器
 		this.service.interceptors.request.use(
 			(config: AxiosRequestConfig) => {
-				const globalStore = GlobalStore()
+				const globalStore = GlobalStore();
 				const token: string = globalStore.token;
 				return { ...config, headers: { ...config.headers, "x-access-token": token } };
 			},
@@ -37,13 +36,13 @@ class Request {
 		// * 响应拦截器
 		this.service.interceptors.response.use(
 			(response: AxiosResponse) => {
-				const globalStore = GlobalStore()
+				const globalStore = GlobalStore();
 				const { data } = response;
 				// token 过期失效
 				if (data.code == RequestEnum.OVERDUE) {
 					ElMessage.error(data.msg);
 					globalStore.setToken("");
-					router.replace('/login');
+					router.replace("/login");
 					return Promise.reject(data);
 				}
 

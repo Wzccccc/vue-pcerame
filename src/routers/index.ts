@@ -6,6 +6,11 @@ import { staticRouters, errorRouters } from "@/routers/modules/staticRouter";
 import { initDynamicRouters } from "./modules/dynamicRouter";
 import { ROUTER_WHITE_LIST } from "@/config/config";
 
+/**
+ * TODO axios pending 状态下可取消当前请求
+ * 场景: 页面切换时取消当前正在 penging 的请求
+ */
+
 // 接口返回数据匹配动态路由表
 const router = createRouter({
 	history: createWebHashHistory(),
@@ -46,7 +51,7 @@ router.beforeEach(async (to, from, next) => {
 	}
 
 	// 将 main 滚动条恢复至左侧/顶部
-	document.querySelector('.card')?.scrollTo(0, 0)
+	document.querySelector(".card")?.scrollTo(0, 0);
 	next();
 });
 

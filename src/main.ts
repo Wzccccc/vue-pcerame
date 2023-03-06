@@ -4,7 +4,7 @@ import App from "./App.vue";
 import "@/styles/reset.scss";
 // 公共样式
 import "@/styles/common.scss";
-// elemenui 样式
+// elementui 样式
 import "@/styles/element.scss"
 // iconfont
 import "@/assets/iconfont/iconfont.scss";

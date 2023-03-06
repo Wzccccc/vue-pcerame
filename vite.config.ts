@@ -1,7 +1,6 @@
 import { defineConfig, loadEnv, ConfigEnv, UserConfig } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html"; // 可在 index.html 中使用环境变量
 import vue from "@vitejs/plugin-vue";
-
 import { resolve } from "path"; // 配置别名 如报错需要安装 @types/node
 import VueSetupExtend from "vite-plugin-vue-setup-extend"; // 可在 setup 上自定义name
 
@@ -28,7 +27,8 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 		resolve: {
 			// ↓路径别名
 			alias: {
-				"@": resolve(__dirname, "./src")
+				"@": resolve(__dirname, "./src"),
+				"vue-i18n": "vue-i18n/dist/vue-i18n.cjs.js"
 			}
 		},
 		server: {
