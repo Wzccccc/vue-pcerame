@@ -1,19 +1,18 @@
 export default {
+	DarkSwitchTip: "开启后,将跟随系统打开或关闭深色模式(默认跟随系统)",
 	loginForm: {
 		UserNameTips: "用户名：admin / user",
 		PassWordTips: "密码：123456",
 		CheckUserName: "请输入用户名",
 		CheckPassWord: "请输入密码",
-		verificatioNoCode: '请输入验证码',
-		verificatioCodeError: '验证码错误请重新输入',
-		Login: "登录",
-		Reset: "重置",
-		Welcome: '欢迎登录',
+		verificatioNoCode: "请输入验证码",
+		verificatioCodeError: "验证码错误请重新输入",
+		Welcome: "欢迎登录",
 		Night: "夜深了, 请休息吧",
-		Morning: '早上好',
-		Noon: '中午好',
-		AfterNoon: '下午好',
-		Evening: '晚上好'
+		Morning: "早上好",
+		Noon: "中午好",
+		AfterNoon: "下午好",
+		Evening: "晚上好"
 	},
 	ErrorPags: {
 		NoPowerTips: "抱歉，您无权访问此页面，请联系管理员",
@@ -33,8 +32,8 @@ export default {
 		常用函数或指令: "常用函数或指令",
 		防抖: "防抖",
 		节流: "节流",
-		水印指令: '水印指令',
-		复制指令: '复制指令',
+		水印指令: "水印指令",
+		复制指令: "复制指令",
 		常用组件: "常用组件",
 		文件上传: "文件上传",
 		SVG图标: "SVG图标",
@@ -63,8 +62,9 @@ export default {
 			SuccessTips: "已退出登录"
 		}
 	},
-
-	SubmitBtn: {
+	BtnGroups: {
+		Login: "登录",
+		Reset: "重置",
 		Ok: "确认",
 		Cancel: "取消"
 	}

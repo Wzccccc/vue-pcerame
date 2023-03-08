@@ -30,10 +30,10 @@
 		</el-form-item>
 		<el-form-item>
 			<el-button class="reset-btn" size="large" @click="resetForm(loginFormRef)">
-				{{ $t("loginForm.Reset") }}
+				{{ $t("BtnGroups.Reset") }}
 			</el-button>
 			<el-button class="login-btn" size="large" type="primary" @click="login(loginFormRef)" :loading="loginLoading">
-				{{ $t("loginForm.Login") }}
+				{{ $t("BtnGroups.Login") }}
 			</el-button>
 		</el-form-item>
 	</el-form>
@@ -41,7 +41,7 @@
 
 <script lang="ts" setup name="loginForm">
 import { reactive, ref, onMounted, onBeforeMount } from "vue";
-import { FormInstance, FormRules, ElNotification } from "element-plus";
+import { FormInstance, FormRules } from "element-plus";
 import { useRouter } from "vue-router";
 import md5 from "js-md5"; // 密码加密
 
@@ -49,7 +49,6 @@ import { Login } from "@/api/interface";
 import { loginApi } from "@/api/modules/login";
 import { GlobalStore } from "@/store";
 import { initDynamicRouters } from "@/routers/modules/dynamicRouter";
-import { getTimeState } from "@/utils/utilsFn";
 import I18n from "@/language/index";
 import Sldentify from "@/components/SIdentify/index.vue";
 
@@ -129,13 +128,6 @@ const login = async (formEl: FormInstance | undefined) => {
 			globalStore.setUserName(loginForm.username);
 			await initDynamicRouters();
 			router.push("/home");
-			// 根据时间展示不同的提示语
-			ElNotification.success({
-				title: getTimeState(),
-				message: `${I18n.global.t("loginForm.Welcome")} Vue-Pcerame`,
-				offset: 60,
-				duration: 3000
-			});
 		} finally {
 			loginLoading.value = false;
 		}

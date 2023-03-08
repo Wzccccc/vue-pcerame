@@ -45,7 +45,6 @@ export const getBrowserLang = (): string => {
  */
 export const getTimeState = () => {
 	let hours = new Date().getHours();
-	console.log(hours);
 	if (hours >= 22 || (hours >= 0 && hours < 6)) return `${I18n.global.t("loginForm.Night")} 🌛`;
 	if (hours >= 6 && hours < 10) return `${I18n.global.t("loginForm.Morning")} ⛅`;
 	if (hours >= 10 && hours < 14) return `${I18n.global.t("loginForm.Noon")} 🌞`;

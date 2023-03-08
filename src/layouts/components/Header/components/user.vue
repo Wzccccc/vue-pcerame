@@ -43,8 +43,8 @@ const logout = () => {
 		`${I18n.global.t("layoutHeader.user.LogoutTips")}`,
 		`${I18n.global.t("layoutHeader.user.LogoutTipsTitle")}`,
 		{
-			confirmButtonText: `${I18n.global.t("SubmitBtn.Ok")}`,
-			cancelButtonText: `${I18n.global.t("SubmitBtn.Cancel")}`,
+			confirmButtonText: `${I18n.global.t("BtnGroups.Ok")}`,
+			cancelButtonText: `${I18n.global.t("BtnGroups.Cancel")}`,
 			type: "warning"
 		}
 	).then(async () => {

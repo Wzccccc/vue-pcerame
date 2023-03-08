@@ -1,19 +1,18 @@
 export default {
+	DarkSwitchTip: "When on, turn the following system on or off the dark mode (default following system)",
 	loginForm: {
 		UserNameTips: "UserName：admin / user",
 		PassWordTips: "PassWord：123456",
 		CheckUserName: "Please enter user name",
 		CheckPassWord: "Please input a password",
-		verificatioNoCode: 'Please enter the verification code',
-		verificatioCodeError: 'Verification code error, please re-enter',
-		Login: "Login",
-		Reset: "Reset",
-		Welcome: 'Welcome',
+		verificatioNoCode: "Please enter the verification code",
+		verificatioCodeError: "Verification code error, please re-enter",
+		Welcome: "Welcome",
 		Night: "It's late at night. Please have a rest",
-		Morning: 'Good Morning',
-		Noon: 'Good Noon',
-		AfterNoon: 'Good AfterNoon',
-		Evening: 'Good Evening'
+		Morning: "Good Morning",
+		Noon: "Good Noon",
+		AfterNoon: "Good AfterNoon",
+		Evening: "Good Evening"
 	},
 	ErrorPags: {
 		NoPowerTips: "Sorry, you do not have access to this page, please contact the administrator",
@@ -33,8 +32,8 @@ export default {
 		常用函数或指令: "Common Funs Or Directs",
 		防抖: "Debounce",
 		节流: "Throttle",
-		水印指令: 'WaterMark Directs',
-		复制指令: 'Copy Directs',
+		水印指令: "WaterMark Directs",
+		复制指令: "Copy Directs",
 		常用组件: "Common Components",
 		文件上传: "Files Upload",
 		SVG图标: "SVG Icon",
@@ -64,7 +63,9 @@ export default {
 		}
 	},
 
-	SubmitBtn: {
+	BtnGroups: {
+		Login: "Login",
+		Reset: "Reset",
 		Ok: "Ok",
 		Cancel: "Cancel"
 	}
