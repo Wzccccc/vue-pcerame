@@ -8,15 +8,15 @@ import { watch, onMounted, nextTick } from "vue";
 const props = defineProps({
 	identifyCode: {
 		type: String,
-		default: "1234"
+		required: true
 	},
 	fontSizeMin: {
 		type: Number,
-		default: 35
+		default: 25
 	},
 	fontSizeMax: {
 		type: Number,
-		default: 35
+		default: 25
 	},
 	backgroundColorMin: {
 		type: Number,

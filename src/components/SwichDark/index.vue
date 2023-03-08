@@ -1,5 +1,5 @@
 <template>
-	<el-tooltip content="开启后,将跟随系统打开或关闭深色模式(默认跟随系统)" placement="top" class="className">
+	<el-tooltip content="开启后,将跟随系统打开或关闭深色模式(默认跟随系统)" placement="top">
 		<el-switch v-model="isDark" inline-prompt :active-icon="Check" :inactive-icon="Close" @change="changTheme" />
 	</el-tooltip>
 </template>
@@ -12,11 +12,6 @@ import { useTheme } from "@/hooks/useTheme";
 const isDark = ref(false);
 const globalStore = GlobalStore();
 const { switchDark } = useTheme();
-defineProps({
-	className: {
-		type: String
-	}
-});
 
 onMounted(() => {
 	isDark.value = globalStore.isFollowSystem;

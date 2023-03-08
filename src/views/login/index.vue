@@ -1,7 +1,7 @@
 <template>
 	<div id="login">
 		<div class="login-box">
-			<SwichDark :className="'dark'" />
+			<SwichDark />
 			<div class="left-box">
 				<img src="@/assets/images/login_left.svg" alt="" />
 			</div>

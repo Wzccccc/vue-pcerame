@@ -168,7 +168,7 @@ const login = async (formEl: FormInstance | undefined) => {
 	.code-item :deep(.el-form-item__content) {
 		justify-content: space-between;
 		.code-input {
-			width: calc(100% - 150px);
+			width: calc(100% - 180px);
 			.icon-yanzhengyanzhengma {
 				width: 14px;
 			}
