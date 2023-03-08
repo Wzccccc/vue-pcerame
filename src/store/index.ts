@@ -5,10 +5,12 @@ import piniaPluginPersistedstate from "pinia-plugin-persistedstate"; // 持久�
 export const GlobalStore = defineStore("GlobalState", {
 	state: (): GlobalState => ({
 		token: "",
-		userName: '',
+		userName: "",
 		language: "",
+		isFollowSystem: true, //是否开启跟随系统主题
 		systemConfig: {
-			isCollapse: false
+			isCollapse: false,
+			isDark: false
 		}
 	}),
 	getters: {},
@@ -17,13 +19,19 @@ export const GlobalStore = defineStore("GlobalState", {
 			this.token = token;
 		},
 		setUserName(name: string) {
-			this.userName = name
-		},
-		setCollapse(systemConfig: systemConfigOptions) {
-			this.systemConfig = systemConfig;
+			this.userName = name;
 		},
 		setLanguage(language: string) {
 			this.language = language;
+		},
+		setIsFllowSystem(val: boolean) {
+			this.isFollowSystem = val;
+		},
+		setCollapse(val: boolean) {
+			this.systemConfig.isCollapse = val;
+		},
+		setTheme(val: boolean) {
+			this.systemConfig.isDark = val;
 		}
 	},
 	persist: {

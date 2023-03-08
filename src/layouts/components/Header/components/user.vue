@@ -51,7 +51,7 @@ const logout = () => {
 		await logoutApi();
 		ElMessage.success(`${I18n.global.t("layoutHeader.user.SuccessTips")}`);
 		globalStore.setToken("");
-		globalStore.setCollapse({ isCollapse: false });
+		globalStore.setCollapse(false);
 		globalStore.setLanguage("");
 		router.replace({ path: "/login" });
 	});

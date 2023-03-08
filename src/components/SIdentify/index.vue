@@ -52,7 +52,7 @@ const props = defineProps({
 	},
 	contentWidth: {
 		type: Number,
-		default: 120
+		default: 150
 	},
 	contentHeight: {
 		type: Number,
