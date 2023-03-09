@@ -58,7 +58,7 @@ import { getTimeState } from "@/utils/utilsFn";
 
 export default defineComponent({
 	beforeRouteEnter(to, from, next) {
-		if (from.path !== "/dataScreen") {
+		if (!["/dataScreen", "/403", "/404", "/500"].includes(from.path)) {
 			// 根据时间展示不同的提示语
 			ElNotification.success({
 				title: getTimeState(),
