@@ -38,7 +38,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			cors: true,
 			proxy: {
 				"/api": {
-					target: "https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e",
+					target: "https://mock.mengxuegu.com/mock/6409955a4689d550adbe07bf/pcerame",
 					changeOrigin: true,
 					rewrite: path => path.replace(/^\/api/, "")
 					// pathRewrite: {

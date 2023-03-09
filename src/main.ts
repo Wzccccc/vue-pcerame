@@ -25,7 +25,8 @@ import I18n from "@/language/index";
 import pinia from "@/store/index";
 import ElementPlus from "element-plus";
 import * as Icons from "@element-plus/icons-vue";
-import "element-plus/dist/index.css";
+
+// mock
 
 const app = createApp(App);
 // 注册 icons

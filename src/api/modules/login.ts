@@ -9,7 +9,7 @@ import menuList from "@/config/menuList.json";
 
 // 登录
 export const loginApi = (params: Login.LoginApi) => {
-	return request.post<Login.ResLogin>("/geeker/login", params);
+	return request.post<Login.ResLogin>("/login", params);
 };
 
 // 获取路由/菜单权限
@@ -30,5 +30,5 @@ export const menuListApi = (params: boolean): Promise<ResponseData> => {
 // 退出登录
 // * 用户退出登录
 export const logoutApi = () => {
-	return request.post("geeker/logout");
+	return request.post("/logout");
 };
