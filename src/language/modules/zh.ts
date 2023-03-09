@@ -6,13 +6,7 @@ export default {
 		CheckUserName: "请输入用户名",
 		CheckPassWord: "请输入密码",
 		verificatioNoCode: "请输入验证码",
-		verificatioCodeError: "验证码错误请重新输入",
-		Welcome: "欢迎登录",
-		Night: "夜深了, 请休息吧",
-		Morning: "早上好",
-		Noon: "中午好",
-		AfterNoon: "下午好",
-		Evening: "晚上好"
+		verificatioCodeError: "验证码错误请重新输入"
 	},
 	ErrorPags: {
 		NoPowerTips: "抱歉，您无权访问此页面，请联系管理员",
@@ -61,6 +55,15 @@ export default {
 			LogoutTips: "您是否确认退出登录?",
 			SuccessTips: "已退出登录"
 		}
+	},
+	WelcomeMessage: {
+		UserName: "亲爱的",
+		Welcome: "欢迎登录",
+		Night: "夜深了, 请休息吧",
+		Morning: "早上好",
+		Noon: "中午好",
+		AfterNoon: "下午好",
+		Evening: "晚上好"
 	},
 	BtnGroups: {
 		Login: "登录",

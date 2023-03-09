@@ -45,9 +45,9 @@ export const getBrowserLang = (): string => {
  */
 export const getTimeState = () => {
 	let hours = new Date().getHours();
-	if (hours >= 22 || (hours >= 0 && hours < 6)) return `${I18n.global.t("loginForm.Night")} 🌛`;
-	if (hours >= 6 && hours < 10) return `${I18n.global.t("loginForm.Morning")} ⛅`;
-	if (hours >= 10 && hours < 14) return `${I18n.global.t("loginForm.Noon")} 🌞`;
-	if (hours >= 14 && hours < 18) return `${I18n.global.t("loginForm.AfterNoon")} 🌞`;
-	if (hours >= 18 && hours < 22) return `${I18n.global.t("loginForm.Evening")} 🌛`;
+	if (hours >= 22 || (hours >= 0 && hours < 6)) return `${I18n.global.t("WelcomeMessage.Night")} 🌛`;
+	if (hours >= 6 && hours < 10) return `${I18n.global.t("WelcomeMessage.Morning")} ⛅`;
+	if (hours >= 10 && hours < 14) return `${I18n.global.t("WelcomeMessage.Noon")} 🌞`;
+	if (hours >= 14 && hours < 18) return `${I18n.global.t("WelcomeMessage.AfterNoon")} 🌞`;
+	if (hours >= 18 && hours < 22) return `${I18n.global.t("WelcomeMessage.Evening")} 🌛`;
 };

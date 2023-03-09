@@ -10,7 +10,6 @@
 					<span v-if="!globalStore.systemConfig.isCollapse">Vue - Pcerame</span>
 				</div>
 				<el-scrollbar>
-					<!-- :collapse="isCollapse" -->
 					<el-menu
 						:default-active="activeMenu"
 						:router="true"
@@ -33,27 +32,6 @@
 	</el-container>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import { ElNotification } from "element-plus";
-import I18n from "@/language/index";
-import { getTimeState } from "@/utils/utilsFn";
-export default defineComponent({
-	beforeRouteEnter(to, from, next) {
-		if (from.path !== "/dataScreen") {
-			// 根据时间展示不同的提示语
-			ElNotification.success({
-				title: getTimeState(),
-				message: `${I18n.global.t("loginForm.Welcome")} Vue-Pcerame`,
-				offset: 55,
-				duration: 5000
-			});
-		}
-		next();
-	}
-});
-</script>
-
 <script lang="ts" setup name="layout">
 import { computed } from "vue";
 import { useRoute } from "vue-router";
@@ -70,6 +48,34 @@ const globalStore = GlobalStore();
 const menuStore = MenuStore();
 const route = useRoute();
 const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path));
+</script>
+
+<script lang="ts" name="layout">
+import { defineComponent } from "vue";
+import { ElNotification } from "element-plus";
+import I18n from "@/language/index";
+import { getTimeState } from "@/utils/utilsFn";
+
+export default defineComponent({
+	beforeRouteEnter(to, from, next) {
+		if (from.path !== "/dataScreen") {
+			// 根据时间展示不同的提示语
+			ElNotification.success({
+				title: getTimeState(),
+				message:
+					I18n.global.t("WelcomeMessage.UserName") +
+					" " +
+					JSON.parse(localStorage.getItem("GlobalState")!).userName +
+					"," +
+					I18n.global.t("WelcomeMessage.Welcome") +
+					" Vue-Pcerame",
+				offset: 55,
+				duration: 3000
+			});
+		}
+		next();
+	}
+});
 </script>
 
 <style scoped lang="scss">
