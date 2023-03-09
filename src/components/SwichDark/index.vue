@@ -1,5 +1,5 @@
 <template>
-	<el-tooltip :content="I18n.global.t('DarkSwitchTip')" placement="top">
+	<el-tooltip :content="$t('DarkSwitchTip')" placement="top">
 		<el-switch v-model="isDark" inline-prompt :active-icon="Check" :inactive-icon="Close" @change="changTheme" />
 	</el-tooltip>
 </template>
@@ -8,7 +8,6 @@
 import { ref, onMounted } from "vue";
 import { Check, Close } from "@element-plus/icons-vue";
 import { GlobalStore } from "@/store";
-import I18n from "@/language/index";
 import { useTheme } from "@/hooks/useTheme";
 const isDark = ref(false);
 const globalStore = GlobalStore();

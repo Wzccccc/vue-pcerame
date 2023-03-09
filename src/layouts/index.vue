@@ -45,8 +45,8 @@ export default defineComponent({
 			ElNotification.success({
 				title: getTimeState(),
 				message: `${I18n.global.t("loginForm.Welcome")} Vue-Pcerame`,
-				offset: 60,
-				duration: 3000
+				offset: 55,
+				duration: 5000
 			});
 		}
 		next();

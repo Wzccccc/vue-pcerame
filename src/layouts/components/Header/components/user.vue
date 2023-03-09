@@ -6,9 +6,15 @@
 		</el-avatar>
 		<template #dropdown>
 			<el-dropdown-menu>
-				<el-dropdown-item command="1">{{ $t("layoutHeader.user.PersonalDetails") }}</el-dropdown-item>
-				<el-dropdown-item command="2">{{ $t("layoutHeader.user.ChangePassword") }}</el-dropdown-item>
-				<el-dropdown-item command="3" divided>{{ $t("layoutHeader.user.LogOut") }}</el-dropdown-item>
+				<el-dropdown-item command="1"
+					><el-icon><User /></el-icon>{{ $t("layoutHeader.user.PersonalDetails") }}</el-dropdown-item
+				>
+				<el-dropdown-item command="2"
+					><el-icon><Edit /></el-icon>{{ $t("layoutHeader.user.ChangePassword") }}</el-dropdown-item
+				>
+				<el-dropdown-item command="3" divided
+					><el-icon><SwitchButton /></el-icon>{{ $t("layoutHeader.user.LogOut") }}</el-dropdown-item
+				>
 			</el-dropdown-menu>
 		</template>
 	</el-dropdown>
@@ -63,7 +69,7 @@ const logout = () => {
 	vertical-align: bottom;
 	display: inline-block;
 	font-size: 16px;
-	margin: 0 10px 0 20px;
+	margin: 0 20px;
 }
 .user-photo {
 	cursor: pointer;

@@ -1,7 +1,7 @@
 <template>
 	<el-popover placement="bottom" :width="300" trigger="click" @show="showPopover" @hide="hidePopover">
 		<template #reference>
-			<el-badge :value="99" :max="99">
+			<el-badge :value="100" :max="99">
 				<i :class="'iconfont icon-bell1'"></i>
 				<!-- <SvgIcon iconName="icon-bell1"></SvgIcon> -->
 			</el-badge>
@@ -34,10 +34,8 @@ const noMore = computed(() => count.value >= 20);
 const disabled = computed(() => loading.value || noMore.value);
 const loadMore = () => {
 	loading.value = true;
-	setTimeout(() => {
-		count.value += 5;
-		loading.value = false;
-	}, 500);
+	count.value += 5;
+	loading.value = false;
 };
 
 const activeName = ref("first");
