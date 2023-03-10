@@ -56,9 +56,7 @@ const logout = () => {
 	).then(async () => {
 		await logoutApi();
 		ElMessage.success(`${I18n.global.t("layoutHeader.user.SuccessTips")}`);
-		globalStore.setToken("");
-		globalStore.setCollapse(false);
-		globalStore.setLanguage("");
+		globalStore.resetInit();
 		router.replace({ path: "/login" });
 	});
 };

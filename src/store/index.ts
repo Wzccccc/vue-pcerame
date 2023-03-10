@@ -32,6 +32,17 @@ export const GlobalStore = defineStore("GlobalState", {
 		},
 		setTheme(val: boolean) {
 			this.systemConfig.isDark = val;
+		},
+		// 初始化
+		resetInit() {
+			this.token = "";
+			this.userName = "";
+			this.language = "";
+			this.isFollowSystem = true; //是否开启跟随系统主题
+			this.systemConfig = {
+				isCollapse: false,
+				isDark: false
+			};
 		}
 	},
 	persist: {

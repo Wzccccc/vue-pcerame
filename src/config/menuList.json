@@ -30,78 +30,6 @@
 			}
 		},
 		{
-			"path": "/utilsFun",
-			"name": "utilsFun",
-			"redirect": "/utilsFun/debounce",
-			"meta": {
-				"icon": "Platform",
-				"title": "常用函数或指令",
-				"isLink": "",
-				"isHide": false,
-				"isFull": false,
-				"isAffix": true,
-				"isKeepAlive": true
-			},
-			"children": [
-				{
-					"path": "/utilsFun/debounce",
-					"name": "debounce",
-					"component": "/utilsFun/debounce/index",
-					"meta": {
-						"icon": "Flag",
-						"title": "防抖",
-						"isLink": "",
-						"isHide": false,
-						"isFull": false,
-						"isAffix": true,
-						"isKeepAlive": true
-					}
-				},
-				{
-					"path": "/utilsFun/throttle",
-					"name": "throttle",
-					"component": "/utilsFun/throttle/index",
-					"meta": {
-						"icon": "Flag",
-						"title": "节流",
-						"isLink": "",
-						"isHide": false,
-						"isFull": false,
-						"isAffix": true,
-						"isKeepAlive": true
-					}
-				},
-				{
-					"path": "/utilsFun/waterMark",
-					"name": "waterMark",
-					"component": "/utilsFun/waterMark/index",
-					"meta": {
-						"icon": "Flag",
-						"title": "水印指令",
-						"isLink": "",
-						"isHide": false,
-						"isFull": false,
-						"isAffix": true,
-						"isKeepAlive": true
-					}
-				},
-				{
-					"path": "/utilsFun/copy",
-					"name": "copy",
-					"component": "/utilsFun/copy/index",
-					"meta": {
-						"icon": "Flag",
-						"title": "复制指令",
-						"isLink": "",
-						"isHide": false,
-						"isFull": false,
-						"isAffix": true,
-						"isKeepAlive": true
-					}
-				}
-			]
-		},
-		{
 			"path": "/businessCon",
 			"name": "businessCon",
 			"redirect": "/businessCon/dataUpload",
@@ -164,6 +92,78 @@
 					"meta": {
 						"icon": "Flag",
 						"title": "拖拽组件",
+						"isLink": "",
+						"isHide": false,
+						"isFull": false,
+						"isAffix": true,
+						"isKeepAlive": true
+					}
+				}
+			]
+		},
+		{
+			"path": "/utilsFun",
+			"name": "utilsFun",
+			"redirect": "/utilsFun/debounce",
+			"meta": {
+				"icon": "Platform",
+				"title": "常用函数或指令",
+				"isLink": "",
+				"isHide": false,
+				"isFull": false,
+				"isAffix": true,
+				"isKeepAlive": true
+			},
+			"children": [
+				{
+					"path": "/utilsFun/debounce",
+					"name": "debounce",
+					"component": "/utilsFun/debounce/index",
+					"meta": {
+						"icon": "Flag",
+						"title": "防抖",
+						"isLink": "",
+						"isHide": false,
+						"isFull": false,
+						"isAffix": true,
+						"isKeepAlive": true
+					}
+				},
+				{
+					"path": "/utilsFun/throttle",
+					"name": "throttle",
+					"component": "/utilsFun/throttle/index",
+					"meta": {
+						"icon": "Flag",
+						"title": "节流",
+						"isLink": "",
+						"isHide": false,
+						"isFull": false,
+						"isAffix": true,
+						"isKeepAlive": true
+					}
+				},
+				{
+					"path": "/utilsFun/waterMark",
+					"name": "waterMark",
+					"component": "/utilsFun/waterMark/index",
+					"meta": {
+						"icon": "Flag",
+						"title": "水印指令",
+						"isLink": "",
+						"isHide": false,
+						"isFull": false,
+						"isAffix": true,
+						"isKeepAlive": true
+					}
+				},
+				{
+					"path": "/utilsFun/copy",
+					"name": "copy",
+					"component": "/utilsFun/copy/index",
+					"meta": {
+						"icon": "Flag",
+						"title": "复制指令",
 						"isLink": "",
 						"isHide": false,
 						"isFull": false,

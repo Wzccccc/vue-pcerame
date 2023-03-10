@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { MenuState } from "../interface";
 import { flatMenu } from "@/utils/utilsFn";
-import { menuListApi } from "@/api/modules/login";
+import { menuListApi } from "@/api/modules/auth";
 
 // 当前用户菜单
 export const MenuStore = defineStore("MenuStore", {
@@ -16,8 +16,8 @@ export const MenuStore = defineStore("MenuStore", {
 	},
 	actions: {
 		async setMenuList() {
-			const { data } = await menuListApi(true);
-			this.authMenuList = data;
+			const { data } = await menuListApi({ userName: JSON.parse(localStorage.getItem("GlobalState")!).userName });
+			this.authMenuList = data as Menu.MenuOptions[];
 		}
 	}
 });

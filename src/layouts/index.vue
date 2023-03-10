@@ -1,5 +1,5 @@
 <template>
-	<el-container class="layout">
+	<el-container class="layout" ref="layout">
 		<el-aside>
 			<div
 				class="menu"
@@ -66,11 +66,12 @@ export default defineComponent({
 					I18n.global.t("WelcomeMessage.UserName") +
 					" " +
 					JSON.parse(localStorage.getItem("GlobalState")!).userName +
-					"," +
+					", " +
 					I18n.global.t("WelcomeMessage.Welcome") +
 					" Vue-Pcerame",
-				offset: 55,
-				duration: 3000
+				duration: 3000,
+				showClose: false,
+				customClass: "welcome_not"
 			});
 		}
 		next();

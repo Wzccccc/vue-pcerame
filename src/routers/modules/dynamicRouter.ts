@@ -30,7 +30,7 @@ export const initDynamicRouters = async () => {
 		router.addRoute(notFoundRouter);
 		// console.log(router.options);
 	} catch (e) {
-		globalStore.setToken("");
+		globalStore.resetInit();
 		router.replace("/login");
 		return Promise.reject(e);
 	}

@@ -41,11 +41,10 @@ class Request {
 				// token 过期失效
 				if (data.code == RequestEnum.OVERDUE) {
 					ElMessage.error(data.msg);
-					globalStore.setToken("");
+					globalStore.resetInit();
 					router.replace("/login");
 					return Promise.reject(data);
 				}
-
 				// 	全局错误拦截
 				if (data.code && data.code !== RequestEnum.SUCCESS) {
 					ElMessage.error(data.msg);

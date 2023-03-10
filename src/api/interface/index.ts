@@ -1,4 +1,4 @@
-// * 请求响应参数
+// * 响应参数
 export interface ResponseData<T = any> {
 	code: string | number;
 	msg: string;
@@ -10,7 +10,7 @@ export namespace Login {
 	export interface LoginForm {
 		username: string;
 		password: string;
-		verificationCode: string
+		verificationCode: string;
 	}
 	export interface ResLogin {
 		access_token: string;
@@ -20,3 +20,6 @@ export namespace Login {
 		password: string;
 	}
 }
+
+// * 权限模块
+export namespace Auth {}
