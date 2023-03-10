@@ -16,7 +16,7 @@ export const MenuStore = defineStore("MenuStore", {
 	},
 	actions: {
 		async setMenuList() {
-			const { data } = await menuListApi({ userName: JSON.parse(localStorage.getItem("GlobalState")!).userName });
+			const { data } = await menuListApi();
 			this.authMenuList = data as Menu.MenuOptions[];
 		}
 	}
