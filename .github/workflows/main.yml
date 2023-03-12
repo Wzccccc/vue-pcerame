@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: "7.9.0"
 
-      # 3. 安装依赖
+      # 3. 安装 依赖
       - name: Install pnpm dependencies
         run: pnpm install
 
