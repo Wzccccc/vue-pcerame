@@ -39,4 +39,4 @@ jobs:
           # Remote port
           SOURCE: ./dist
           # 部署路径
-          TARGET: /user/local/nginx/html/wzc_pcerame
+          TARGET: /usr/local/nginx/html/wzc_pcerame
