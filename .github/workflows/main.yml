@@ -24,7 +24,7 @@ jobs:
 
       # 4. 打包
       - name: Run build task
-        run: pnpm build
+        run: pnpm build:pro
 
       # 5. 部署
       - name: Deploy to Server
