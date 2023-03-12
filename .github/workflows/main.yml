@@ -1,7 +1,7 @@
 name: Pcerame CI
 
 on:
-  psuh:
+  push:
     branches: ["main"]
 
   workflow_dispatch:
