@@ -10,7 +10,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
 
 	return {
-		base: "./",
+		base: env.VITE_PUBLIC_PATH,
 		plugins: [
 			vue(),
 			VueSetupExtend(),

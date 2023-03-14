@@ -30,13 +30,13 @@ jobs:
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@v4.1.8
         with:
-          # 登陆的时候的 sshkey
+          # 登陆的时候的 sshkey 密钥
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          # Remote host
+          # Remote host 服务器地址（外网IP）
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          # Remote user
+          # Remote user 用户
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           # Remote port
           SOURCE: ./dist
           # 部署路径
-          TARGET: /usr/local/nginx/html/wzc_pcerame
+          TARGET: /usr/local/nginx/html/my_pcerame
