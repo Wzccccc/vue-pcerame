@@ -15,7 +15,6 @@
 <script lang="ts" setup name="login">
 import SwichDark from "@/components/SwichDark/index.vue";
 import LoginForm from "./components/loginForm.vue";
-throw new Error("二次测试行数是否正常");
 </script>
 <style scoped lang="scss">
 @use "./index.scss";

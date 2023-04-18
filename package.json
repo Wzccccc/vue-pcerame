@@ -34,7 +34,9 @@
 		"vuedraggable": "^2.24.3"
 	},
 	"devDependencies": {
+		"@types/js-md5": "^0.7.0",
 		"@types/node": "^18.11.18",
+		"@types/qs": "^6.9.7",
 		"@types/sortablejs": "^1.15.0",
 		"@vitejs/plugin-vue": "^4.0.0",
 		"node-sass": "^8.0.0",

@@ -3,7 +3,9 @@ lockfileVersion: 5.4
 specifiers:
   '@element-plus/icons-vue': ^2.0.10
   '@sentry/vue': ^7.48.0
+  '@types/js-md5': ^0.7.0
   '@types/node': ^18.11.18
+  '@types/qs': ^6.9.7
   '@types/sortablejs': ^1.15.0
   '@vitejs/plugin-vue': ^4.0.0
   '@vueuse/core': ^9.10.0
@@ -58,7 +60,9 @@ dependencies:
   vuedraggable: 2.24.3
 
 devDependencies:
+  '@types/js-md5': 0.7.0
   '@types/node': 18.11.18
+  '@types/qs': 6.9.7
   '@types/sortablejs': 1.15.0
   '@vitejs/plugin-vue': 4.0.0_vite@4.0.3+vue@3.2.45
   node-sass: 8.0.0
@@ -568,6 +572,10 @@ packages:
     resolution: {integrity: sha512-UfnOK1pIxO7P+EgPRZXD9jMpimd8QEFcEZ5R67R1UhGbv4zghU5+NE7U8M8G9H5Jc8FI51rqDWQs6FtUfq2e/Q==, registry: http://registry.npm.taobao.org/, tarball: http://registry.npm.taobao.org/@types/event-emitter/-/event-emitter-0.3.3.tgz}
     dev: false
 
+  /@types/js-md5/0.7.0:
+    resolution: {integrity: sha512-4mN02EhCni6MlvCUl9bpcbMfu7R3G+ac+J37b7gKCu3tWhZc5/Ya41T+2QNR2aFt6vnMe+uTa5rFQ+nT2kl6cA==}
+    dev: true
+
   /@types/lodash-es/4.17.6:
     resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==, registry: http://registry.npm.taobao.org/, tarball: http://registry.npm.taobao.org/@types/lodash-es/-/lodash-es-4.17.6.tgz}
     dependencies:
@@ -587,6 +595,10 @@ packages:
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==, registry: http://registry.npm.taobao.org/, tarball: http://registry.npm.taobao.org/@types/normalize-package-data/-/normalize-package-data-2.4.1.tgz}
+    dev: true
+
+  /@types/qs/6.9.7:
+    resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
     dev: true
 
   /@types/sortablejs/1.15.0:

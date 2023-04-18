@@ -28,7 +28,7 @@ import * as Icons from "@element-plus/icons-vue";
 
 const app = createApp(App);
 
-// 实验接入 sentry 监控
+// * sentry 监控
 // import * as Sentry from "@sentry/vue";
 // Sentry.init({
 // 	app,
