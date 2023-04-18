@@ -7,5 +7,5 @@
 <script setup lang="ts" name="supTable"></script>
 
 <style scoped lang="scss">
-@import "./index.scss";
+@use "./index.scss";
 </style>

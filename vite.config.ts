@@ -39,7 +39,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 					}
 				}
 			}),
-			process.env.NODE_ENV === "production" ? viteSentry(sentryConfig) : null
+			env.VITE_ENV === "production" ? viteSentry(sentryConfig) : null
 		],
 		// ↓解析配置
 		resolve: {
@@ -66,7 +66,10 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			}
 		},
 		build: {
-			sourcemap: process.env.NODE_ENV === "production"
+			sourcemap: env.VITE_ENV === "production"
+		},
+		define: {
+			"process.env": process.env
 		}
 	};
 });

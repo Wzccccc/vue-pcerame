@@ -135,5 +135,5 @@ const login = async (formEl: FormInstance | undefined) => {
 };
 </script>
 <style scoped lang="scss">
-@import "./loginForm.scss";
+@use "./loginForm.scss";
 </style>
