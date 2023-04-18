@@ -135,46 +135,5 @@ const login = async (formEl: FormInstance | undefined) => {
 };
 </script>
 <style scoped lang="scss">
-.title {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 40px;
-	img {
-		width: 60px;
-	}
-	h2 {
-		margin-left: 20px;
-		font-size: 42px;
-	}
-}
-.el-form {
-	.el-form-item {
-		margin-bottom: 40px;
-		.get-code {
-			border: 1px solid #ccc;
-			height: 40px;
-			cursor: pointer;
-		}
-	}
-	.code-item :deep(.el-form-item__content) {
-		justify-content: space-between;
-		.code-input {
-			width: calc(100% - 180px);
-			.icon-yanzhengyanzhengma {
-				width: 14px;
-			}
-		}
-	}
-	.el-form-item:last-child {
-		margin-bottom: 0;
-		:deep(.el-form-item__content) {
-			justify-content: space-around !important;
-			.el-button {
-				border-radius: 20px;
-				width: 40%;
-			}
-		}
-	}
-}
+@import "./loginForm.scss";
 </style>

@@ -7,7 +7,5 @@
 <script setup lang="ts" name="dragCon"></script>
 
 <style scoped lang="scss">
-#dragCon {
-	line-height: 50px;
-}
+@import "./index.scss";
 </style>

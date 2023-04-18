@@ -7,7 +7,5 @@
 <script setup lang="ts" name="scgCon"></script>
 
 <style scoped lang="scss">
-#scgCon {
-	line-height: 50px;
-}
+@import "./index.scss";
 </style>

@@ -3,6 +3,23 @@ import { createHtmlPlugin } from "vite-plugin-html"; // 可在 index.html 中使
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path"; // 配置别名 如报错需要安装 @types/node
 import VueSetupExtend from "vite-plugin-vue-setup-extend"; // 可在 setup 上自定义name
+import viteSentry from "vite-plugin-sentry";
+
+const sentryConfig = {
+	url: "http://zhicwang.com:8200", // 项目地址
+	authToken: "eedc97e4def9463f8682c40ceec34a8d566c964220d344e68a2627726e26efd7", //sentry授权令牌
+	org: "acf3d0c842eb",
+	project: "javascript-vue",
+	release: process.env.SENTRY_VERSION || "0.0.1",
+	setCommits: {
+		auto: true
+	},
+	sourceMaps: {
+		include: ["./dist/assets"],
+		ignore: ["node_modules"],
+		urlPrefix: "~/assets"
+	}
+};
 
 // https://vitejs.dev/config/
 // ConfigEnv UserConfig ts 提示报错需要导入
@@ -21,7 +38,8 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 						title: env.VITE_APP_TITLE
 					}
 				}
-			})
+			}),
+			process.env.NODE_ENV === "production" ? viteSentry(sentryConfig) : null
 		],
 		// ↓解析配置
 		resolve: {
@@ -46,6 +64,9 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 					// }
 				}
 			}
+		},
+		build: {
+			sourcemap: process.env.NODE_ENV === "production"
 		}
 	};
 });

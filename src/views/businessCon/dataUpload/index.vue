@@ -7,7 +7,5 @@
 <script setup lang="ts" name="dataUpload"></script>
 
 <style scoped lang="scss">
-#dataUpload {
-	line-height: 50px;
-}
+@import "./index.scss";
 </style>

@@ -7,7 +7,5 @@
 <script setup lang="ts" name="supTable"></script>
 
 <style scoped lang="scss">
-#supTable {
-	line-height: 50px;
-}
+@import "./index.scss";
 </style>

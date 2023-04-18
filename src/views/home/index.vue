@@ -8,14 +8,5 @@
 // home
 </script>
 <style scoped lang="scss">
-#home {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	img {
-		width: 50%;
-	}
-}
+@import "./index.scss";
 </style>

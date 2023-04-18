@@ -15,6 +15,8 @@
 <script lang="ts" setup name="login">
 import SwichDark from "@/components/SwichDark/index.vue";
 import LoginForm from "./components/loginForm.vue";
+
+throw new Error("测试 sentry");
 </script>
 <style scoped lang="scss">
 @import "./index.scss";

@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@element-plus/icons-vue": "^2.0.10",
+		"@sentry/vue": "^7.48.0",
 		"@vueuse/core": "^9.10.0",
 		"@wangeditor/editor": "^5.1.23",
 		"@wangeditor/editor-for-vue": "^1.0.2",
@@ -26,6 +27,7 @@
 		"print-js": "^1.6.0",
 		"qs": "^6.11.0",
 		"sortablejs": "^1.15.0",
+		"vite-plugin-sentry": "^1.2.0",
 		"vue": "^3.2.45",
 		"vue-i18n": "^9.2.2",
 		"vue-router": "^4.1.6",
