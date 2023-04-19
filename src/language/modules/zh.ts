@@ -1,5 +1,4 @@
 export default {
-	DarkSwitchTip: "开启后,将跟随系统打开或关闭深色模式(默认跟随系统)",
 	loginForm: {
 		UserNameTips: "用户名：admin / user",
 		PassWordTips: "密码：123456",

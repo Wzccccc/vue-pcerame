@@ -1,32 +1,26 @@
 <template>
-	<el-tooltip :content="$t('DarkSwitchTip')" placement="top">
-		<el-switch v-model="isDark" inline-prompt :active-icon="Check" :inactive-icon="Close" @change="changTheme" />
-	</el-tooltip>
+	<el-switch v-model="isDark" inline-prompt :active-icon="Sunny" :inactive-icon="Moon" @change="changTheme" />
 </template>
 
 <script lang="ts" setup name="swichDark">
-import { ref, onMounted } from "vue";
-import { Check, Close } from "@element-plus/icons-vue";
+import { ref, watch } from "vue";
+import { Sunny, Moon } from "@element-plus/icons-vue";
 import { GlobalStore } from "@/store";
 import { useTheme } from "@/hooks/useTheme";
 const isDark = ref(false);
 const globalStore = GlobalStore();
 const { switchDark } = useTheme();
-
-onMounted(() => {
-	isDark.value = globalStore.isFollowSystem;
-});
+watch(
+	() => globalStore.systemConfig.isDark,
+	val => {
+		isDark.value = val;
+	},
+	{ immediate: true }
+);
 
 const changTheme = (val: boolean) => {
-	globalStore.setIsFllowSystem(val);
-	// 开启
-	if (val) {
-		// true 为 深色模式 false 为正常
-		globalStore.setTheme(window.matchMedia("(prefers-color-scheme:dark)").matches);
-	} else {
-		// 关闭 深色
-		globalStore.setTheme(false);
-	}
+	globalStore.setIsFllowSystem(val === window.matchMedia("(prefers-color-scheme:dark)").matches);
+	globalStore.setTheme(val);
 	switchDark();
 };
 </script>

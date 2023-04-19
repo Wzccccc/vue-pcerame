@@ -1,5 +1,4 @@
 export default {
-	DarkSwitchTip: "When on, turn the following system on or off the dark mode (default following system)",
 	loginForm: {
 		UserNameTips: "UserName：admin / user",
 		PassWordTips: "PassWord：123456",

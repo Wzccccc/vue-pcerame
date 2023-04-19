@@ -14,15 +14,18 @@ import "@/styles/common.scss";
 import "@/styles/element.scss";
 // iconfont
 import "@/assets/iconfont/iconfont.scss";
-// 引入 iconSvg 为全局组件
-// import "@/assets/iconfont/icon.js";
-import SvgIcon from "@/components/SvgIcon/index.vue";
 // 引入指令
 import directives from "@/directives/index";
+// 路由
 import router from "./routers";
 // i18n
 import I18n from "@/language/index";
+// pinia
 import pinia from "@/store/index";
+// 引入 iconSvg 为全局组件
+// import "@/assets/iconfont/icon.js";
+import SvgIcon from "@/components/SvgIcon/index.vue";
+
 import ElementPlus from "element-plus";
 import * as Icons from "@element-plus/icons-vue";
 

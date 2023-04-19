@@ -29,10 +29,17 @@
 			</div>
 		</el-form-item>
 		<el-form-item>
-			<el-button class="reset-btn" size="large" @click="resetForm(loginFormRef)">
+			<el-button class="reset-btn" size="large" :icon="CircleClose" @click="resetForm(loginFormRef)">
 				{{ $t("BtnGroups.Reset") }}
 			</el-button>
-			<el-button class="login-btn" size="large" type="primary" @click="login(loginFormRef)" :loading="loginLoading">
+			<el-button
+				class="login-btn"
+				size="large"
+				type="primary"
+				:icon="UserFilled"
+				@click="login(loginFormRef)"
+				:loading="loginLoading"
+			>
 				{{ $t("BtnGroups.Login") }}
 			</el-button>
 		</el-form-item>
@@ -42,6 +49,7 @@
 <script lang="ts" setup name="loginForm">
 import { reactive, ref, onMounted, onBeforeMount } from "vue";
 import { FormInstance, FormRules } from "element-plus";
+import { CircleClose, UserFilled } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
 import md5 from "js-md5"; // 密码加密
 

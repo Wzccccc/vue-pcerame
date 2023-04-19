@@ -31,17 +31,13 @@ const locale = computed(() => {
 	return I18n.locale.value === "zh" ? zhCn : en;
 });
 
-// 获取系统是否为跟随系统颜色(默认开启)
+// 如果用户手动设置了主题并且与浏览器主题不一致,将不会跟随系统,一致的情况会跟随系统(默认跟随)
 if (globalStore.isFollowSystem) {
-	// true 深色
 	globalStore.setTheme(window.matchMedia("(prefers-color-scheme:dark)").matches);
-} else {
-	globalStore.setTheme(false);
 }
 switchDark();
 // 监听系统的深色模式变化
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", event => {
-	// console.log(event);
 	if (globalStore.isFollowSystem) {
 		globalStore.setTheme(event.matches);
 		switchDark();
