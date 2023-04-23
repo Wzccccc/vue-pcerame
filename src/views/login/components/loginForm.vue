@@ -75,11 +75,10 @@ const loginRules = reactive<FormRules>({
 	username: [{ required: true, message: I18n.global.t("loginForm.CheckUserName"), trigger: ["blur", "change"] }],
 	password: [{ required: true, message: I18n.global.t("loginForm.CheckPassWord"), trigger: ["blur", "change"] }],
 	verificationCode: [
+		{ required: true, message: I18n.global.t("loginForm.verificatioNoCode"), trigger: ["blur", "change"] },
 		{
 			validator: (rule: any, value: any, callback: any) => {
-				if (!value) {
-					callback(new Error(`${I18n.global.t("loginForm.verificatioNoCode")}`));
-				} else if (value.toLowerCase() !== identifyCode.value.toLowerCase()) {
+				if (value && value.toLowerCase() !== identifyCode.value.toLowerCase()) {
 					callback(new Error(`${I18n.global.t("loginForm.verificatioCodeError")}`));
 				} else {
 					callback();
@@ -95,10 +94,8 @@ onBeforeMount(() => {
 });
 onMounted(() => {
 	// 监听回车事件
-	document.onkeydown = (e: any) => {
-		if (e.keyCode === 13 || loginLoading.value) {
-			login(loginFormRef.value);
-		}
+	document.onkeydown = (e: KeyboardEvent) => {
+		(e.code === "Enter" || e.key === "Enter" || loginLoading.value) && login(loginFormRef.value);
 	};
 });
 
