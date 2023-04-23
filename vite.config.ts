@@ -3,6 +3,8 @@ import { createHtmlPlugin } from "vite-plugin-html"; // 可在 index.html 中使
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path"; // 配置别名 如报错需要安装 @types/node
 import VueSetupExtend from "vite-plugin-vue-setup-extend"; // 可在 setup 上自定义name
+import viteCompression from "vite-plugin-compression";
+
 // * sentry 监控
 // import viteSentry from "vite-plugin-sentry";
 // const sentryConfig = {
@@ -23,7 +25,7 @@ import VueSetupExtend from "vite-plugin-vue-setup-extend"; // 可在 setup 上�
 
 // https://vitejs.dev/config/
 // ConfigEnv UserConfig ts 提示报错需要导入
-export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
+export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
 
 	return {
@@ -31,6 +33,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 		plugins: [
 			vue(),
 			VueSetupExtend(),
+			viteCompression(),
 			createHtmlPlugin({
 				inject: {
 					data: {
@@ -39,6 +42,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 					}
 				}
 			})
+
 			// * sentry 监控
 			// env.VITE_ENV === "production" ? viteSentry(sentryConfig) : null
 		],
