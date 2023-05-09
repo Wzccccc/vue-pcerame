@@ -1,5 +1,5 @@
 import { createPinia, defineStore } from "pinia";
-import { GlobalState, systemConfigOptions } from "./interface";
+import { GlobalState } from "./interface";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate"; // 持久化
 
 export const GlobalStore = defineStore("GlobalState", {
@@ -41,7 +41,7 @@ export const GlobalStore = defineStore("GlobalState", {
 			this.isFollowSystem = true; //是否开启跟随系统主题
 			this.systemConfig = {
 				isCollapse: false,
-				isDark: false
+				isDark: this.systemConfig.isDark
 			};
 		}
 	},
