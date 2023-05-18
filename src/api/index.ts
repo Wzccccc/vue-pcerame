@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
+import axios, { AxiosInstance, AxiosRequestConfig, InternalAxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
 import { ElMessage } from "element-plus";
 
 import { ResponseData } from "./interface";
@@ -23,10 +23,14 @@ class Request {
 		this.service = axios.create(config); // 实例化 axios
 		// * 请求拦截器
 		this.service.interceptors.request.use(
-			(config: AxiosRequestConfig) => {
+			(config: InternalAxiosRequestConfig) => {
 				const globalStore = GlobalStore();
 				const token: string = globalStore.token;
-				return { ...config, headers: { ...config.headers, "x-access-token": token } };
+				// return { ...config, headers: { ...config.headers, "x-access-token": token } };
+				if (config.headers && typeof config.headers.set === "function") {
+					config.headers.set("x-access-token", token);
+				}
+				return config;
 			},
 			(error: AxiosError) => {
 				return Promise.reject(error);
