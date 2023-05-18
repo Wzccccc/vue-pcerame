@@ -11,6 +11,7 @@ dist
 .husky
 .local
 /bin
+assets
 .eslintrc.js
 .prettierrc.js
 /src/mock/*

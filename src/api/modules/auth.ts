@@ -1,6 +1,6 @@
 import request from "@/api";
-import { Auth } from "../interface/index";
-import menuList from "@/config/menuList.json";
+// import { Auth } from "../interface/index";
+// import menuList from "@/config/menuList.json";
 
 // 获取菜单/路由
 export const menuListApi = () => {

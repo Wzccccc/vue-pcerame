@@ -26,14 +26,14 @@ export function debounce<T = any, R = any>(
 				}
 				if (immediate && !isInvoke) {
 					// 立即执行
-					const result = await fn.apply(null, args);
+					const result = await fn(...args);
 					resolve(result);
 					isInvoke = true;
 					finishCallback();
 				} else {
 					// 延迟执行
 					timer = setTimeout(async () => {
-						const result = await fn.apply(null, args);
+						const result = await fn(...args);
 						resolve(result);
 						isInvoke = false;
 						timer = null;
