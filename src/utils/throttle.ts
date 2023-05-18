@@ -5,7 +5,7 @@
  * @param {boolean} immediate 是否默认执行一次(第一次不触发节流)
  * @returns 节流后的函数
  */
-export function throttle<T = any, R = any>(fn: (...args: T[]) => R, delay: number = 500, immediate: boolean = false) {
+export function throttle<T, R>(fn: (...args: T[]) => R, delay: number = 500, immediate: boolean = false) {
 	let timer: NodeJS.Timeout | null = null;
 	let stop: boolean = false;
 	let death: boolean = false;
