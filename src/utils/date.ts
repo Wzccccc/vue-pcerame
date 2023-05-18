@@ -12,3 +12,5 @@
  * @returns 转换后的时间戳
  */
 // export const timeStrToTimeStamp = (time: string) => {};
+
+export {};
