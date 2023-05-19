@@ -30,22 +30,20 @@
 import { ref, onUnmounted } from "vue";
 import { throttle } from "@/utils/throttle";
 
-type thorttleType = { (...args: never[]): void; destroy: () => void; open: () => void; close: () => void };
-
 const input = ref("");
 const input2 = ref("");
 const copyInput = ref("");
 const copyInput2 = ref("");
-const handleInput: thorttleType = throttle(
-	() => {
-		copyInput.value = input.value;
+const handleInput = throttle(
+	(val: string) => {
+		copyInput.value = val;
 	},
 	500,
 	true
 );
-const handleInput2: thorttleType = throttle(
-	() => {
-		copyInput2.value = input2.value;
+const handleInput2 = throttle(
+	(val: string) => {
+		copyInput2.value = val;
 	},
 	2000,
 	true

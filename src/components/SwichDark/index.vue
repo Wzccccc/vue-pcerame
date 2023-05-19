@@ -3,13 +3,15 @@
 </template>
 
 <script lang="ts" setup name="swichDark">
-import { Ref, ref, watch } from "vue";
+import { ref, watch } from "vue";
 import { Sunny, Moon } from "@element-plus/icons-vue";
 import { GlobalStore } from "@/store";
 import { useTheme } from "@/hooks/useTheme";
-const isDark: Ref<boolean> = ref(false);
+
+const isDark = ref(false);
 const globalStore = GlobalStore();
 const { switchDark } = useTheme();
+
 watch(
 	() => globalStore.systemConfig.isDark,
 	(val: boolean) => {
@@ -18,9 +20,9 @@ watch(
 	{ immediate: true }
 );
 
-const changTheme = (val: boolean) => {
-	globalStore.setIsFllowSystem(val === window.matchMedia("(prefers-color-scheme:dark)").matches);
-	globalStore.setTheme(val);
+const changTheme = () => {
+	globalStore.setIsFllowSystem(isDark.value === window.matchMedia("(prefers-color-scheme:dark)").matches);
+	globalStore.setTheme(isDark.value);
 	switchDark();
 };
 </script>

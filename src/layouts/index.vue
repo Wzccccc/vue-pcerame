@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts" setup name="layout">
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import { MenuStore } from "@/store/modules/menu";
 import { GlobalStore } from "@/store";
@@ -48,6 +48,23 @@ const globalStore = GlobalStore();
 const menuStore = MenuStore();
 const route = useRoute();
 const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path) as string);
+onMounted(() => {
+	reszie({ target: { innerWidth: window.innerWidth } } as unknown as UIEvent);
+	window.addEventListener("resize", reszie);
+});
+
+// 监听屏幕变化
+const reszie = (e: UIEvent) => {
+	let viewportWidth = (e.target as Window).innerWidth;
+	switch (!!viewportWidth) {
+		case viewportWidth < 992:
+			globalStore.setCollapse(true);
+			break;
+		case viewportWidth >= 992:
+			globalStore.setCollapse(false);
+			break;
+	}
+};
 </script>
 
 <script lang="ts" name="layout">

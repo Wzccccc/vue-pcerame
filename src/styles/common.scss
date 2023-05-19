@@ -1,4 +1,4 @@
-// * card 卡片样式
+/* card */
 .card {
 	height: 100%;
 	padding: 20px;
@@ -11,9 +11,19 @@
 	box-shadow: 0 0 12px rgb(0 0 0 / 5%);
 }
 
-// * 欢迎提示
+/* welcome tip */
 .welcome_not {
 	width: 340px !important;
 	top: 70px !important;
 	right: 25px !important;
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--el-border-color-darker);
+	border-radius: 20px;
 }
