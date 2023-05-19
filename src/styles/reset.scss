@@ -20,9 +20,20 @@ h6 {
 	font-size: 2em;
 }
 /* 解决密码自动填充表单输入框默认添加背景色 */
+// input:-internal-autofill-selected {
+// 	background-color: -internal-light-dark(#fff, #141414) !important;
+// }
+input:-internal-autofill-previewed,
 input:-internal-autofill-selected {
-	background-color: #fff !important;
+	background-color: transparent;
+	-webkit-text-fill-color: var(--el-input-text-color) !important;
+	transition: background-color 10000s ease-in-out 0s !important;
+	-webkit-transition: background-color 10000s ease-in-out 0s !important;
+	-moz-transition: background-color 10000s ease-in-out 0s !important;
+	-ms-transition: background-color 10000s ease-in-out 0s !important;
+	-o-transition: background-color 10000s ease-in-out 0s !important;
 }
+
 /* 阻止在 mac 上触底反弹 橡皮筋 效果 */
 body {
 	overscroll-behavior: none;

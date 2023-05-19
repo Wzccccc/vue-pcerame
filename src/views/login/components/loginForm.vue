@@ -12,7 +12,13 @@
 			</el-input>
 		</el-form-item>
 		<el-form-item prop="password">
-			<el-input v-model="loginForm.password" type="password" show-password :placeholder="$t('loginForm.PassWordTips')">
+			<el-input
+				v-model="loginForm.password"
+				type="password"
+				show-password
+				autocomplete="new-password"
+				:placeholder="$t('loginForm.PassWordTips')"
+			>
 				<template #prefix>
 					<el-icon><Lock /></el-icon>
 				</template>
@@ -29,7 +35,7 @@
 			</div>
 		</el-form-item>
 		<el-form-item>
-			<el-button class="reset-btn" size="large" :icon="CircleClose" @click="resetForm(loginFormRef)">
+			<el-button class="reset-btn" size="large" :icon="CircleClose" @click="resetForm">
 				{{ $t("BtnGroups.Reset") }}
 			</el-button>
 			<el-button
@@ -116,15 +122,15 @@ function makeCode(data: string, len: number) {
 }
 
 // 重置表单
-const resetForm = (formEl: FormInstance | undefined) => {
-	if (!formEl || loginLoading.value) return;
-	formEl.resetFields();
+const resetForm = () => {
+	if (!loginFormRef.value || loginLoading.value) return;
+	loginFormRef.value.resetFields();
 };
 
 // 登录
 const login = async (formEl: FormInstance | undefined) => {
 	if (!formEl) return;
-	formEl.validate(async (valid, fields) => {
+	formEl.validate(async valid => {
 		if (!valid) return;
 		loginLoading.value = true;
 		try {
