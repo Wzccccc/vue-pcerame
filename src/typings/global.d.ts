@@ -19,13 +19,15 @@ declare namespace Menu {
 		isKeepAlive: boolean;
 	}
 }
+
 /* Vite */
-declare type Recordable<T = any> = Record<string, T>;
+declare type Recordable<T = string> = Record<string, T>;
+
 declare interface ViteEnv {
-	VITE_ENV: "development" | "production" | "test";
+	VITE_NODE_ENV: "development" | "production" | "test";
 	VITE_APP_TITLE: string;
 	VITE_APP_PORT: number;
 	VITE_PUBLIC_PATH: string;
-	VITE_APP_BASE_URL: string;
+	VITE_API_BASE_URL: string;
 	VITE_APP_PROXY: Boolean;
 }

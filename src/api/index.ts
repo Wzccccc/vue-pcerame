@@ -8,28 +8,28 @@ import { GlobalStore } from "@/store";
 import router from "@/routers";
 
 // 配置 config 对象
+// http://axios-js.com/zh-cn/docs/#%E8%AF%B7%E6%B1%82%E9%85%8D%E7%BD%AE
 const config = {
-	baseURL: import.meta.env.VITE_APP_BASE_URL, // 默认路径
-	timeout: 5000, // 超时时间
+	baseURL: import.meta.env.VITE_API_BASE_URL as string, // 基准路径
+	timeout: RequestEnum.TIMEOUT as number,
 	withCredentials: true // 跨域时允许带凭证
-	// 其他配置查看  http://axios-js.com/zh-cn/docs/#%E8%AF%B7%E6%B1%82%E9%85%8D%E7%BD%AE
 };
 
 // 封装 axios 请求类
 class Request {
-	service: AxiosInstance; // 创建 axios 实例
-	public constructor(config: AxiosRequestConfig) {
-		// public 公有属性（默认）
-		this.service = axios.create(config); // 实例化 axios
+	// 创建 axios 实例
+	service: AxiosInstance;
+
+	constructor(config: AxiosRequestConfig) {
+		// 实例化 axios
+		this.service = axios.create(config);
+
 		// * 请求拦截器
 		this.service.interceptors.request.use(
 			(config: InternalAxiosRequestConfig) => {
 				const globalStore = GlobalStore();
 				const token: string = globalStore.token;
-				// return { ...config, headers: { ...config.headers, "x-access-token": token } };
-				if (config.headers && typeof config.headers.set === "function") {
-					config.headers.set("x-access-token", token);
-				}
+				config.headers && config.headers.set("x-access-token", token);
 				return config;
 			},
 			(error: AxiosError) => {
@@ -77,6 +77,7 @@ class Request {
 	post<T>(url: string, params?: object, _object = {}): Promise<ResponseData<T>> {
 		return this.service.post(url, params, _object);
 	}
+	// delete put download ...
 }
 
 export default new Request(config);
