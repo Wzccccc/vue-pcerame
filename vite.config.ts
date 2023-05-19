@@ -1,6 +1,6 @@
 import vue from "@vitejs/plugin-vue";
 import { defineConfig, loadEnv, ConfigEnv, UserConfig, type PluginOption } from "vite";
-import { resolve } from "path"; // 配置别名 如报错需要安装 @types/node
+import { resolve } from "path"; // 配置别名
 import { createHtmlPlugin } from "vite-plugin-html"; // 可在 index.html 中使用环境变量
 import viteCompression from "vite-plugin-compression";
 import VueSetupExtend from "vite-plugin-vue-setup-extend"; // 可在 setup 上自定义name
