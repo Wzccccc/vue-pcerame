@@ -19,3 +19,11 @@ h6 {
 :-webkit-any(article, aside, nav, section) h1 {
 	font-size: 2em;
 }
+/* 解决密码自动填充表单输入框默认添加背景色 */
+input:-internal-autofill-selected {
+	background-color: #fff !important;
+}
+/* 阻止在 mac 上触底反弹 橡皮筋 效果 */
+body {
+	overscroll-behavior: none;
+}
