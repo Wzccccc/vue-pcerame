@@ -4,7 +4,7 @@
 		<i :class="'iconfont icon-language1 '"></i>
 		<template #dropdown>
 			<el-dropdown-menu>
-				<el-dropdown-item command="zh" :disabled="language && language === 'zh'">{{
+				<el-dropdown-item command="zh" :disabled="language === 'zh'">{{
 					$t("layoutHeader.language.SimplifiedChinese")
 				}}</el-dropdown-item>
 				<el-dropdown-item command="en" :disabled="language === 'en'">{{ $t("layoutHeader.language.English") }}</el-dropdown-item>

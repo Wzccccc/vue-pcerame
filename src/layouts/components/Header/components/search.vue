@@ -74,7 +74,7 @@ const createFilter = (queryString: string) => {
 };
 
 // 点击菜单
-const handleclickMenu = (item: Menu.MenuOptions) => {
+const handleclickMenu = (item: Menu.MenuOptions | Record<string, any>) => {
 	if (item.meta.isLink) {
 		window.open(item.meta.isLink, "_blank");
 	} else {

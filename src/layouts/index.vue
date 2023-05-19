@@ -40,14 +40,14 @@ import { GlobalStore } from "@/store";
 
 import SubMenu from "@/layouts/components/Menu/SubMenu.vue";
 import Header from "@/layouts/components/Header/index.vue";
-import Tabs from "@/layouts/components/Tabs/index.vue";
+// import Tabs from "@/layouts/components/Tabs/index.vue";
 import Main from "@/layouts/components/Main/index.vue";
 import Footer from "@/layouts/components/Footer/index.vue";
 
 const globalStore = GlobalStore();
 const menuStore = MenuStore();
 const route = useRoute();
-const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path));
+const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path) as string);
 </script>
 
 <script lang="ts" name="layout">
