@@ -2,7 +2,6 @@ import { defineConfig, loadEnv, ConfigEnv, UserConfig } from "vite";
 import { resolve } from "path"; // 配置别名
 import { convertEnvType } from "./build/getEnv";
 import { createPlugins } from "./build/getPlugins";
-import { createCompress } from "./build/pack";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
@@ -33,8 +32,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			}
 		},
 		build: {
-			// target: "es2020",
-			// minify: "terser",
+			target: "es2020",
+			// minify: "terser", // 混淆器
 			// rollup 配置
 			rollupOptions: {
 				output: {
@@ -47,9 +46,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 						}
 					}
 				},
-				//  告诉打包工具 在external配置的 都是外部依赖项  不需要打包
-				external: [],
-				plugins: createCompress(viteEnv)
+				//  告诉打包工具 在external配置的 都是外部依赖项  不需要打包,例如使用了 CDN 等
+				external: []
 			},
 			terserOptions: {
 				compress: {
