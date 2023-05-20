@@ -15,7 +15,6 @@ export function throttle<T, R>(
 	let death: boolean = false;
 	let flag: boolean = true;
 	function _throttle(...args: T[]) {
-		console.log(stop, death, death);
 		if (death) {
 			fn(...args);
 			return;

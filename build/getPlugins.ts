@@ -40,6 +40,7 @@ export const createPlugins = (viteEnv: ViteEnv): (PluginOption | PluginOption[])
 			svgo: { plugins: [{ name: "removeViewBox" }, { name: "removeEmptyAttrs", active: false }] }
 		}),
 		// 预览分析打包
-		viteEnv.VITE_APP_REPORT && (visualizer({ filename: "stats.html", gzipSize: true, brotliSize: true }) as PluginOption)
+		viteEnv.VITE_APP_REPORT &&
+			(visualizer({ filename: "stats.html", gzipSize: true, brotliSize: true, open: true }) as PluginOption)
 	];
 };

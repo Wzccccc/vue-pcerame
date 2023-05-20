@@ -8,7 +8,6 @@ import { createCompress } from "./build/pack";
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
 	const viteEnv = convertEnvType(env);
-	console.log(viteEnv);
 	return {
 		base: viteEnv.VITE_APP_PUBLIC_PATH,
 		plugins: createPlugins(viteEnv),
@@ -55,8 +54,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			terserOptions: {
 				compress: {
 					// 生产环境时移除console
-					drop_console: true,
-					drop_debugger: true
+					drop_console: viteEnv.VITE_APP_DROP_DEBUG,
+					drop_debugger: viteEnv.VITE_APP_DROP_CONSOLE
 				}
 			}
 		}

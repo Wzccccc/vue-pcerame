@@ -42,7 +42,7 @@ const activeName = ref("first");
 
 // tabs 切换
 const handleClick = (tab: TabsPaneContext, event: Event) => {
-	// console.log(tab, event);
+	console.log(tab, event);
 };
 
 const showPopover = () => {

@@ -59,7 +59,6 @@ router.beforeEach(async (to, from, next) => {
  * @description 重置路由
  */
 const resetRouter = () => {
-	// console.log(router);
 	// TODO... 去除所有当前权限的所有路由 清除面包屑/tab
 };
 

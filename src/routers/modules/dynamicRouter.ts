@@ -15,7 +15,6 @@ export const initDynamicRouters = async () => {
 		await menuStore.setMenuList();
 		// 添加动态路由
 		menuStore.flatDataMneuList.forEach((item: any) => {
-			// console.log(item.children);
 			item.children && delete item.children;
 			if (item.component && isType(item.component) == "string") {
 				item.component = modules["/src/views" + item.component + ".vue"];
@@ -28,7 +27,6 @@ export const initDynamicRouters = async () => {
 		});
 		// 添加错误路由
 		router.addRoute(notFoundRouter);
-		// console.log(router.options);
 	} catch (e) {
 		globalStore.resetInit();
 		router.replace("/login");

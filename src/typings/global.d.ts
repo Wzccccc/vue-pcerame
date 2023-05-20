@@ -32,6 +32,7 @@ declare interface ViteEnv {
 	VITE_APP_REPORT: boolean;
 	VITE_APP_PROXY: Boolean;
 	VITE_APP_DROP_CONSOLE: boolean;
+	VITE_APP_DROP_DEBUG: boolean;
 	VITE_APP_BUILD_COMPRESS: "gzip" | "brotli" | "gzip,brotli" | "none";
 	VITE_APP_BUILD_COMPRESS_DELETE_ORIGIN_FILE: booelan;
 }
