@@ -34,8 +34,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			}
 		},
 		build: {
-			target: "es2020",
-			minify: "terser",
+			// target: "es2020",
+			// minify: "terser",
 			// rollup 配置
 			rollupOptions: {
 				output: {
