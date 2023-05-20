@@ -39,4 +39,4 @@ jobs:
           # Remote port
           SOURCE: ./dist
           # 部署路径
-          TARGET: /usr/local/nginx/html/my_pcerame
+          TARGET: /usr/local/nginx/html/vue_pcerame
