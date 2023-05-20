@@ -15,14 +15,13 @@ h6 {
 	margin: 0;
 	padding: 0;
 }
+
 /* 解决 h1 标签在 webkit 内核浏览器中文字大小失效问题 */
 :-webkit-any(article, aside, nav, section) h1 {
 	font-size: 2em;
 }
+
 /* 解决密码自动填充表单输入框默认添加背景色 */
-// input:-internal-autofill-selected {
-// 	background-color: -internal-light-dark(#fff, #141414) !important;
-// }
 input:-internal-autofill-previewed,
 input:-internal-autofill-selected {
 	background-color: transparent;

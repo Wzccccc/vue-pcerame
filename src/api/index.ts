@@ -10,7 +10,7 @@ import router from "@/routers";
 // 配置 config 对象
 // http://axios-js.com/zh-cn/docs/#%E8%AF%B7%E6%B1%82%E9%85%8D%E7%BD%AE
 const config = {
-	baseURL: import.meta.env.VITE_API_BASE_URL as string, // 基准路径
+	baseURL: import.meta.env.VITE_APP_API_BASE_URL as string, // 接口基准路径
 	timeout: RequestEnum.TIMEOUT as number,
 	withCredentials: true // 跨域时允许带凭证
 };

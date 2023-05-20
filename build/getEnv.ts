@@ -4,7 +4,7 @@ export function convertEnvType(envConfig: Recordable): ViteEnv {
 	let realEnv: any = { ...envConfig };
 	for (const key of Object.keys(envConfig)) {
 		key === "VITE_APP_PORT" && (realEnv[key] = Number(realEnv[key]));
-		key === "VITE_APP_PROXY" && (realEnv[key] = Boolean(realEnv[key]));
+		["VITE_APP_PROXY", "VITE_APP_REPORT"].includes(key) && (realEnv[key] = Boolean(realEnv[key]));
 	}
 	return realEnv;
 }
