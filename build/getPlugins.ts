@@ -7,7 +7,7 @@ import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { visualizer } from "rollup-plugin-visualizer"; // 打包预览
 import viteImagemin from "vite-plugin-imagemin"; // 图片压缩
-import { createCompress } from "./pack";
+// import { createCompress } from "./pack";
 
 /**
  * @description 创建插件
@@ -20,7 +20,7 @@ export const createPlugins = (viteEnv: ViteEnv): (PluginOption | PluginOption[])
 		// name 可以写在 script 标签上
 		VueSetupExtend(),
 		// 打包配置
-		createCompress(viteEnv),
+		// createCompress(viteEnv),
 		// 注入变量到 html 文件
 		createHtmlPlugin({
 			inject: {
