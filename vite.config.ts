@@ -6,6 +6,7 @@ import { createPlugins } from "./build/getPlugins";
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
 	const viteEnv = convertEnvType(env);
+	console.log(viteEnv);
 	return {
 		base: viteEnv.VITE_APP_PUBLIC_PATH,
 		plugins: createPlugins(viteEnv),
