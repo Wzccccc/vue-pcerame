@@ -2,6 +2,7 @@ import vue from "@vitejs/plugin-vue";
 import { type PluginOption } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html"; // 可在 index.html 中使用环境变量
 import VueSetupExtend from "vite-plugin-vue-setup-extend"; // 可在 setup 上自定义name
+import viteEslint from "vite-plugin-eslint"; // 启动项目时 ESlint校验
 import AutoImport from "unplugin-auto-import/vite"; // Element 自动导入插件
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
@@ -14,35 +15,36 @@ import { createCompress } from "./pack";
  * @returns (PluginOption | PluginOption[])[]
  */
 export const createPlugins = (viteEnv: ViteEnv): (PluginOption | PluginOption[])[] => {
-	return [
-		vue(),
-		// name 可以写在 script 标签上
-		VueSetupExtend(),
-		// 打包配置
-		createCompress(viteEnv),
-		// 注入变量到 html 文件
-		createHtmlPlugin({
-			inject: {
-				data: { title: viteEnv.VITE_APP_TITLE }
-			}
-		}),
-		// Element 自动导入
-		AutoImport({
-			resolvers: [ElementPlusResolver()]
-		}),
-		Components({
-			resolvers: [ElementPlusResolver()]
-		}),
-		// 图片压缩
-		viteImagemin({
-			gifsicle: { optimizationLevel: 7, interlaced: false },
-			optipng: { optimizationLevel: 7 },
-			mozjpeg: { quality: 20 },
-			pngquant: { quality: [0.8, 0.9], speed: 4 },
-			svgo: { plugins: [{ name: "removeViewBox" }, { name: "removeEmptyAttrs", active: false }] }
-		}),
-		// 预览分析打包
-		viteEnv.VITE_APP_REPORT &&
-			(visualizer({ filename: "stats.html", gzipSize: true, brotliSize: true, open: true }) as PluginOption)
-	];
+  return [
+    vue(),
+    // name 可以写在 script 标签上
+    VueSetupExtend(),
+    viteEslint(),
+    // 打包配置
+    createCompress(viteEnv),
+    // 注入变量到 html 文件
+    createHtmlPlugin({
+      inject: {
+        data: { title: viteEnv.VITE_APP_TITLE }
+      }
+    }),
+    // Element 自动导入
+    AutoImport({
+      resolvers: [ElementPlusResolver()]
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()]
+    }),
+    // 图片压缩
+    viteImagemin({
+      gifsicle: { optimizationLevel: 7, interlaced: false },
+      optipng: { optimizationLevel: 7 },
+      mozjpeg: { quality: 20 },
+      pngquant: { quality: [0.8, 0.9], speed: 4 },
+      svgo: { plugins: [{ name: "removeViewBox" }, { name: "removeEmptyAttrs", active: false }] }
+    }),
+    // 预览分析打包
+    viteEnv.VITE_APP_REPORT &&
+      (visualizer({ filename: "stats.html", gzipSize: true, brotliSize: true, open: true }) as PluginOption)
+  ];
 };

@@ -1,59 +1,59 @@
 .el-container {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .layout {
-	min-width: 900px;
-	.el-aside {
-		width: auto;
-		overflow: inherit;
-		// height: 100%;
-		border-right: 1px solid var(--el-menu-border-color);
-		.menu {
-			display: flex;
-			flex-direction: column;
-			height: 100%;
-			transition: width 0.2s linear;
-			.logo {
-				cursor: pointer;
-				font: bold 18px arial;
-				height: 55px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				border-bottom: 1px solid var(--el-menu-border-color);
-				img {
-					width: 30px;
-				}
-				span {
-					white-space: nowrap;
-					margin-left: 10px;
-				}
-			}
-			.el-scrollbar {
-				height: calc(100% - 55px);
-				:deep(.el-scrollbar__bar.is-vertical) {
-					right: 0;
-				}
-			}
+  min-width: 900px;
+  .el-aside {
+    width: auto;
+    overflow: inherit;
 
-			.el-menu--vertical {
-				width: 100%;
-				border-right: 0;
-				:deep(.el-menu-item.is-active) {
-					background-color: #eef5fe;
-				}
-				:deep(.el-menu-item:not(.is-active):hover),
-				:deep(.el-sub-menu .el-sub-menu__title:hover) {
-					background-color: #eeeff2;
-				}
-			}
-		}
-	}
+    // height: 100%;
+    border-right: 1px solid var(--el-menu-border-color);
+    .menu {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: width 0.2s linear;
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 55px;
+        font: bold 18px arial;
+        cursor: pointer;
+        border-bottom: 1px solid var(--el-menu-border-color);
+        img {
+          width: 30px;
+        }
+        span {
+          margin-left: 10px;
+          white-space: nowrap;
+        }
+      }
+      .el-scrollbar {
+        height: calc(100% - 55px);
+        :deep(.el-scrollbar__bar.is-vertical) {
+          right: 0;
+        }
+      }
+      .el-menu--vertical {
+        width: 100%;
+        border-right: 0;
+        :deep(.el-menu-item.is-active) {
+          background-color: #eef5fe;
+        }
+        :deep(.el-menu-item:not(.is-active):hover),
+        :deep(.el-sub-menu .el-sub-menu__title:hover) {
+          background-color: #eeeff2;
+        }
+      }
+    }
+  }
 }
 .right-con {
-	flex-direction: column;
+  flex-direction: column;
 }
 .welcome_not {
-	margin-right: 100px;
+  margin-right: 100px;
 }
