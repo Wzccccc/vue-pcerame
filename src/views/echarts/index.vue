@@ -1,5 +1,5 @@
 <template>
-	<div id="echarts">数据大屏</div>
+  <div id="echarts">数据大屏</div>
 </template>
 
 <script setup lang="ts" name="echarts"></script>

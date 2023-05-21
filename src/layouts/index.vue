@@ -1,35 +1,35 @@
 <template>
-	<el-container class="layout" ref="layout">
-		<el-aside>
-			<div
-				class="menu"
-				:style="{ width: globalStore.systemConfig.isCollapse ? '65px' : globalStore.language === 'zh' ? '240px' : '260px' }"
-			>
-				<div class="logo">
-					<img src="@/assets/images/logo.png" alt="" />
-					<span v-if="!globalStore.systemConfig.isCollapse">Vue - Pcerame</span>
-				</div>
-				<el-scrollbar>
-					<el-menu
-						:default-active="activeMenu"
-						:router="true"
-						:collapse="globalStore.systemConfig.isCollapse"
-						:collapse-transition="false"
-					>
-						<SubMenu :menuList="menuStore.dataMneuList" />
-					</el-menu>
-				</el-scrollbar>
-			</div>
-		</el-aside>
-		<el-container class="right-con">
-			<!-- * 头部 -->
-			<Header />
-			<!-- * 内容 -->
-			<Main />
-			<!-- * 页脚 -->
-			<Footer />
-		</el-container>
-	</el-container>
+  <el-container class="layout" ref="layout">
+    <el-aside>
+      <div
+        class="menu"
+        :style="{ width: globalStore.systemConfig.isCollapse ? '65px' : globalStore.language === 'zh' ? '240px' : '260px' }"
+      >
+        <div class="logo">
+          <img src="@/assets/images/logo.png" alt="" />
+          <span v-if="!globalStore.systemConfig.isCollapse">Vue - Pcerame</span>
+        </div>
+        <el-scrollbar>
+          <el-menu
+            :default-active="activeMenu"
+            :router="true"
+            :collapse="globalStore.systemConfig.isCollapse"
+            :collapse-transition="false"
+          >
+            <SubMenu :menuList="menuStore.dataMneuList" />
+          </el-menu>
+        </el-scrollbar>
+      </div>
+    </el-aside>
+    <el-container class="right-con">
+      <!-- * 头部 -->
+      <Header />
+      <!-- * 内容 -->
+      <Main />
+      <!-- * 页脚 -->
+      <Footer />
+    </el-container>
+  </el-container>
 </template>
 
 <script lang="ts" setup name="layout">
@@ -49,21 +49,21 @@ const menuStore = MenuStore();
 const route = useRoute();
 const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path) as string);
 onMounted(() => {
-	reszie({ target: { innerWidth: window.innerWidth } } as unknown as UIEvent);
-	window.addEventListener("resize", reszie);
+  reszie({ target: { innerWidth: window.innerWidth } } as unknown as UIEvent);
+  window.addEventListener("resize", reszie);
 });
 
 // 监听屏幕变化
 const reszie = (e: UIEvent) => {
-	let viewportWidth = (e.target as Window).innerWidth;
-	switch (!!viewportWidth) {
-		case viewportWidth < 992:
-			globalStore.setCollapse(true);
-			break;
-		case viewportWidth >= 992:
-			globalStore.setCollapse(false);
-			break;
-	}
+  let viewportWidth = (e.target as Window).innerWidth;
+  switch (!!viewportWidth) {
+    case viewportWidth < 992:
+      globalStore.setCollapse(true);
+      break;
+    case viewportWidth >= 992:
+      globalStore.setCollapse(false);
+      break;
+  }
 };
 </script>
 
@@ -74,25 +74,25 @@ import I18n from "@/language/index";
 import { getTimeState } from "@/utils/utilsFn";
 
 export default defineComponent({
-	beforeRouteEnter(to, from, next) {
-		if (!["/dataScreen", "/403", "/404", "/500"].includes(from.path)) {
-			// 根据时间展示不同的提示语
-			ElNotification.success({
-				title: getTimeState(),
-				message:
-					I18n.global.t("WelcomeMessage.UserName") +
-					" " +
-					JSON.parse(localStorage.getItem("GlobalState")!).userName +
-					", " +
-					I18n.global.t("WelcomeMessage.Welcome") +
-					" Vue-Pcerame",
-				duration: 3000,
-				showClose: false,
-				customClass: "welcome_not"
-			});
-		}
-		next();
-	}
+  beforeRouteEnter(to, from, next) {
+    if (!["/dataScreen", "/403", "/404", "/500"].includes(from.path)) {
+      // 根据时间展示不同的提示语
+      ElNotification.success({
+        title: getTimeState(),
+        message:
+          I18n.global.t("WelcomeMessage.UserName") +
+          " " +
+          JSON.parse(localStorage.getItem("GlobalState")!).userName +
+          ", " +
+          I18n.global.t("WelcomeMessage.Welcome") +
+          " Vue-Pcerame",
+        duration: 3000,
+        showClose: false,
+        customClass: "welcome_not"
+      });
+    }
+    next();
+  }
 });
 </script>
 

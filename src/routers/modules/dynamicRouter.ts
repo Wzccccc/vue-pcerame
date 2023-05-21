@@ -8,28 +8,28 @@ import { GlobalStore } from "@/store";
 const modules = import.meta.glob("@/views/**/*.vue");
 
 export const initDynamicRouters = async () => {
-	const globalStore = GlobalStore();
-	const menuStore = MenuStore();
-	try {
-		// 获取列表
-		await menuStore.setMenuList();
-		// 添加动态路由
-		menuStore.flatDataMneuList.forEach((item: any) => {
-			item.children && delete item.children;
-			if (item.component && isType(item.component) == "string") {
-				item.component = modules["/src/views" + item.component + ".vue"];
-			}
-			if (item.meta.isFull) {
-				router.addRoute(item);
-			} else {
-				router.addRoute("layout", item);
-			}
-		});
-		// 添加错误路由
-		router.addRoute(notFoundRouter);
-	} catch (e) {
-		globalStore.resetInit();
-		router.replace("/login");
-		return Promise.reject(e);
-	}
+  const globalStore = GlobalStore();
+  const menuStore = MenuStore();
+  try {
+    // 获取列表
+    await menuStore.setMenuList();
+    // 添加动态路由
+    menuStore.flatDataMneuList.forEach((item: any) => {
+      item.children && delete item.children;
+      if (item.component && isType(item.component) == "string") {
+        item.component = modules["/src/views" + item.component + ".vue"];
+      }
+      if (item.meta.isFull) {
+        router.addRoute(item);
+      } else {
+        router.addRoute("layout", item);
+      }
+    });
+    // 添加错误路由
+    router.addRoute(notFoundRouter);
+  } catch (e) {
+    globalStore.resetInit();
+    router.replace("/login");
+    return Promise.reject(e);
+  }
 };

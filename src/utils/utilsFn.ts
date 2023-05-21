@@ -5,9 +5,9 @@ import I18n from "@/language/index";
  * @return string
  */
 export const isType = (val: any) => {
-	if (val === null) return "null";
-	if (typeof val !== "object") return typeof val;
-	else return Object.prototype.toString.call(val).slice(8, -1).toLocaleLowerCase();
+  if (val === null) return "null";
+  if (typeof val !== "object") return typeof val;
+  else return Object.prototype.toString.call(val).slice(8, -1).toLocaleLowerCase();
 };
 
 /**
@@ -16,12 +16,12 @@ export const isType = (val: any) => {
  * @return Array
  */
 export const flatMenu = (menuList: Menu.MenuOptions[]): any[] => {
-	let copyMenulist = JSON.parse(JSON.stringify(menuList));
-	return copyMenulist.reduce((pre: Menu.MenuOptions[], cur: Menu.MenuOptions) => {
-		let resultList = [...pre, cur];
-		if (cur.children) resultList = [...resultList, ...flatMenu(cur.children)];
-		return resultList;
-	}, []);
+  let copyMenulist = JSON.parse(JSON.stringify(menuList));
+  return copyMenulist.reduce((pre: Menu.MenuOptions[], cur: Menu.MenuOptions) => {
+    let resultList = [...pre, cur];
+    if (cur.children) resultList = [...resultList, ...flatMenu(cur.children)];
+    return resultList;
+  }, []);
 };
 
 /**
@@ -29,14 +29,14 @@ export const flatMenu = (menuList: Menu.MenuOptions[]): any[] => {
  * @return string
  */
 export const getBrowserLang = (): string => {
-	let browserLang = navigator.language;
-	let defaultBrowserLang = "";
-	if (browserLang.toLowerCase() === "cn" || browserLang.toLowerCase() === "zh" || browserLang.toLowerCase() === "zh-cn") {
-		defaultBrowserLang = "zh";
-	} else {
-		defaultBrowserLang = "en";
-	}
-	return defaultBrowserLang;
+  let browserLang = navigator.language;
+  let defaultBrowserLang = "";
+  if (browserLang.toLowerCase() === "cn" || browserLang.toLowerCase() === "zh" || browserLang.toLowerCase() === "zh-cn") {
+    defaultBrowserLang = "zh";
+  } else {
+    defaultBrowserLang = "en";
+  }
+  return defaultBrowserLang;
 };
 
 /**
@@ -44,10 +44,10 @@ export const getBrowserLang = (): string => {
  * @return string
  */
 export const getTimeState = () => {
-	let hours = new Date().getHours();
-	if (hours >= 22 || (hours >= 0 && hours < 6)) return `${I18n.global.t("WelcomeMessage.Night")} 🌛`;
-	if (hours >= 6 && hours < 10) return `${I18n.global.t("WelcomeMessage.Morning")} ⛅`;
-	if (hours >= 10 && hours < 14) return `${I18n.global.t("WelcomeMessage.Noon")} 🌞`;
-	if (hours >= 14 && hours < 18) return `${I18n.global.t("WelcomeMessage.AfterNoon")} 🌞`;
-	if (hours >= 18 && hours < 22) return `${I18n.global.t("WelcomeMessage.Evening")} 🌛`;
+  let hours = new Date().getHours();
+  if (hours >= 22 || (hours >= 0 && hours < 6)) return `${I18n.global.t("WelcomeMessage.Night")} 🌛`;
+  if (hours >= 6 && hours < 10) return `${I18n.global.t("WelcomeMessage.Morning")} ⛅`;
+  if (hours >= 10 && hours < 14) return `${I18n.global.t("WelcomeMessage.Noon")} 🌞`;
+  if (hours >= 14 && hours < 18) return `${I18n.global.t("WelcomeMessage.AfterNoon")} 🌞`;
+  if (hours >= 18 && hours < 22) return `${I18n.global.t("WelcomeMessage.Evening")} 🌛`;
 };

@@ -1,35 +1,35 @@
 <template>
-	<div id="header">
-		<el-header style="font-size: 12px">
-			<div class="toolbar">
-				<div class="bar-left">
-					<el-icon @click="changMenu">
-						<component :is="globalStore.systemConfig.isCollapse ? 'expand' : 'fold'"></component>
-					</el-icon>
-					<!-- TODO 面包屑 -->
-				</div>
-				<div class="bar-right">
-					<!-- * 深色模式开关 -->
-					<SwichDark style="vertical-align: middle" />
-					<div class="bar-right-icons">
-						<div class="search">
-							<Search />
-						</div>
-						<div class="notice">
-							<Notice />
-						</div>
-						<div class="language">
-							<Language />
-						</div>
-						<div class="screen">
-							<Screen />
-						</div>
-					</div>
-					<User />
-				</div>
-			</div>
-		</el-header>
-	</div>
+  <div id="header">
+    <el-header style="font-size: 12px">
+      <div class="toolbar">
+        <div class="bar-left">
+          <el-icon @click="changMenu">
+            <component :is="globalStore.systemConfig.isCollapse ? 'expand' : 'fold'"></component>
+          </el-icon>
+          <!-- TODO 面包屑 -->
+        </div>
+        <div class="bar-right">
+          <!-- * 深色模式开关 -->
+          <SwichDark style="vertical-align: middle" />
+          <div class="bar-right-icons">
+            <div class="search">
+              <Search />
+            </div>
+            <div class="notice">
+              <Notice />
+            </div>
+            <div class="language">
+              <Language />
+            </div>
+            <div class="screen">
+              <Screen />
+            </div>
+          </div>
+          <User />
+        </div>
+      </div>
+    </el-header>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -43,7 +43,7 @@ import User from "./components/user.vue";
 
 const globalStore = GlobalStore();
 const changMenu = () => {
-	globalStore.setCollapse(!globalStore.systemConfig.isCollapse);
+  globalStore.setCollapse(!globalStore.systemConfig.isCollapse);
 };
 </script>
 

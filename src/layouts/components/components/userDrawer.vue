@@ -1,5 +1,5 @@
 <template>
-	<div>抽屉内容</div>
+  <div>抽屉内容</div>
 </template>
 
 <script setup lang="ts" name="drawer"></script>
