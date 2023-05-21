@@ -14,8 +14,7 @@
     "lint:prettier": "prettier --write \"src/**/*.{js,ts,json,jsx,tsx,css,less,scss,vue,html,md}\"",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
     "lint:lint-staged": "lint-staged",
-    "prepare": "husky install",
-    "commit": "git add -A && czg && git push"
+    "prepare": "husky install"
   },
   "resolutions": {
     "bin-wrapper": "npm:bin-wrapper-china"
@@ -51,8 +50,6 @@
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",
     "@vitejs/plugin-vue": "^4.0.0",
-    "cz-git": "^1.6.1",
-    "czg": "^1.6.1",
     "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -85,10 +82,5 @@
   },
   "engines": {
     "node": ">=18.13.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-git"
-    }
   }
 }
