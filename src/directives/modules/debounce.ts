@@ -1,13 +1,13 @@
 import type { Directive, DirectiveBinding } from "vue";
-interface Eltype extends HTMLElement {
-  _handleclick_: () => any;
+interface EleType extends HTMLElement {
+  _handleClick_: () => any;
 }
 /**
  * @description 防抖指令 v-debounce
  * @param binding 参数可拓展 binding:obj
  */
 const debounce: Directive = {
-  mounted(el: Eltype, binding: DirectiveBinding) {
+  mounted(el: EleType, binding: DirectiveBinding) {
     if (typeof binding.value.fn !== "function") {
       throw new Error("callback must be a function");
     }
@@ -15,7 +15,7 @@ const debounce: Directive = {
       throw new Error("delay must be a number");
     }
     let timer: NodeJS.Timeout | null = null;
-    el._handleclick_ = function () {
+    el._handleClick_ = function () {
       if (timer) {
         clearTimeout(timer);
         timer = null;
@@ -24,10 +24,10 @@ const debounce: Directive = {
         binding.value.fn();
       }, binding.value.delay || 500);
     };
-    el.addEventListener("click", el._handleclick_);
+    el.addEventListener("click", el._handleClick_);
   },
-  beforeUnmount(el: Eltype) {
-    el.removeEventListener("click", el._handleclick_);
+  beforeUnmount(el: EleType) {
+    el.removeEventListener("click", el._handleClick_);
   }
 };
 export default debounce;

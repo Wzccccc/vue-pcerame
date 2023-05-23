@@ -1,1 +1,12 @@
-# 测试 gitee 和 github 仓库同步
+# Vue-Pcerame
+
+```shell
+pnpm i
+pnpm dev
+```
+
+build
+
+```shell
+pnpm build:dev/test/pro
+```

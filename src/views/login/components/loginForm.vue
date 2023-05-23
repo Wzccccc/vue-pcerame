@@ -25,13 +25,13 @@
       </el-input>
     </el-form-item>
     <el-form-item class="code-item" prop="verificationCode">
-      <el-input v-model="loginForm.verificationCode" class="code-input" :placeholder="$t('loginForm.verificatioNoCode')">
+      <el-input v-model="loginForm.verificationCode" class="code-input" :placeholder="$t('loginForm.verificationNoCode')">
         <template #prefix>
           <i :class="'iconfont icon-yanzhengyanzhengma'"></i>
         </template>
       </el-input>
       <div class="get-code" @click="refreshCode">
-        <Sldentify :identifyCode="identifyCode"></Sldentify>
+        <SIdentify :identifyCode="identifyCode"></SIdentify>
       </div>
     </el-form-item>
     <el-form-item>
@@ -64,7 +64,7 @@ import { loginApi } from "@/api/modules/login";
 import { GlobalStore } from "@/store";
 import { initDynamicRouters } from "@/routers/modules/dynamicRouter";
 import I18n from "@/language/index";
-import Sldentify from "@/components/SIdentify/index.vue";
+import SIdentify from "@/components/SIdentify/index.vue";
 
 const router = useRouter();
 const globalStore = GlobalStore();
@@ -76,16 +76,16 @@ const loginForm = reactive<Login.LoginForm>({
   verificationCode: ""
 });
 const identifyCode = ref("");
-const identifyCodes = ref("0123456789abcdwerwshdjeJKDHRJHKOOPLMKQ");
+const identifyCodes = ref("0123456789abcdwefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
 const loginRules = reactive<FormRules>({
   username: [{ required: true, message: I18n.global.t("loginForm.CheckUserName"), trigger: ["blur", "change"] }],
   password: [{ required: true, message: I18n.global.t("loginForm.CheckPassWord"), trigger: ["blur", "change"] }],
   verificationCode: [
-    { required: true, message: I18n.global.t("loginForm.verificatioNoCode"), trigger: ["blur", "change"] },
+    { required: true, message: I18n.global.t("loginForm.verificationNoCode"), trigger: ["blur", "change"] },
     {
       validator: (rule: any, value: any, callback: any) => {
         if (value && value.toLowerCase() !== identifyCode.value.toLowerCase()) {
-          callback(new Error(`${I18n.global.t("loginForm.verificatioCodeError")}`));
+          callback(new Error(`${I18n.global.t("loginForm.verificationCodeError")}`));
         } else {
           callback();
         }

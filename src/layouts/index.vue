@@ -16,7 +16,7 @@
             :collapse="globalStore.systemConfig.isCollapse"
             :collapse-transition="false"
           >
-            <SubMenu :menuList="menuStore.dataMneuList" />
+            <SubMenu :menuList="menuStore.dataMenuList" />
           </el-menu>
         </el-scrollbar>
       </div>
@@ -49,12 +49,12 @@ const menuStore = MenuStore();
 const route = useRoute();
 const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path) as string);
 onMounted(() => {
-  reszie({ target: { innerWidth: window.innerWidth } } as unknown as UIEvent);
-  window.addEventListener("resize", reszie);
+  resize({ target: { innerWidth: window.innerWidth } } as unknown as UIEvent);
+  window.addEventListener("resize", resize);
 });
 
 // 监听屏幕变化
-const reszie = (e: UIEvent) => {
+const resize = (e: UIEvent) => {
   let viewportWidth = (e.target as Window).innerWidth;
   switch (!!viewportWidth) {
     case viewportWidth < 992:
@@ -88,7 +88,7 @@ export default defineComponent({
           " Vue-Pcerame",
         duration: 3000,
         showClose: false,
-        customClass: "welcome_not"
+        customClass: "welcome-tip"
       });
     }
     next();

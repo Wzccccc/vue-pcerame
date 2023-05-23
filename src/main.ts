@@ -23,7 +23,7 @@ import "element-plus/dist/index.css";
 import "element-plus/theme-chalk/dark/css-vars.css";
 // custom  dark(自定义暗黑模式)
 import "@/styles/theme/dark.scss";
-// elementui 样式
+// Element 样式
 import "@/styles/element.scss";
 // iconfont
 import "@/assets/iconfont/iconfont.scss";

@@ -4,7 +4,7 @@ declare namespace Menu {
     path: string;
     name: string;
     meta: MetaProps;
-    compoents?: string | (() => Promise<string>);
+    components?: string | (() => Promise<string>);
     redirect?: string;
     children?: MenuOptions[];
   }
@@ -34,5 +34,5 @@ declare interface ViteEnv {
   VITE_APP_DROP_CONSOLE: boolean;
   VITE_APP_DROP_DEBUG: boolean;
   VITE_APP_BUILD_COMPRESS: "gzip" | "brotli" | "gzip,brotli" | "none";
-  VITE_APP_BUILD_COMPRESS_DELETE_ORIGIN_FILE: booelan;
+  VITE_APP_BUILD_COMPRESS_DELETE_ORIGIN_FILE: boolean;
 }

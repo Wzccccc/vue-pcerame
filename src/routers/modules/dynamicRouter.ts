@@ -14,7 +14,7 @@ export const initDynamicRouters = async () => {
     // 获取列表
     await menuStore.setMenuList();
     // 添加动态路由
-    menuStore.flatDataMneuList.forEach((item: any) => {
+    menuStore.flatDataMenuList.forEach((item: any) => {
       item.children && delete item.children;
       if (item.component && isType(item.component) == "string") {
         item.component = modules["/src/views" + item.component + ".vue"];

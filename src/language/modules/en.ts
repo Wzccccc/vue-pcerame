@@ -4,10 +4,10 @@ export default {
     PassWordTips: "PassWord：123456",
     CheckUserName: "Please enter user name",
     CheckPassWord: "Please input a password",
-    verificatioNoCode: "Please enter the verification code",
-    verificatioCodeError: "Verification code error, please re-enter"
+    verificationNoCode: "Please enter the verification code",
+    verificationCodeError: "Verification code error, please re-enter"
   },
-  ErrorPags: {
+  ErrorPages: {
     NoPowerTips: "Sorry, you do not have access to this page, please contact the administrator",
     NoExistTips: "Sorry, the page you visited does not exist",
     NoNetTips: "Sorry, your current network is poor, please try again later",
@@ -22,7 +22,7 @@ export default {
     500: "500",
     首页: "Home",
     数据大屏: "Large Data Screen",
-    常用函数或指令: "Common Funs Or Directs",
+    常用函数或指令: "Common Funcs Or Directs",
     防抖: "Debounce",
     节流: "Throttle",
     水印指令: "WaterMark Directs",

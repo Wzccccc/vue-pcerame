@@ -10,7 +10,7 @@
         </div>
         <div class="bar-right">
           <!-- * 深色模式开关 -->
-          <SwichDark style="vertical-align: middle" />
+          <SwitchDark style="vertical-align: middle" />
           <div class="bar-right-icons">
             <div class="search">
               <Search />
@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import { GlobalStore } from "@/store/index";
-import SwichDark from "@/components/SwichDark/index.vue";
+import SwitchDark from "@/components/SwitchDark/index.vue";
 import Search from "./components/search.vue";
 import Notice from "./components/notice.vue";
 import Language from "./components/language.vue";

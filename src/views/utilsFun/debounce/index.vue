@@ -16,8 +16,8 @@
     <el-divider />
     <h4>防抖指令</h4>
     <el-space :size="15" spacer="|">
-      <el-button type="primary" v-debounce="{ fn: clickDiretive }">触发防抖指令(默认值:0.5s后触发)</el-button>
-      <el-button type="primary" v-debounce="{ fn: clickDiretive2, delay: 2000 }">触发防抖指令(自定义:2s后触发)</el-button>
+      <el-button type="primary" v-debounce="{ fn: clickDirective }">触发防抖指令(默认值:0.5s后触发)</el-button>
+      <el-button type="primary" v-debounce="{ fn: clickDirective2, delay: 2000 }">触发防抖指令(自定义:2s后触发)</el-button>
     </el-space>
   </div>
 </template>
@@ -70,10 +70,10 @@ function cancelDebounce2() {
   disabled2.value = true;
 }
 
-const clickDiretive = () => {
+const clickDirective = () => {
   ElMessage.success("我是延迟0.5s执行的防抖指令");
 };
-const clickDiretive2 = () => {
+const clickDirective2 = () => {
   ElMessage.success("我是延迟2s执行的防抖指令");
 };
 </script>

@@ -4,20 +4,27 @@ import { RouteRecordRaw } from "vue-router";
 // 登陆页 首页
 export const staticRouters: RouteRecordRaw[] = [
   {
-    path: "",
+    path: "/",
     redirect: "/home"
   },
   // {
-  // 	path: "/home",
-  // 	name: "home",
-  // 	component: () => import("@/views/home/index.vue"),
-  // 	meta: { title: "首页" }
+  //   path: "/home",
+  //   name: "home",
+  //   component: () => import("@/views/home/index.vue"),
+  //   meta: { title: "首页" }
   // },
   {
     path: "/login",
     name: "login",
     component: () => import("@/views/login/index.vue"),
     meta: { title: "登录" }
+  },
+  {
+    path: "/layout",
+    name: "layout",
+    component: () => import("@/layouts/index.vue"),
+    redirect: "/home",
+    children: []
   }
 ];
 
@@ -40,13 +47,6 @@ export const errorRouters = [
     name: "500",
     component: () => import("@/components/errorCom/500.vue"),
     meta: { title: "500" }
-  },
-  {
-    path: "/layout",
-    name: "layout",
-    component: () => import("@/layouts/index.vue"),
-    redirect: "/home",
-    children: []
   }
 ];
 

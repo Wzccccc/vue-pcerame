@@ -8,7 +8,7 @@ import { ROUTER_WHITE_LIST } from "@/config/config";
 
 /**
  * TODO axios pending 状态下可取消当前请求
- * 场景: 页面切换时取消当前正在 penging 的请求
+ * 场景: 页面切换时取消当前正在 pending 的请求
  */
 
 // 接口返回数据匹配动态路由表
@@ -24,13 +24,14 @@ const router = createRouter({
  */
 router.beforeEach(async (to, from, next) => {
   const globalStore = GlobalStore();
+  // history 模式下无法获取页面来自哪个路由,需要在服务器端配置
 
   // 动态设置当前页面title
   const title = import.meta.env.VITE_APP_TITLE;
   document.title = to.meta.title ? `${I18n.global.t(`layoutMenu.${to.meta.title}`)} - Vue-Pcerame` : title;
 
   // 登录页
-  if (to.name === "login") {
+  if (to.path.toLocaleLowerCase() === "/login") {
     if (globalStore.token) return next(from.fullPath);
     // 没有 token 重置路由 清除面包屑/tab
     resetRouter();
@@ -45,7 +46,7 @@ router.beforeEach(async (to, from, next) => {
 
   // 防止登录时路由未获取到菜单，需要重新添加动态路由
   const menuStore = MenuStore();
-  if (!menuStore.dataMneuList.length) {
+  if (!menuStore.dataMenuList.length) {
     await initDynamicRouters();
     return next({ ...to, replace: true });
   }

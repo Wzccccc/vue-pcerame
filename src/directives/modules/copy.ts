@@ -1,23 +1,23 @@
 import type { Directive, DirectiveBinding } from "vue";
 import { ElMessage } from "element-plus";
-interface Eltype extends HTMLElement {
+interface EleType extends HTMLElement {
   copyData: string | number;
-  _handleclick_: () => any;
+  _handleClick_: () => any;
 }
 /**
  * @description 复制指令 v-copy
  * @param binding 可拓展
  */
 const copy: Directive = {
-  mounted(el: Eltype, binding: DirectiveBinding) {
-    const handleclick2 = handleclick.bind(this, binding.value);
-    el.addEventListener("click", handleclick2);
+  mounted(el: EleType, binding: DirectiveBinding) {
+    const handleClick2 = handleClick.bind(this, binding.value);
+    el.addEventListener("click", handleClick2);
   },
-  beforeUnmount(el: Eltype) {
-    el.removeEventListener("click", el._handleclick_);
+  beforeUnmount(el: EleType) {
+    el.removeEventListener("click", el._handleClick_);
   }
 };
-function handleclick(this: any, obj: any) {
+function handleClick(this: any, obj: any) {
   const input = document.createElement("input");
   input.value = (document.querySelector(`${obj.id}`) as HTMLInputElement).value;
   document.body.appendChild(input);

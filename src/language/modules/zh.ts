@@ -4,10 +4,10 @@ export default {
     PassWordTips: "密码：123456",
     CheckUserName: "请输入用户名",
     CheckPassWord: "请输入密码",
-    verificatioNoCode: "请输入验证码",
-    verificatioCodeError: "验证码错误请重新输入"
+    verificationNoCode: "请输入验证码",
+    verificationCodeError: "验证码错误请重新输入"
   },
-  ErrorPags: {
+  ErrorPages: {
     NoPowerTips: "抱歉，您无权访问此页面，请联系管理员",
     NoExistTips: "抱歉，您访问的页面不存在",
     NoNetTips: "抱歉，您当前网络不佳，请稍后再试",

@@ -1,6 +1,6 @@
 <template>
   <div id="footer">
-    <el-footer> vue3 + vite4 + pinia + elementui-plus 后台模板（V1.0） </el-footer>
+    <el-footer> vue3 + vite4 + pinia + Element Plus 后台模板（V1.0） </el-footer>
   </div>
 </template>
 

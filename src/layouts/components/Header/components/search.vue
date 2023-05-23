@@ -1,5 +1,5 @@
 <template>
-  <div class="serach-dailog">
+  <div class="search-dialog">
     <!-- <SvgIcon iconName="icon-search1" @click="handlerOpen"></SvgIcon> -->
     <i :class="'iconfont icon-search1'" @click="handlerOpen"></i>
 
@@ -9,7 +9,7 @@
         v-model="searchMenu"
         :fetch-suggestions="searchMenulist"
         :placeholder="$t(`layoutHeader.SearchTips`)"
-        @select="handleclickMenu"
+        @select="handleClickMenu"
       >
         <template #prefix>
           <el-icon><Search /></el-icon>
@@ -38,7 +38,7 @@ const searchMenu = ref("");
 const menuSearchRef = ref();
 
 // 数据
-const menuList = computed(() => menuStore.flatDataMneuList.filter((item: { meta: { isHide: boolean } }) => !item.meta.isHide));
+const menuList = computed(() => menuStore.flatDataMenuList.filter((item: { meta: { isHide: boolean } }) => !item.meta.isHide));
 
 // 打开弹窗
 const handlerOpen = () => {
@@ -74,7 +74,7 @@ const createFilter = (queryString: string) => {
 };
 
 // 点击菜单
-const handleclickMenu = (item: Menu.MenuOptions | Record<string, any>) => {
+const handleClickMenu = (item: Menu.MenuOptions | Record<string, any>) => {
   if (item.meta.isLink) {
     window.open(item.meta.isLink, "_blank");
   } else {
@@ -85,7 +85,7 @@ const handleclickMenu = (item: Menu.MenuOptions | Record<string, any>) => {
 </script>
 
 <style scoped lang="scss">
-.serach-dailog {
+.search-dialog {
   :deep(.el-overlay-dialog) {
     background-color: rgb(0 0 0 / 50%) !important;
   }

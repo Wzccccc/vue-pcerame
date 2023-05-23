@@ -24,7 +24,7 @@ export const GlobalStore = defineStore("GlobalState", {
     setLanguage(language: string) {
       this.language = language;
     },
-    setIsFllowSystem(val: boolean) {
+    setIsFollowSystem(val: boolean) {
       this.isFollowSystem = val;
     },
     setCollapse(val: boolean) {
