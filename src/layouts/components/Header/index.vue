@@ -15,11 +15,11 @@
             <div class="search">
               <Search />
             </div>
-            <div class="notice">
-              <Notice />
-            </div>
             <div class="language">
               <Language />
+            </div>
+            <div class="notice">
+              <Notice />
             </div>
             <div class="screen">
               <Screen />

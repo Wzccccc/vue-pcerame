@@ -12,7 +12,7 @@
         @select="handleClickMenu"
       >
         <template #prefix>
-          <i-ep-Search />
+          <el-icon><Search /></el-icon>
         </template>
         <template #default="{ item }">
           <el-icon>
@@ -84,6 +84,7 @@ const handleClickMenu = (item: Menu.MenuOptions | Record<string, any>) => {
 
 <style scoped lang="scss">
 .search-dialog {
+  height: 100%;
   :deep(.el-overlay-dialog) {
     background-color: rgb(0 0 0 / 50%) !important;
   }

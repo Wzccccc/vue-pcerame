@@ -7,8 +7,8 @@ import { visualizer } from "rollup-plugin-visualizer"; // 打包预览
 import viteImagemin from "vite-plugin-imagemin"; // 图片压缩
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
-import Icons from "unplugin-icons/vite";
-import IconsResolver from "unplugin-icons/resolver";
+// import Icons from "unplugin-icons/vite";
+// import IconsResolver from "unplugin-icons/resolver";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import path from "path";
 import { createCompress } from "./pack";
@@ -38,9 +38,11 @@ export const createPlugins = (viteEnv: ViteEnv): (PluginOption | PluginOption[])
       include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
       resolvers: [
         // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
-        ElementPlusResolver(),
+        ElementPlusResolver()
         // 自动导入图标组件
-        IconsResolver({})
+        // IconsResolver({
+        //   prefix: "Icon"
+        // })
       ],
       vueTemplate: true, // 是否在 vue 模板中自动导入
       dts: path.resolve(pathSrc, "types", "auto-imports.d.ts") // (false) 配置文件生成位置，默认是根目录 /auto-imports.d.ts
@@ -52,16 +54,13 @@ export const createPlugins = (viteEnv: ViteEnv): (PluginOption | PluginOption[])
       extensions: ["vue", "jsx", "tsx", "ts", "js"],
       resolvers: [
         // 自动注册图标组件
-        IconsResolver({
-          enabledCollections: ["ep"] //@iconify-json/ep 是 Element Plus 的图标库
-        }),
+        // IconsResolver({
+        //   enabledCollections: ["ep"] //@iconify-json/ep 是 Element Plus 的图标库
+        // }),
         // 自动导入 Element Plus 组件
         ElementPlusResolver()
       ],
       dts: path.resolve(pathSrc, "types", "components.d.ts") // (false) 配置文件生成位置，默认是根目录 /components.d.ts
-    }),
-    Icons({
-      autoInstall: true
     }),
     // 图片压缩
     viteImagemin({

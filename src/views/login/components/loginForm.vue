@@ -7,7 +7,9 @@
     <el-form-item prop="username">
       <el-input v-model="loginForm.username" :placeholder="$t('loginForm.UserNameTips')">
         <template #prefix>
-          <i-ep-User />
+          <el-icon>
+            <User />
+          </el-icon>
         </template>
       </el-input>
     </el-form-item>
@@ -20,7 +22,9 @@
         :placeholder="$t('loginForm.PassWordTips')"
       >
         <template #prefix>
-          <i-ep-Lock />
+          <el-icon>
+            <Lock />
+          </el-icon>
         </template>
       </el-input>
     </el-form-item>

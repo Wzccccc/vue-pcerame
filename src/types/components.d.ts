@@ -44,11 +44,6 @@ declare module "@vue/runtime-core" {
     ElTabs: typeof import("element-plus/es")["ElTabs"];
     Footer: typeof import("./../layouts/components/Footer/index.vue")["default"];
     Header: typeof import("./../layouts/components/Header/index.vue")["default"];
-    IEpEdit: typeof import("~icons/ep/edit")["default"];
-    IEpLock: typeof import("~icons/ep/lock")["default"];
-    IEpSearch: typeof import("~icons/ep/search")["default"];
-    IEpSwitchButton: typeof import("~icons/ep/switch-button")["default"];
-    IEpUser: typeof import("~icons/ep/user")["default"];
     Language: typeof import("./../layouts/components/Header/components/language.vue")["default"];
     LoginForm: typeof import("./../views/login/components/loginForm.vue")["default"];
     Main: typeof import("./../layouts/components/Main/index.vue")["default"];

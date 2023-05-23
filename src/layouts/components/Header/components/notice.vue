@@ -60,6 +60,7 @@ const hidePopover = () => {
 
 <style scoped lang="scss">
 .el-badge {
+  height: 100%;
   vertical-align: top;
   :deep(.el-badge__content) {
     top: 2px;
