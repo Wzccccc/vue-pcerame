@@ -6,7 +6,6 @@ import { GlobalStore } from "@/store";
 
 //  导入views 所有文件
 const modules = import.meta.glob("@/views/**/*.vue");
-
 export const initDynamicRouters = async () => {
   const globalStore = GlobalStore();
   const menuStore = MenuStore();
