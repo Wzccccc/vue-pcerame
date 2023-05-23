@@ -12,10 +12,7 @@
   </div>
 </template>
 
-<script lang="ts" setup name="login">
-import SwitchDark from "@/components/SwitchDark/index.vue";
-import LoginForm from "./components/loginForm.vue";
-</script>
+<script lang="ts" setup name="login"></script>
 <style scoped lang="scss">
 @use "./index.scss";
 </style>

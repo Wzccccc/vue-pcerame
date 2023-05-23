@@ -23,7 +23,6 @@
 </template>
 
 <script setup lang="ts" name="debounce">
-import { ref } from "vue";
 import { debounce } from "@/utils/debounce";
 import { ElButton, ElMessage } from "element-plus";
 

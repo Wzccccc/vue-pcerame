@@ -6,15 +6,9 @@
     </el-avatar>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item command="1"
-          ><el-icon><User /></el-icon>{{ $t("layoutHeader.user.PersonalDetails") }}</el-dropdown-item
-        >
-        <el-dropdown-item command="2"
-          ><el-icon><Edit /></el-icon>{{ $t("layoutHeader.user.ChangePassword") }}</el-dropdown-item
-        >
-        <el-dropdown-item command="3" divided
-          ><el-icon><SwitchButton /></el-icon>{{ $t("layoutHeader.user.LogOut") }}</el-dropdown-item
-        >
+        <el-dropdown-item command="1"><i-ep-User />{{ $t("layoutHeader.user.PersonalDetails") }}</el-dropdown-item>
+        <el-dropdown-item command="2"><i-ep-Edit />{{ $t("layoutHeader.user.ChangePassword") }}</el-dropdown-item>
+        <el-dropdown-item command="3" divided><i-ep-SwitchButton />{{ $t("layoutHeader.user.LogOut") }}</el-dropdown-item>
       </el-dropdown-menu>
     </template>
   </el-dropdown>
@@ -24,14 +18,10 @@
 </template>
 
 <script setup lang="ts" name="user">
-import { ref } from "vue";
+import { ElMessage, ElMessageBox } from "element-plus";
 import { GlobalStore } from "@/store";
 import I18n from "@/language/index";
 import { logoutApi } from "@/api/modules/login";
-import UserDrawer from "@/layouts/components/components/userDrawer.vue";
-
-import { useRouter } from "vue-router";
-import { ElMessage, ElMessageBox } from "element-plus";
 
 const globalStore = GlobalStore();
 const router = useRouter();

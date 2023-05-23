@@ -5,8 +5,6 @@
 </template>
 
 <script setup lang="ts" name="SvgIcon">
-import { computed } from "vue";
-// 后期需要借助 vite-plugin-svg-icons 插件 完成 svg 的使用
 const props = defineProps({
   iconName: {
     type: String,

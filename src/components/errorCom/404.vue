@@ -10,8 +10,6 @@
 </template>
 
 <script setup lang="ts" name="404">
-import { useRouter, onBeforeRouteLeave } from "vue-router";
-import { ref } from "vue";
 const router = useRouter();
 let timeNum = ref(10);
 const timer = setInterval(() => {

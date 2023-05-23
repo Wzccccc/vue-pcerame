@@ -7,7 +7,7 @@
     <el-form-item prop="username">
       <el-input v-model="loginForm.username" :placeholder="$t('loginForm.UserNameTips')">
         <template #prefix>
-          <el-icon><User /></el-icon>
+          <i-ep-User />
         </template>
       </el-input>
     </el-form-item>
@@ -20,7 +20,7 @@
         :placeholder="$t('loginForm.PassWordTips')"
       >
         <template #prefix>
-          <el-icon><Lock /></el-icon>
+          <i-ep-Lock />
         </template>
       </el-input>
     </el-form-item>
@@ -53,10 +53,8 @@
 </template>
 
 <script lang="ts" setup name="loginForm">
-import { reactive, ref, onMounted, onBeforeMount } from "vue";
 import { FormInstance, FormRules } from "element-plus";
 import { CircleClose, UserFilled } from "@element-plus/icons-vue";
-import { useRouter } from "vue-router";
 import md5 from "js-md5"; // 密码加密
 
 import { Login } from "@/api/interface";

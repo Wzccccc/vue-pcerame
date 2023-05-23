@@ -14,9 +14,6 @@
 </template>
 
 <script setup lang="ts" name="language">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
-import { useRouter } from "vue-router";
 import { GlobalStore } from "@/store";
 import i18n from "@/language/index";
 

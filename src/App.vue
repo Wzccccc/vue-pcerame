@@ -7,8 +7,6 @@
 <script setup lang="ts" name="app">
 import zhCn from "element-plus/es/locale/lang/zh-cn";
 import en from "element-plus/es/locale/lang/en";
-import { watch, ref } from "vue";
-import { useI18n } from "vue-i18n";
 import { GlobalStore } from "./store";
 import { getBrowserLang } from "@/utils/utilsFn";
 import { useTheme } from "@/hooks/useTheme";

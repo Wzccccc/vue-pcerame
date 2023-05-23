@@ -1,7 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 
-// import ElementPlus from "element-plus";
 import * as Icons from "@element-plus/icons-vue";
 
 // 引入 iconSvg 为全局组件

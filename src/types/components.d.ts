@@ -9,9 +9,9 @@ export {};
 
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
-    403: typeof import("./src/components/errorCom/403.vue")["default"];
-    404: typeof import("./src/components/errorCom/404.vue")["default"];
-    500: typeof import("./src/components/errorCom/500.vue")["default"];
+    403: typeof import("./../components/errorCom/403.vue")["default"];
+    404: typeof import("./../components/errorCom/404.vue")["default"];
+    500: typeof import("./../components/errorCom/500.vue")["default"];
     ElAside: typeof import("element-plus/es")["ElAside"];
     ElAutocomplete: typeof import("element-plus/es")["ElAutocomplete"];
     ElAvatar: typeof import("element-plus/es")["ElAvatar"];
@@ -42,11 +42,28 @@ declare module "@vue/runtime-core" {
     ElSwitch: typeof import("element-plus/es")["ElSwitch"];
     ElTabPane: typeof import("element-plus/es")["ElTabPane"];
     ElTabs: typeof import("element-plus/es")["ElTabs"];
+    Footer: typeof import("./../layouts/components/Footer/index.vue")["default"];
+    Header: typeof import("./../layouts/components/Header/index.vue")["default"];
+    IEpEdit: typeof import("~icons/ep/edit")["default"];
+    IEpLock: typeof import("~icons/ep/lock")["default"];
+    IEpSearch: typeof import("~icons/ep/search")["default"];
+    IEpSwitchButton: typeof import("~icons/ep/switch-button")["default"];
+    IEpUser: typeof import("~icons/ep/user")["default"];
+    Language: typeof import("./../layouts/components/Header/components/language.vue")["default"];
+    LoginForm: typeof import("./../views/login/components/loginForm.vue")["default"];
+    Main: typeof import("./../layouts/components/Main/index.vue")["default"];
+    Notice: typeof import("./../layouts/components/Header/components/notice.vue")["default"];
     RouterLink: typeof import("vue-router")["RouterLink"];
     RouterView: typeof import("vue-router")["RouterView"];
-    SIdentify: typeof import("./src/components/SIdentify/index.vue")["default"];
-    SvgIcon: typeof import("./src/components/SvgIcon/index.vue")["default"];
-    SwitchDark: typeof import("./src/components/SwitchDark/index.vue")["default"];
+    Screen: typeof import("./../layouts/components/Header/components/screen.vue")["default"];
+    Search: typeof import("./../layouts/components/Header/components/search.vue")["default"];
+    SIdentify: typeof import("./../components/SIdentify/index.vue")["default"];
+    SubMenu: typeof import("./../layouts/components/Menu/SubMenu.vue")["default"];
+    SvgIcon: typeof import("./../components/SvgIcon/index.vue")["default"];
+    SwitchDark: typeof import("./../components/SwitchDark/index.vue")["default"];
+    Tabs: typeof import("./../layouts/components/Tabs/index.vue")["default"];
+    User: typeof import("./../layouts/components/Header/components/user.vue")["default"];
+    UserDrawer: typeof import("./../layouts/components/components/userDrawer.vue")["default"];
   }
   export interface ComponentCustomProperties {
     vInfiniteScroll: typeof import("element-plus/es")["ElInfiniteScroll"];

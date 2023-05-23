@@ -12,7 +12,7 @@
         @select="handleClickMenu"
       >
         <template #prefix>
-          <el-icon><Search /></el-icon>
+          <i-ep-Search />
         </template>
         <template #default="{ item }">
           <el-icon>
@@ -26,8 +26,6 @@
 </template>
 
 <script setup lang="ts" name="search">
-import { ref, nextTick, computed } from "vue";
-import { useRouter } from "vue-router";
 import { MenuStore } from "@/store/modules/menu";
 
 const menuStore = MenuStore();

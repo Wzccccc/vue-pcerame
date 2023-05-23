@@ -34,12 +34,6 @@
 
 <script setup lang="ts">
 import { GlobalStore } from "@/store/index";
-import SwitchDark from "@/components/SwitchDark/index.vue";
-import Search from "./components/search.vue";
-import Notice from "./components/notice.vue";
-import Language from "./components/language.vue";
-import Screen from "./components/screen.vue";
-import User from "./components/user.vue";
 
 const globalStore = GlobalStore();
 const changMenu = () => {

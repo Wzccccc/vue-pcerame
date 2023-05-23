@@ -1,4 +1,3 @@
-import { computed } from "vue";
 import { GlobalStore } from "@/store";
 export const useTheme = () => {
   const globalStore = GlobalStore();

@@ -27,7 +27,6 @@
 </template>
 
 <script setup lang="ts" name="throttle">
-import { ref, onUnmounted } from "vue";
 import { throttle } from "@/utils/throttle";
 
 const input = ref("");

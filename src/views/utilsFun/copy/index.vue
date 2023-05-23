@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts" name="copy">
-import { ref } from "vue";
 const input = ref<string>("");
 </script>
 <style scoped lang="scss">

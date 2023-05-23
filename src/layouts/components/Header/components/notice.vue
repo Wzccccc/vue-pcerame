@@ -24,7 +24,6 @@
 </template>
 
 <script setup lang="ts" name="notice">
-import { computed, ref, nextTick, Ref } from "vue";
 import type { TabsPaneContext } from "element-plus";
 
 const isMounted: Ref<boolean> = ref(false);

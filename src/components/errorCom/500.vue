@@ -11,7 +11,6 @@
 </template>
 
 <script setup lang="ts" name="500">
-import { useRouter } from "vue-router";
 import { GlobalStore } from "@/store/index";
 const router = useRouter();
 const globalStore = GlobalStore();

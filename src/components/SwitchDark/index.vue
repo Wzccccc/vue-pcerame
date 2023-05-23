@@ -3,7 +3,6 @@
 </template>
 
 <script lang="ts" setup name="switchDark">
-import { ref, watch } from "vue";
 import { Sunny, Moon } from "@element-plus/icons-vue";
 import { GlobalStore } from "@/store";
 import { useTheme } from "@/hooks/useTheme";

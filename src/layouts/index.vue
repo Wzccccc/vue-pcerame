@@ -33,16 +33,8 @@
 </template>
 
 <script lang="ts" setup name="layout">
-import { computed, onMounted } from "vue";
-import { useRoute } from "vue-router";
 import { MenuStore } from "@/store/modules/menu";
 import { GlobalStore } from "@/store";
-
-import SubMenu from "@/layouts/components/Menu/SubMenu.vue";
-import Header from "@/layouts/components/Header/index.vue";
-// import Tabs from "@/layouts/components/Tabs/index.vue";
-import Main from "@/layouts/components/Main/index.vue";
-import Footer from "@/layouts/components/Footer/index.vue";
 
 const globalStore = GlobalStore();
 const menuStore = MenuStore();

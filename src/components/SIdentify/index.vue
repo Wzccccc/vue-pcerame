@@ -4,7 +4,6 @@
   </div>
 </template>
 <script setup lang="ts" name="SIdentify">
-import { watch, onMounted, nextTick } from "vue";
 const props = defineProps({
   identifyCode: {
     type: String,
