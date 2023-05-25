@@ -52,7 +52,7 @@ export const createPlugins = (viteEnv: ViteEnv): (PluginOption | PluginOption[])
       // 只要项目中，在components目录下的文件，会自动导入到components.d.ts中，这样，页面或者组件中就不用再次引入了，也无需在`main.js`通过app.component全局注册了
       dirs: ["src/components", "src/**/components"],
       extensions: ["vue", "jsx", "tsx", "ts", "js"],
-      directoryAsNamespace: true,
+      // directoryAsNamespace: true,
       resolvers: [
         // 自动注册图标组件
         // IconsResolver({
