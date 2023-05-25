@@ -1,9 +1,9 @@
-import { App } from "vue";
+import { App, Directive } from "vue";
 import copy from "./modules/copy";
 import debounce from "./modules/debounce";
 import waterMarker from "./modules/waterMark";
 
-const directivesList: any = {
+const directivesList: { [Key: string]: Directive } = {
   copy,
   debounce,
   waterMarker

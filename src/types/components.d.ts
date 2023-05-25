@@ -42,6 +42,9 @@ declare module "@vue/runtime-core" {
     ElSwitch: typeof import("element-plus/es")["ElSwitch"];
     ElTabPane: typeof import("element-plus/es")["ElTabPane"];
     ElTabs: typeof import("element-plus/es")["ElTabs"];
+    ErrorCom403: typeof import("./../components/errorCom/403.vue")["default"];
+    ErrorCom404: typeof import("./../components/errorCom/404.vue")["default"];
+    ErrorCom500: typeof import("./../components/errorCom/500.vue")["default"];
     Footer: typeof import("./../layouts/components/Footer/index.vue")["default"];
     Header: typeof import("./../layouts/components/Header/index.vue")["default"];
     Language: typeof import("./../layouts/components/Header/components/language.vue")["default"];
@@ -57,7 +60,7 @@ declare module "@vue/runtime-core" {
     SvgIcon: typeof import("./../components/SvgIcon/index.vue")["default"];
     SwitchDark: typeof import("./../components/SwitchDark/index.vue")["default"];
     Tabs: typeof import("./../layouts/components/Tabs/index.vue")["default"];
-    User: typeof import("./../layouts/components/Header/components/user.vue")["default"];
+    UserAvatar: typeof import("./../layouts/components/Header/components/userAvatar.vue")["default"];
     UserDrawer: typeof import("./../layouts/components/components/userDrawer.vue")["default"];
   }
   export interface ComponentCustomProperties {

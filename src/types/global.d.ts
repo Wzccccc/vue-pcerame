@@ -4,7 +4,7 @@ declare namespace Menu {
     path: string;
     name: string;
     meta: MetaProps;
-    components?: string | (() => Promise<string>);
+    component?: string | (() => Promise<unknown>);
     redirect?: string;
     children?: MenuOptions[];
   }

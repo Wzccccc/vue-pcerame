@@ -25,7 +25,7 @@
               <Screen />
             </div>
           </div>
-          <User />
+          <UserAvatar />
         </div>
       </div>
     </el-header>

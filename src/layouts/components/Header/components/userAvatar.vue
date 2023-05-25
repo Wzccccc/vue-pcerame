@@ -61,8 +61,12 @@ const logout = () => {
 <style scoped lang="scss">
 .user-name {
   display: inline-block;
-  margin: 0 20px;
+  max-width: 50px;
+  margin: 0 5px 0 10px;
+  overflow: hidden;
   font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   vertical-align: bottom;
 }
 .user-photo {

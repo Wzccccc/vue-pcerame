@@ -32,7 +32,7 @@ const disabled2 = ref(true);
 function request1() {
   ElMessage.success("已触发防抖函数1");
 }
-const beginDebounce: any = debounce(
+const beginDebounce = debounce(
   request1,
   1000,
   false,
@@ -52,7 +52,7 @@ function cancelDebounce() {
 function request2() {
   ElMessage.success("已触发防抖函数2");
 }
-const beginDebounce2: any = debounce(
+const beginDebounce2 = debounce(
   request2,
   2000,
   false,

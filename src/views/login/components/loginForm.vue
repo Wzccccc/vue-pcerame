@@ -85,7 +85,7 @@ const loginRules = reactive<FormRules>({
   verificationCode: [
     { required: true, message: I18n.global.t("loginForm.verificationNoCode"), trigger: ["blur", "change"] },
     {
-      validator: (rule: any, value: any, callback: any) => {
+      validator: (rule, value, callback) => {
         if (value && value.toLowerCase() !== identifyCode.value.toLowerCase()) {
           callback(new Error(`${I18n.global.t("loginForm.verificationCodeError")}`));
         } else {
