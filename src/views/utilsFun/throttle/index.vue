@@ -20,8 +20,6 @@
         <span class="txt">2000ms </span>
         <el-input v-model="input2" style="width: 300px" @input="handleInput2" /> <span>{{ copyInput2 }}</span>
       </div>
-      <el-divider />
-      <h4>节流指令</h4>
     </div>
   </div>
 </template>

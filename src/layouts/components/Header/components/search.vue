@@ -113,9 +113,11 @@ const handleClickMenu = (item: Menu.MenuOptions | Record<string, any>) => {
     top: 2px;
     font-size: 16px;
   }
-  span {
-    margin-left: 10px;
-    font-size: 14px;
+  .el-autocomplete-suggestion__list {
+    span {
+      margin-left: 10px;
+      font-size: 14px;
+    }
   }
 }
 </style>

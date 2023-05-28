@@ -5,7 +5,7 @@
         class="menu"
         :style="{ width: globalStore.systemConfig.isCollapse ? '65px' : globalStore.language === 'zh' ? '240px' : '260px' }"
       >
-        <div class="logo">
+        <div class="logo" @click="toHome">
           <img src="@/assets/images/logo.png" alt="" />
           <span v-if="!globalStore.systemConfig.isCollapse">Vue - Pcerame</span>
         </div>
@@ -38,12 +38,17 @@ import { GlobalStore } from "@/store";
 
 const globalStore = GlobalStore();
 const menuStore = MenuStore();
+const router = useRouter();
 const route = useRoute();
 const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path) as string);
 onMounted(() => {
   resize({ target: { innerWidth: window.innerWidth } } as unknown as UIEvent);
   window.addEventListener("resize", resize);
 });
+
+const toHome = () => {
+  router.push("/home");
+};
 
 // 监听屏幕变化
 const resize = (e: UIEvent) => {
