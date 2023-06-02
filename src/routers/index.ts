@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import I18n from "@/language/index";
 import { GlobalStore } from "@/store";
 import { MenuStore } from "@/store/modules/menu";
@@ -12,7 +12,7 @@ import { ROUTER_WHITE_LIST } from "@/config/config";
  */
 // 接口返回数据匹配动态路由表
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [...staticRouters, ...errorRouters],
   strict: false,
   scrollBehavior: () => ({ left: 0, top: 0 })
