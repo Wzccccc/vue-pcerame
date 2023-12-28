@@ -32,6 +32,7 @@ import "@/styles/common.scss";
 import "@/styles/reset.scss";
 
 const app = createApp(App);
+
 // 注册 icons
 for (const [key, component] of Object.entries(Icons)) {
   app.component(key, component);
