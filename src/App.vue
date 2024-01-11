@@ -15,6 +15,7 @@ const I18n = useI18n();
 const globalStore = GlobalStore();
 const { switchDark } = useTheme();
 const locale = ref(zhCn);
+
 watch(
   () => globalStore.language,
   newVal => {
