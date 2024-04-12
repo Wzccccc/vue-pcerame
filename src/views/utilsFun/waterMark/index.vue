@@ -1,7 +1,7 @@
 <template>
   <div
     id="water-mark"
-    v-waterMarker="{ text: 'Vue-Pcerame', font: '20px Microsoft JhengHei', textColor: 'rgba(180, 180, 180, 0.2)' }"
+    v-waterMarker="{ text: 'Vue-Simply', font: '20px Microsoft JhengHei', textColor: 'rgba(180, 180, 180, 0.2)' }"
   >
     <h4 v-for="item in 30" :key="item">水印指令</h4>
   </div>

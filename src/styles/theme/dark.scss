@@ -1,9 +1,9 @@
 /* 自定义 element 暗黑模式样式 */
 html.dark {
-  // * pcerame
-  --pcerame-bg-color: #141414;
-  --pcerame-main-bg-color: #0d0d0d;
-  --pcerame-border-light: 1px solid #4c4c4d;
+  // * Simply
+  --simply-bg-color: #141414;
+  --simply-main-bg-color: #0d0d0d;
+  --simply-border-light: 1px solid #4c4c4d;
 
   // * wangEditor
   --w-e-toolbar-color: #595959;
@@ -38,31 +38,31 @@ html.dark {
   // layout
   .el-container {
     .el-aside {
-      background-color: var(--pcerame-bg-color) !important;
-      border-right: var(--pcerame-border-light) !important;
+      background-color: var(--simply-bg-color) !important;
+      border-right: var(--simply-border-light) !important;
       .logo {
-        border-bottom: var(--pcerame-border-light) !important;
+        border-bottom: var(--simply-border-light) !important;
       }
     }
     .not-aside {
       border-right: none !important;
     }
     .el-header {
-      background-color: var(--pcerame-bg-color) !important;
+      background-color: var(--simply-bg-color) !important;
       border-bottom-color: var(--el-border-color-light) !important;
     }
     .el-main {
-      background-color: var(--pcerame-main-bg-color) !important;
+      background-color: var(--simply-main-bg-color) !important;
       .card {
-        background-color: var(--pcerame-bg-color) !important;
+        background-color: var(--simply-bg-color) !important;
       }
     }
     .el-tabs {
-      background-color: var(--pcerame-bg-color) !important;
+      background-color: var(--simply-bg-color) !important;
     }
     .el-footer {
       .footer {
-        background-color: var(--pcerame-bg-color) !important;
+        background-color: var(--simply-bg-color) !important;
         border-top-color: var(--el-border-color-light) !important;
         a {
           color: var(--el-text-color-regular) !important;
@@ -76,7 +76,7 @@ html.dark {
   .el-sub-menu,
   .el-menu-item,
   .el-sub-menu__title {
-    background-color: var(--pcerame-bg-color) !important;
+    background-color: var(--simply-bg-color) !important;
     &:not(.is-active) {
       color: #bdbdc0 !important;
     }
@@ -86,7 +86,7 @@ html.dark {
     }
   }
   .el-menu-item:not(.is-active):hover {
-    background-color: var(--pcerame-main-bg-color) !important;
+    background-color: var(--simply-main-bg-color) !important;
   }
 
   // iconfont

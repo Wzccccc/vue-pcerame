@@ -28,7 +28,7 @@ const changeLanguage = (command: string) => {
   // 浏览器title需要同步改变
   const title = import.meta.env.VITE_APP_TITLE;
   document.title = router.currentRoute.value.meta.title
-    ? `${i18n.global.t(`layoutMenu.${router.currentRoute.value.meta.title}`)} - Vue-Pcerame`
+    ? `${i18n.global.t(`layoutMenu.${router.currentRoute.value.meta.title}`)} - Vue-Simply`
     : title;
 };
 </script>

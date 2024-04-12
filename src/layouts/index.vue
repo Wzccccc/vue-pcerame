@@ -7,7 +7,7 @@
       >
         <div class="logo" @click="toHome">
           <img src="@/assets/images/logo.png" alt="" />
-          <span v-if="!globalStore.systemConfig.isCollapse">Vue - Pcerame</span>
+          <span v-if="!globalStore.systemConfig.isCollapse">Vue - Simply</span>
         </div>
         <el-scrollbar>
           <el-menu
@@ -82,7 +82,7 @@ export default defineComponent({
           JSON.parse(localStorage.getItem("GlobalState")!).userName +
           ", " +
           I18n.global.t("WelcomeMessage.Welcome") +
-          " Vue-Pcerame",
+          " Vue-Simply",
         duration: 3000,
         showClose: false,
         customClass: "welcome-tip"

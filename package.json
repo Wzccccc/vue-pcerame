@@ -1,10 +1,10 @@
 {
-  "name": "vue-pcerame",
+  "name": "vue-simply",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "serve": "vite",
     "build:dev": "vue-tsc  && vite build --mode development",
     "build:test": "vue-tsc  && vite build --mode test",
     "build:pro": "vue-tsc  && vite build --mode production",

@@ -25,7 +25,7 @@ router.beforeEach(async (to, from, next) => {
   const globalStore = GlobalStore();
   // 动态设置当前页面title
   const title = import.meta.env.VITE_APP_TITLE;
-  document.title = to.meta.title ? `${I18n.global.t(`layoutMenu.${to.meta.title}`)} - Vue-Pcerame` : title;
+  document.title = to.meta.title ? `${I18n.global.t(`layoutMenu.${to.meta.title}`)} - Vue-Simply` : title;
   // 登录页
   if (to.path.toLocaleLowerCase() === "/login") {
     if (globalStore.token) return next(from.fullPath);

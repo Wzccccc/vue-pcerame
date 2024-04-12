@@ -1,7 +1,7 @@
 <template>
   <div class="title">
     <img src="@/assets/images/logo.png" alt="" />
-    <h2>Vue-Pcerame</h2>
+    <h2>Vue-Simply</h2>
   </div>
   <el-form ref="loginFormRef" :model="loginForm" :rules="loginRules" size="large">
     <el-form-item prop="username">
