@@ -4,7 +4,7 @@ import App from "./App.vue";
 import * as Icons from "@element-plus/icons-vue";
 
 // 引入 iconSvg 为全局组件
-// import "@/assets/iconfont/icon.js";
+import "@/assets/iconfont/icon.js";
 import SvgIcon from "@/components/SvgIcon/index.vue";
 
 // 引入指令

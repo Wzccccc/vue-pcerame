@@ -12,6 +12,7 @@ declare module "@vue/runtime-core" {
     403: typeof import("./../components/errorCom/403.vue")["default"];
     404: typeof import("./../components/errorCom/404.vue")["default"];
     500: typeof import("./../components/errorCom/500.vue")["default"];
+    Dialog: typeof import("./../components/Dialog/index.ts")["default"];
     ElAside: typeof import("element-plus/es")["ElAside"];
     ElAutocomplete: typeof import("element-plus/es")["ElAutocomplete"];
     ElAvatar: typeof import("element-plus/es")["ElAvatar"];
@@ -57,6 +58,7 @@ declare module "@vue/runtime-core" {
     SvgIcon: typeof import("./../components/SvgIcon/index.vue")["default"];
     SwitchDark: typeof import("./../components/SwitchDark/index.vue")["default"];
     Tabs: typeof import("./../layouts/components/Tabs/index.vue")["default"];
+    TestDialog: typeof import("./../views/businessCon/dialog/components/testDialog.vue")["default"];
     UserAvatar: typeof import("./../layouts/components/Header/components/userAvatar.vue")["default"];
     UserDrawer: typeof import("./../layouts/components/components/userDrawer.vue")["default"];
   }

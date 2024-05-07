@@ -14,3 +14,11 @@ export interface systemConfigOptions {
   isCollapse: boolean;
   isDark: boolean;
 }
+// 全局弹窗
+export interface DialogListState {
+  dialogList: DialogState[];
+}
+export interface DialogState {
+  id: string;
+  close: () => {};
+}

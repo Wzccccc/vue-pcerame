@@ -58,9 +58,9 @@
           }
         },
         {
-          "path": "/businessCon/svgCon",
-          "name": "svgCon",
-          "component": "/businessCon/svgCon/index",
+          "path": "/businessCon/svgIcon",
+          "name": "svgIcon",
+          "component": "/businessCon/svgIcon/index",
           "meta": {
             "icon": "PictureFilled",
             "title": "SVG图标",
@@ -86,12 +86,26 @@
           }
         },
         {
-          "path": "/businessCon/dragCon",
-          "name": "dragCon",
-          "component": "/businessCon/dragCon/index",
+          "path": "/businessCon/drag",
+          "name": "drag",
+          "component": "/businessCon/drag/index",
           "meta": {
             "icon": "Flag",
             "title": "拖拽组件",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": true,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/businessCon/dialog",
+          "name": "dialog",
+          "component": "/businessCon/dialog/index",
+          "meta": {
+            "icon": "Flag",
+            "title": "弹窗组件",
             "isLink": "",
             "isHide": false,
             "isFull": false,

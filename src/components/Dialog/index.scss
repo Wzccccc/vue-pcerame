@@ -1,0 +1,41 @@
+.dialog-container {
+  position: absolute;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 3px solid #686b70;
+  border-radius: 8px;
+  .dialog-header {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #686b70;
+    &-btn {
+      display: flex;
+      i {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        &:hover {
+          background-color: #bab8b8;
+        }
+        &:last-child {
+          margin-left: 10px;
+          &:hover {
+            background-color: #f56c6c;
+          }
+        }
+      }
+    }
+  }
+  .dialog-content {
+    padding: 10px;
+  }
+}

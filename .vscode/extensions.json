@@ -1,7 +1,6 @@
 {
   "recommendations": [
-    "vue.vue-Official",
-    "vue.vscode-typescript-vue-plugin",
+    "vue.vue-official",
     "hollowtree.vue-snippets",
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",

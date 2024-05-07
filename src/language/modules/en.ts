@@ -31,7 +31,8 @@ export default {
     文件上传: "Files Upload",
     SVG图标: "SVG Icon",
     拖拽组件: "Drag Components",
-    超级表格: "Super Table"
+    超级表格: "Super Table",
+    弹窗组件: "Dialog Components"
   },
   layoutHeader: {
     SearchTips: "Menu search: support name, path",

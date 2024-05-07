@@ -1,6 +1,6 @@
 @font-face {
   font-family: iconfont; /* Project id 3865092 */
-  src: url("//at.alicdn.com/t/c/font_3865092_prphv7guyvi.ttf?t=1675322338110") format("truetype");
+  src: url("iconfont.ttf?t=1715047221236") format("truetype");
 }
 .iconfont {
   font-family: iconfont !important;
@@ -8,6 +8,12 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-zuixiaohua::before {
+  content: "\e625";
+}
+.icon-guanbi::before {
+  content: "\e617";
 }
 .icon-yanzhengyanzhengma::before {
   content: "\e624";
