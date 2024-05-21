@@ -77,6 +77,7 @@ class Request {
   post<T>(url: string, params?: object, _object = {}): Promise<ResponseData<T>> {
     return this.service.post(url, params, _object);
   }
+
   // delete put download ...
 }
 
