@@ -39,4 +39,5 @@ for (const [key, component] of Object.entries(Icons)) {
 }
 
 app.component("SvgIcon", SvgIcon);
+
 app.use(router).use(I18n).use(pinia).use(directives).mount("#app");
